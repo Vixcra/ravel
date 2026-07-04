@@ -1,0 +1,13 @@
+{
+  "format": "evrec/1",
+  "meta": { "map": "central-core", "hero": "Magmax", "tps": 60, "recordedAt": "2026-07-04T00:00:00Z", "recorderVersion": "1.0.0" },
+  "ticks": [
+    { "t": 0, "area": "central-core:0", "player": { "x": 100, "y": 100, "vx": 0, "vy": 0, "mouse": [10, 0], "alive": true },
+      "entities": [ { "n": "wall", "x": 500, "y": 500, "r": 30 }, { "n": "normal", "x": 200, "y": 200, "r": 15, "vx": 10, "vy": 0 } ] },
+    { "t": 1, "area": "central-core:0", "player": { "x": 110, "y": 100, "vx": 10, "vy": 0, "mouse": [10, 0], "alive": true },
+      "entities": [ { "n": "wall", "x": 500, "y": 500, "r": 30 }, { "n": "normal", "x": 210, "y": 200, "r": 15, "vx": 10, "vy": 0 } ] },
+    { "t": 2, "area": "central-core:0", "player": { "x": 120, "y": 100, "vx": 10, "vy": 0, "mouse": [10, 0], "alive": true },
+      "entities": [ { "n": "wall", "x": 500, "y": 500, "r": 30 }, { "n": "normal", "x": 220, "y": 200, "r": 15, "vx": 10, "vy": 0 } ] }
+  ],
+  "raw": []
+}

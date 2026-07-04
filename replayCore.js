@@ -1,0 +1,57 @@
+(function () {
+  function parseEvrec(text) {
+    var ev = typeof text === "string" ? JSON.parse(text) : text;
+    if (!ev || ev.format !== "evrec/1") throw new Error("bad evrec format");
+    if (!Array.isArray(ev.ticks)) throw new Error("bad evrec format");
+    return ev;
+  }
+
+  function _lerp(a, b, f) { return a + (b - a) * f; }
+
+  function sampleFrame(ev, tickFloat) {
+    var n = ev.ticks.length;
+    if (n === 0) return { player: null, entities: [] };
+    var i = Math.floor(tickFloat);
+    if (i < 0) i = 0;
+    if (i > n - 1) i = n - 1;
+    var j = i + 1 <= n - 1 ? i + 1 : i;
+    var f = tickFloat - Math.floor(tickFloat);
+    if (i === j) f = 0;
+    var A = ev.ticks[i], B = ev.ticks[j];
+    var player = null;
+    if (A.player) {
+      player = {
+        x: _lerp(A.player.x, B.player.x, f),
+        y: _lerp(A.player.y, B.player.y, f),
+        vx: A.player.vx, vy: A.player.vy,
+        mouse: A.player.mouse, alive: A.player.alive
+      };
+    }
+    var entities = [];
+    for (var k = 0; k < A.entities.length; k++) {
+      var ea = A.entities[k];
+      var eb = (B.entities[k] && B.entities[k].n === ea.n) ? B.entities[k] : ea;
+      entities.push({
+        n: ea.n,
+        x: _lerp(ea.x, eb.x, f),
+        y: _lerp(ea.y, eb.y, f),
+        r: ea.r, vx: ea.vx, vy: ea.vy
+      });
+    }
+    return { player: player, entities: entities };
+  }
+
+  function readAhead(ev, entityIndex, tick, count) {
+    var pts = [];
+    for (var t = tick + 1; t <= tick + count && t < ev.ticks.length; t++) {
+      var e = ev.ticks[t].entities[entityIndex];
+      if (!e) break;
+      pts.push({ x: e.x, y: e.y });
+    }
+    return pts;
+  }
+
+  var api = { parseEvrec: parseEvrec, sampleFrame: sampleFrame, readAhead: readAhead };
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  if (typeof window !== "undefined") window.replayCore = api;
+})();
