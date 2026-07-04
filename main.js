@@ -137,7 +137,13 @@ function animate(time) {
     const areaUpdated = oldArea !== player.area || oldWorld !== player.world;
     
     renderArea(game.getStates(0), game.players, player.pos, areaUpdated);
-    
+
+    if (window.replay && window.replay.active) {
+      const cx = staticWidth / 2, cy = staticHeight / 2;
+      const toScreen = (wx, wy) => ({ x: cx + (wx - player.pos.x), y: cy + (wy - player.pos.y) });
+      window.replay.drawOverlays(context, toScreen);
+    }
+
     applyScale(context, settings.scale, () => {
       drawAreaHeader(context, 6, strokeColor, areaText, staticWidth, 40, world);
       
