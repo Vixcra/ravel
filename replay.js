@@ -142,7 +142,13 @@
   // aucune aire ni entités à repositionner et le canvas reste noir.
   replay.boot = function () {
     try {
-      if (typeof game === "undefined" || game.players.length > 0) return; // déjà en jeu
+      if (typeof game !== "undefined" && game.players.length > 0) return; // déjà en jeu
+      // Voie principale : cliquer "Enter game" avec les défauts (world=Original=central-core,
+      // hero=Normal). Ça exécute EXACTEMENT le démarrage du menu -> settings/résolution/UI corrects
+      // (minimap + herocard + caméra), contrairement à une séquence bricolée à la main.
+      var connect = document.getElementById("connect");
+      if (connect) { connect.click(); return; }
+      // Fallback si le menu a été retiré : séquence minimale (rendu dégradé, sans réglages menu).
       if (typeof inMenu !== "undefined") inMenu = false;
       if (game.worlds.length === 0 && typeof loadMain === "function") loadMain();
       if (game.worlds.length === 0 && typeof missing_world !== "undefined") game.worlds.push(missing_world);
@@ -151,8 +157,6 @@
       if (typeof loadImages === "function") loadImages(p.className);
       game.worlds[0].areas[0].load();
       if (typeof startAnimation === "function") startAnimation();
-      var gamed = document.getElementById("game");
-      if (gamed) gamed.style.display = "inline-block";
     } catch (e) { console.error("[replay] boot failed:", e); }
   };
 
