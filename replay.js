@@ -136,5 +136,25 @@
     reader.readAsText(file);
   };
 
+  // Monte le monde principal (central-core = worlds[0]) si aucune partie n'est en cours, pour qu'un
+  // .evrec puisse être rejoué sans passer par le menu. Réplique la séquence de démarrage de
+  // listeners.js (loadMain -> new player -> area.load -> startAnimation). Sans ça, applyFrame n'a
+  // aucune aire ni entités à repositionner et le canvas reste noir.
+  replay.boot = function () {
+    try {
+      if (typeof game === "undefined" || game.players.length > 0) return; // déjà en jeu
+      if (typeof inMenu !== "undefined") inMenu = false;
+      if (game.worlds.length === 0 && typeof loadMain === "function") loadMain();
+      if (game.worlds.length === 0 && typeof missing_world !== "undefined") game.worlds.push(missing_world);
+      var p = new Basic(new Vector(6, 6), 5);
+      game.players.push(p);
+      if (typeof loadImages === "function") loadImages(p.className);
+      game.worlds[0].areas[0].load();
+      if (typeof startAnimation === "function") startAnimation();
+      var gamed = document.getElementById("game");
+      if (gamed) gamed.style.display = "inline-block";
+    } catch (e) { console.error("[replay] boot failed:", e); }
+  };
+
   window.replay = replay;
 })();
