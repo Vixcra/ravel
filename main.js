@@ -139,9 +139,13 @@ function animate(time) {
     renderArea(game.getStates(0), game.players, player.pos, areaUpdated);
 
     if (window.replay && window.replay.active) {
-      const cx = staticWidth / 2, cy = staticHeight / 2;
-      const toScreen = (wx, wy) => ({ x: cx + (wx - player.pos.x), y: cy + (wy - player.pos.y) });
-      window.replay.drawOverlays(context, toScreen);
+      // Même repère que renderArea : width/height + fov, focus = player.pos (passé à renderArea),
+      // area.pos pour les entités. drawOverlays applique le split joueur/entité en interne.
+      window.replay.drawOverlays(context, {
+        fov: fov, W: width, H: height,
+        focusX: player.pos.x, focusY: player.pos.y,
+        areaX: area.pos.x, areaY: area.pos.y
+      });
     }
 
     applyScale(context, settings.scale, () => {

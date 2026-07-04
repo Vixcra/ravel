@@ -24,7 +24,9 @@
     if (frame.player) { player.pos.x = frame.player.x; player.pos.y = frame.player.y; }
 
     var world = game.worlds[player.world];
+    if (!world) return;                       // I2: garde une transition d'aire mid-replay
     var area = world.areas[player.area];
+    if (!area || !area.entities) return;
     // Reconstruit les buckets d'entités par nom de type.
     var buckets = {};
     for (var i = 0; i < frame.entities.length; i++) {
@@ -47,14 +49,19 @@
   replay.layers = { heroCircle: true, aimCone: true, playerVector: true, enemyPaths: true, hud: true };
   replay.pathAhead = 30;
 
-  // toScreen: {x,y} monde -> {x,y} écran. Fournie par l'appelant (main.js) qui connaît la caméra.
-  replay.drawOverlays = function (ctx, toScreen) {
+  // view = { fov, W, H, focusX, focusY, areaX, areaY } fourni par main.js. On reproduit EXACTEMENT
+  // les deux transforms du drawer.js : entités = width/2 + (areaX + wx - focusX)*fov (avec area.pos),
+  // joueur = width/2 + (wx - focusX)*fov (SANS area.pos). Sinon overlays décalés de ~fov (×32).
+  replay.drawOverlays = function (ctx, view) {
     if (!replay.active || !replay._frame) return;
     var f = replay._frame;
     var L = replay.layers;
+    var fov = view.fov, W = view.W, H = view.H;
+    function entPt(wx, wy) { return { x: W / 2 + (view.areaX + wx - view.focusX) * fov, y: H / 2 + (view.areaY + wy - view.focusY) * fov }; }
+    function plPt(wx, wy)  { return { x: W / 2 + (wx - view.focusX) * fov,             y: H / 2 + (wy - view.focusY) * fov }; }
 
     if (f.player) {
-      var ps = toScreen(f.player.x, f.player.y);
+      var ps = plPt(f.player.x, f.player.y);
 
       if (L.heroCircle) {
         ctx.save();
@@ -76,7 +83,7 @@
       }
 
       if (L.playerVector && (f.player.vx || f.player.vy)) {
-        var pe = toScreen(f.player.x + f.player.vx * 3, f.player.y + f.player.vy * 3);
+        var pe = plPt(f.player.x + f.player.vx * 3, f.player.y + f.player.vy * 3);
         ctx.save();
         ctx.strokeStyle = "#ffcc00"; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.moveTo(ps.x, ps.y); ctx.lineTo(pe.x, pe.y); ctx.stroke();
@@ -94,8 +101,8 @@
         ctx.save();
         ctx.strokeStyle = "rgba(255,80,80,0.7)"; ctx.lineWidth = 1.5;
         ctx.beginPath();
-        var s0 = toScreen(ent.x, ent.y); ctx.moveTo(s0.x, s0.y);
-        for (var p = 0; p < pts.length; p++) { var sp = toScreen(pts[p].x, pts[p].y); ctx.lineTo(sp.x, sp.y); }
+        var s0 = entPt(ent.x, ent.y); ctx.moveTo(s0.x, s0.y);
+        for (var p = 0; p < pts.length; p++) { var sp = entPt(pts[p].x, pts[p].y); ctx.lineTo(sp.x, sp.y); }
         ctx.stroke();
         ctx.restore();
       }
