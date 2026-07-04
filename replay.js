@@ -110,5 +110,24 @@
     }
   };
 
+  replay.play  = function () { if (replay.active) replay.playing = true; };
+  replay.pause = function () { replay.playing = false; };
+  replay.step  = function (delta) {
+    replay.playing = false;
+    var last = replay.ev.ticks.length - 1;
+    replay.tickFloat = Math.max(0, Math.min(last, Math.round(replay.tickFloat) + delta));
+  };
+  replay.seek = function (tick) {
+    var last = replay.ev.ticks.length - 1;
+    replay.tickFloat = Math.max(0, Math.min(last, tick));
+  };
+  // tps cible (1..60) -> multiplicateur de vitesse de lecture.
+  replay.setSpeed = function (tps) { replay.speed = tps / (replay.ev.meta.tps || 60); };
+  replay.loadFile = function (file) {
+    var reader = new FileReader();
+    reader.onload = function () { replay.load(reader.result); };
+    reader.readAsText(file);
+  };
+
   window.replay = replay;
 })();

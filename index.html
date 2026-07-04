@@ -214,5 +214,49 @@
   <script src="drawer.js"></script>
   <script src="main.js"></script>
   <script src="replay.js"></script>
+  <div id="replay-bar" style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#eee;
+       font:13px monospace;padding:6px 10px;display:flex;gap:10px;align-items:center;z-index:9999;">
+    <input type="file" id="replay-file" accept=".json,.evrec">
+    <button id="replay-play">▶/⏸</button>
+    <button id="replay-back">⏮ -1</button>
+    <button id="replay-fwd">+1 ⏭</button>
+    <input type="range" id="replay-scrub" min="0" max="0" step="1" value="0" style="flex:1;">
+    <label>tps <input type="range" id="replay-speed" min="1" max="60" step="1" value="60" style="width:120px;"></label>
+    <span id="replay-speed-val">60</span>
+  </div>
+  <script>
+    (function () {
+      var f = document.getElementById("replay-file");
+      var scrub = document.getElementById("replay-scrub");
+      var speed = document.getElementById("replay-speed");
+      var speedVal = document.getElementById("replay-speed-val");
+      f.addEventListener("change", function (e) {
+        if (e.target.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function () {
+            window.replay.load(reader.result);
+            scrub.max = window.replay.ev.ticks.length - 1;
+          };
+          reader.readAsText(e.target.files[0]);
+        }
+      });
+      document.getElementById("replay-play").onclick = function () {
+        window.replay.playing ? window.replay.pause() : window.replay.play();
+      };
+      document.getElementById("replay-back").onclick = function () { window.replay.step(-1); };
+      document.getElementById("replay-fwd").onclick  = function () { window.replay.step(1); };
+      scrub.addEventListener("input", function () { window.replay.seek(parseInt(scrub.value, 10)); });
+      speed.addEventListener("input", function () {
+        window.replay.setSpeed(parseInt(speed.value, 10));
+        speedVal.textContent = speed.value;
+      });
+      // Sync le curseur de scrub sur la lecture.
+      setInterval(function () {
+        if (window.replay && window.replay.active && window.replay.playing) {
+          scrub.value = Math.floor(window.replay.tickFloat);
+        }
+      }, 50);
+    })();
+  </script>
 </body>
 </html>
