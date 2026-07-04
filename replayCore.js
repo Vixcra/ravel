@@ -11,12 +11,11 @@
   function sampleFrame(ev, tickFloat) {
     var n = ev.ticks.length;
     if (n === 0) return { player: null, entities: [] };
+    if (tickFloat < 0) tickFloat = 0;
+    if (tickFloat > n - 1) tickFloat = n - 1;
     var i = Math.floor(tickFloat);
-    if (i < 0) i = 0;
-    if (i > n - 1) i = n - 1;
     var j = i + 1 <= n - 1 ? i + 1 : i;
-    var f = tickFloat - Math.floor(tickFloat);
-    if (i === j) f = 0;
+    var f = i === j ? 0 : tickFloat - i;
     var A = ev.ticks[i], B = ev.ticks[j];
     var player = null;
     if (A.player) {

@@ -37,6 +37,14 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   console.log("replayCore: sampleFrame clamp OK");
 })();
 
+// sampleFrame: clamp fractionnaire hors bornes (négatif non-entier) = premier tick exact
+(function () {
+  var ev = RC.parseEvrec(text);
+  assert.strictEqual(RC.sampleFrame(ev, -0.5).player.x, 100); // pas d'interpolation vers tick 1
+  assert.strictEqual(RC.sampleFrame(ev, 2.5).player.x, 120);  // au-delà du dernier = dernier tick
+  console.log("replayCore: sampleFrame clamp fractionnaire OK");
+})();
+
 // readAhead: positions futures de l'ennemi (index 1) sur 2 ticks
 (function () {
   var ev = RC.parseEvrec(text);
