@@ -105,19 +105,29 @@ function animate(time) {
     }
     
     const player = game.players[0];
-    
-    if (inputArray.length > settings.tick_delay && settings.fps_limit !== "unlimited" && settings.tick_delay > 0) {
-      inputArray.splice(0, inputArray.length - settings.tick_delay);
-      game.inputPlayer(0, inputArray[0]);
-    } else {
-      game.inputPlayer(0, input);
-    }
-    inputArray.push(input);
-    
+
     const oldArea = player.area;
     const oldWorld = player.world;
-    
-    game.update(progress * tick_speed);
+
+    if (window.replay && window.replay.active) {
+      if (window.replay.playing) {
+        // Avance l'horloge de replay : (progress ms / durée d'un tick) * vitesse.
+        const tickMs = 1000 / (window.replay.ev.meta.tps || 60);
+        window.replay.tickFloat += (progress / tickMs) * window.replay.speed;
+        const last = window.replay.ev.ticks.length - 1;
+        if (window.replay.tickFloat > last) { window.replay.tickFloat = last; window.replay.playing = false; }
+      }
+      window.replay.applyFrame(game);
+    } else {
+      if (inputArray.length > settings.tick_delay && settings.fps_limit !== "unlimited" && settings.tick_delay > 0) {
+        inputArray.splice(0, inputArray.length - settings.tick_delay);
+        game.inputPlayer(0, inputArray[0]);
+      } else {
+        game.inputPlayer(0, input);
+      }
+      inputArray.push(input);
+      game.update(progress * tick_speed);
+    }
     
     const world = game.worlds[player.world];
     const area = world.areas[player.area];
