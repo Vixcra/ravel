@@ -50,11 +50,34 @@
     }
   };
 
-  // Suit les changements d'aire/région de la run : loadMain() charge TOUS les mondes,
+  // Le menu ne charge qu'UN jeu de mondes (loadMain OU loadHard OU loadSecondary) ;
+  // une run peut warper n'importe où -> on charge les trois et on dédoublonne par nom.
+  // On ne retire que les doublons ajoutés en FIN de tableau : les index de mondes
+  // existants (player.world) restent valides.
+  replay._ensureAllWorlds = function (game) {
+    if (replay._worldsLoaded) return;
+    replay._worldsLoaded = true;
+    try {
+      var before = game.worlds.length, have = {}, i;
+      for (i = 0; i < before; i++) have[String(game.worlds[i].name)] = true;
+      if (typeof loadMain === "function") loadMain();
+      if (typeof loadHard === "function") loadHard();
+      if (typeof loadSecondary === "function") loadSecondary();
+      for (i = game.worlds.length - 1; i >= before; i--) {
+        var nm = String(game.worlds[i].name);
+        if (have[nm]) game.worlds.splice(i, 1);
+        else have[nm] = true;
+      }
+      console.log("[replay] mondes chargés pour le replay:", game.worlds.length);
+    } catch (e) { console.warn("[replay] ensureAllWorlds:", e); }
+  };
+
+  // Suit les changements d'aire/région de la run : tous les mondes sont chargés,
   // on bascule player.world/area sur le monde du même nom. Région inconnue -> on reste.
   replay._switchArea = function (game, areaStr) {
     if (!areaStr || areaStr === replay._lastAreaStr) return;
     replay._lastAreaStr = areaStr;
+    replay._ensureAllWorlds(game);
     var ci = areaStr.lastIndexOf(":");
     var region = ci >= 0 ? areaStr.slice(0, ci) : areaStr;
     var areaName = ci >= 0 ? areaStr.slice(ci + 1) : "";
@@ -63,7 +86,11 @@
     for (var i = 0; i < game.worlds.length; i++) {
       if (game.worlds[i] && String(game.worlds[i].name).toLowerCase() === region.toLowerCase()) { wi = i; break; }
     }
-    if (wi < 0) { console.warn("[replay] région inconnue de Ravel:", region); return; }
+    if (wi < 0) {
+      // "unknown" = ticks pré-partie (écran d'accueil) : normal, on attend la vraie région.
+      if (region !== "unknown") console.warn("[replay] région inconnue de Ravel:", region);
+      return;
+    }
     var world = game.worlds[wi];
     var ai = -1;
     for (var a = 0; a < world.areas.length; a++) {
