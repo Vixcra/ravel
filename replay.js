@@ -148,6 +148,7 @@
         return;
       }
       console.log("[replay] switch →", region + ":" + areaName, "(monde", wi + ", aire", ai + ")");
+      replay._logPosOnce = true; // trace la géométrie au prochain frame (diagnostic caméra/vide)
       replay._pupArea = null;       // marionnettes à reconstruire dans la nouvelle aire
       replay._lastPellets = null;   // area.load a respawné des pellets aléatoires -> re-remplacer
       replay._pelletsCleared = false;
@@ -221,9 +222,16 @@
     var o = frame.o || [0, 0];
     replay._origin = o;
 
-    if (frame.player) {
+    if (frame.player && isFinite(frame.player.x) && isFinite(frame.player.y)) {
       player.pos.x = area.pos.x + (frame.player.x - o[0]);
       player.pos.y = area.pos.y + (frame.player.y - o[1]);
+      if (replay._logPosOnce) {
+        replay._logPosOnce = false;
+        var lb = area.boundary || {};
+        console.log("[replay] pos: fichier=(" + frame.player.x.toFixed(1) + "," + frame.player.y.toFixed(1) +
+          ") o=[" + o[0] + "," + o[1] + "] local=(" + (frame.player.x - o[0]).toFixed(1) + "," + (frame.player.y - o[1]).toFixed(1) +
+          ") | aire Ravel pos=(" + area.pos.x + "," + area.pos.y + ") bornes x:" + lb.x + " y:" + lb.y + " w:" + lb.w + " h:" + lb.h);
+      }
       var st = frame.player.stats;
       if (st) {
         if (st.level != null) player.level = st.level;
