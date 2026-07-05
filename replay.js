@@ -164,10 +164,11 @@
         if (st.nextXp != null) player.nextLevelExperience = st.nextXp;
         else if (st.xp != null) player.nextLevelExperience = st.xp + 1; // vieux fichiers: clamp
         if (st.points != null) player.points = st.points;
-        // Niveaux d'abilities (cavités 1..5 de la herocard) — fournis par le recorder
-        // dès que la structure heroInfoCard.buttons est confirmée (buttonsSample).
-        if (st.ab1 != null) { player.ab1L = st.ab1; player.hasAB = true; }
-        if (st.ab2 != null) { player.ab2L = st.ab2; player.hasAB = true; }
+        // Niveaux d'abilities (cavités 1..5 de la herocard). Le jeu MASQUE .level
+        // pendant l'usage d'une ability (indistinguable d'un niveau 0 dans le fichier) ;
+        // les niveaux ne baissent jamais en cours de run -> on affiche le max vu.
+        if (st.ab1 != null) { player.ab1L = Math.max(player.ab1L || 0, st.ab1); player.hasAB = true; }
+        if (st.ab2 != null) { player.ab2L = Math.max(player.ab2L || 0, st.ab2); player.hasAB = true; }
       }
     }
 
