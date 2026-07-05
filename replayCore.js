@@ -3,6 +3,14 @@
     var ev = typeof text === "string" ? JSON.parse(text) : text;
     if (!ev || ev.format !== "evrec/1") throw new Error("bad evrec format");
     if (!Array.isArray(ev.ticks)) throw new Error("bad evrec format");
+    // Les pellets ne sont écrits qu'aux ticks de changement : index de report
+    // (par tick, référence vers le dernier set connu) pour un scrub O(1).
+    var last = null, refs = null;
+    for (var i = 0; i < ev.ticks.length; i++) {
+      if (ev.ticks[i].pellets) { last = ev.ticks[i].pellets; if (!refs) refs = new Array(ev.ticks.length); }
+      if (refs) refs[i] = last;
+    }
+    ev._pelletsRef = refs; // null si le fichier ne contient aucun pellet (evrec 1.0)
     return ev;
   }
 
@@ -43,6 +51,7 @@
     }
     var frame = { player: player, entities: entities, area: A.area };
     if (A.o) frame.o = A.o; // origine de l'aire (tuiles) pour re-baser au playback
+    frame.pellets = ev._pelletsRef ? (ev._pelletsRef[i] || null) : null;
     return frame;
   }
 

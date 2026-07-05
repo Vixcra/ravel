@@ -77,3 +77,22 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   assert.strictEqual(old.o, undefined);
   console.log("replayCore: origin+stats+wh OK");
 })();
+
+// pellets: ecrits seulement aux ticks de changement -> sampleFrame reporte le dernier set connu
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60 },
+    ticks: [
+      { t: 0, area: "a:0", player: null, entities: [], pellets: [ { x: 1, y: 2, r: 0.25 } ] },
+      { t: 1, area: "a:0", player: null, entities: [] },
+      { t: 2, area: "a:0", player: null, entities: [], pellets: [ { x: 9, y: 9, r: 0.25 } ] },
+      { t: 3, area: "a:0", player: null, entities: [] }
+    ]
+  }));
+  assert.strictEqual(RC.sampleFrame(ev, 0).pellets[0].x, 1);
+  assert.strictEqual(RC.sampleFrame(ev, 1.5).pellets[0].x, 1);   // report du tick 0
+  assert.strictEqual(RC.sampleFrame(ev, 3).pellets[0].x, 9);     // report du tick 2
+  // ancien format sans pellets: null
+  assert.strictEqual(RC.sampleFrame(RC.parseEvrec(text), 0).pellets, null);
+  console.log("replayCore: pellets carry-forward OK");
+})();

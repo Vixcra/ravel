@@ -16,6 +16,9 @@
     replay._puppets = [];
     replay._origin = [0, 0];
     replay._lastAreaStr = null;
+    replay._lastPellets = null;
+    replay._pelletsCleared = false;
+    replay._heroLoaded = null;
     return replay.ev;
   };
 
@@ -40,6 +43,11 @@
     if (m.hero) p.className = m.hero;
     var c = m.hero && HERO_COLORS[m.hero];
     if (c) { p.color = c; p.tempColor = c; }
+    // Icônes d'abilités du héros (loadImages change les src globaux ; une fois par héros)
+    if (m.hero && replay._heroLoaded !== m.hero && typeof loadImages === "function") {
+      replay._heroLoaded = m.hero;
+      try { loadImages(m.hero); } catch (e) {}
+    }
   };
 
   // Suit les changements d'aire/région de la run : loadMain() charge TOUS les mondes,
@@ -71,7 +79,9 @@
       player.world = wi;
       player.area = ai;
       try { world.areas[ai].load(); } catch (e) { console.warn("[replay] area.load:", e); }
-      replay._pupArea = null; // marionnettes à reconstruire dans la nouvelle aire
+      replay._pupArea = null;       // marionnettes à reconstruire dans la nouvelle aire
+      replay._lastPellets = null;   // area.load a respawné des pellets aléatoires -> re-remplacer
+      replay._pelletsCleared = false;
     }
   };
 
@@ -132,6 +142,11 @@
         if (st.regen != null) player.regen = st.regen;
         if (st.speed != null) player.speed = st.speed;
         if (st.xp != null) player.experience = st.xp;
+        // Bornes de niveau : sans elles la barre d'xp déborde au lieu de repartir à zéro
+        if (st.prevXp != null) player.previousLevelExperience = st.prevXp;
+        if (st.nextXp != null) player.nextLevelExperience = st.nextXp;
+        else if (st.xp != null) player.nextLevelExperience = st.xp + 1; // vieux fichiers: clamp
+        if (st.points != null) player.points = st.points;
       }
     }
 
@@ -154,6 +169,24 @@
     }
     puppets.length = frame.entities.length;
     area.entities = buckets;
+
+    // Pellets réels : remplace ceux que Ravel a spawné au hasard (area.load).
+    // frame.pellets = référence stable entre changements -> rebuild seulement au changement.
+    if (frame.pellets && replay._lastPellets !== frame.pellets) {
+      replay._lastPellets = frame.pellets;
+      var plist = [];
+      for (var pi = 0; pi < frame.pellets.length; pi++) {
+        var fp = frame.pellets[pi];
+        var pel = new Pellet(new Vector(fp.x - o[0], fp.y - o[1]), 1, []);
+        pel.freeze = 1e15;
+        plist.push(pel);
+      }
+      area.static_entities["pellet"] = plist;
+    } else if (frame.pellets === null && !replay._pelletsCleared && area.static_entities) {
+      // Vieux fichier sans pellets : on retire ceux de Ravel (positions aléatoires trompeuses).
+      area.static_entities["pellet"] = [];
+      replay._pelletsCleared = true;
+    }
 
     // Overlays : joueur en coords MONDE (plPt), entités en coords LOCALES (entPt ajoute area.pos).
     var fLocal = { player: null, entities: [] };
