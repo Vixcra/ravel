@@ -139,12 +139,12 @@ function animate(time) {
     renderArea(game.getStates(0), game.players, player.pos, areaUpdated);
 
     if (window.replay && window.replay.active) {
-      // Même repère que renderArea : width/height + fov, focus = player.pos (passé à renderArea),
-      // area.pos pour les entités. drawOverlays applique le split joueur/entité en interne.
+      // Même repère que renderArea : le wrapper getStates rend avec pos = world.pos +
+      // area.pos (grille des mondes) — les overlays doivent utiliser le MÊME offset.
       window.replay.drawOverlays(context, {
         fov: fov, W: width, H: height,
         focusX: player.pos.x, focusY: player.pos.y,
-        areaX: area.pos.x, areaY: area.pos.y
+        areaX: world.pos.x + area.pos.x, areaY: world.pos.y + area.pos.y
       });
     }
 

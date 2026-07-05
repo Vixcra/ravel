@@ -223,14 +223,15 @@
     replay._origin = o;
 
     if (frame.player && isFinite(frame.player.x) && isFinite(frame.player.y)) {
-      player.pos.x = area.pos.x + (frame.player.x - o[0]);
-      player.pos.y = area.pos.y + (frame.player.y - o[1]);
+      // Repère MONDE de Ravel = world.pos (grille des mondes) + area.pos + local.
+      // Oublier world.pos marche sur Central Core (0,0) et met la caméra dans le
+      // vide partout ailleurs (canvas noir).
+      player.pos.x = world.pos.x + area.pos.x + (frame.player.x - o[0]);
+      player.pos.y = world.pos.y + area.pos.y + (frame.player.y - o[1]);
       if (replay._logPosOnce) {
         replay._logPosOnce = false;
-        var lb = area.boundary || {};
-        console.log("[replay] pos: fichier=(" + frame.player.x.toFixed(1) + "," + frame.player.y.toFixed(1) +
-          ") o=[" + o[0] + "," + o[1] + "] local=(" + (frame.player.x - o[0]).toFixed(1) + "," + (frame.player.y - o[1]).toFixed(1) +
-          ") | aire Ravel pos=(" + area.pos.x + "," + area.pos.y + ") bornes x:" + lb.x + " y:" + lb.y + " w:" + lb.w + " h:" + lb.h);
+        console.log("[replay] pos: local=(" + (frame.player.x - o[0]).toFixed(1) + "," + (frame.player.y - o[1]).toFixed(1) +
+          ") monde Ravel=(" + world.pos.x + "," + world.pos.y + ") aire=(" + area.pos.x + "," + area.pos.y + ")");
       }
       var st = frame.player.stats;
       if (st) {
