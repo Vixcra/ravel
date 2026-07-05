@@ -52,3 +52,28 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   assert.deepStrictEqual(pts, [ { x: 210, y: 200 }, { x: 220, y: 200 } ]);
   console.log("replayCore: readAhead OK");
 })();
+
+// sampleFrame: propage l'origine o, les stats joueur et w/h des murs (evrec 1.1)
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60 },
+    ticks: [
+      { t: 0, area: "a:0", o: [10, -62.5],
+        player: { x: 100, y: 50, vx: 0, vy: 0, mouse: [0, 0], alive: true, stats: { level: 2, energy: 20 } },
+        entities: [ { n: "wall", rawN: "WALL", x: 8.5, y: 15, r: null, w: 2, h: 40 } ] },
+      { t: 1, area: "a:0", o: [10, -62.5],
+        player: { x: 102, y: 50, vx: 0, vy: 0, mouse: [0, 0], alive: true, stats: { level: 2, energy: 21 } },
+        entities: [ { n: "wall", rawN: "WALL", x: 8.5, y: 15, r: null, w: 2, h: 40 } ] }
+    ]
+  }));
+  var f = RC.sampleFrame(ev, 0.5);
+  assert.deepStrictEqual(f.o, [10, -62.5]);
+  assert.strictEqual(f.player.stats.level, 2);
+  assert.strictEqual(f.entities[0].w, 2);
+  assert.strictEqual(f.entities[0].h, 40);
+  assert.strictEqual(f.entities[0].r, null);
+  // ancien format sans o/stats: pas de crash
+  var old = RC.sampleFrame(RC.parseEvrec(text), 0);
+  assert.strictEqual(old.o, undefined);
+  console.log("replayCore: origin+stats+wh OK");
+})();

@@ -25,19 +25,25 @@
         vx: A.player.vx, vy: A.player.vy,
         mouse: A.player.mouse, alive: A.player.alive
       };
+      if (A.player.stats) player.stats = A.player.stats;
     }
     var entities = [];
     for (var k = 0; k < A.entities.length; k++) {
       var ea = A.entities[k];
       var eb = (B.entities[k] && B.entities[k].n === ea.n) ? B.entities[k] : ea;
-      entities.push({
+      var rec = {
         n: ea.n,
         x: _lerp(ea.x, eb.x, f),
         y: _lerp(ea.y, eb.y, f),
         r: ea.r, vx: ea.vx, vy: ea.vy
-      });
+      };
+      if (ea.w != null) rec.w = ea.w;
+      if (ea.h != null) rec.h = ea.h;
+      entities.push(rec);
     }
-    return { player: player, entities: entities };
+    var frame = { player: player, entities: entities, area: A.area };
+    if (A.o) frame.o = A.o; // origine de l'aire (tuiles) pour re-baser au playback
+    return frame;
   }
 
   function readAhead(ev, entityIndex, tick, count) {
