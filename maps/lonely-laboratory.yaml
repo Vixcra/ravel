@@ -1,0 +1,2955 @@
+name: Lonely Laboratory
+warping_requirements:
+- research_lab_discovered
+properties:
+  friction: 0.75
+  background_color: [38, 92, 255, 125]
+areas:
+- name: Research Facility
+  x: var x
+  y: var y
+  zones:
+  - type: exit
+    x: 0
+    y: 0
+    width: 64
+    height: 480
+    translate:
+      x: -3616
+      y: 0
+  - type: safe
+    x: 64
+    y: 0
+    width: 256
+    height: 480
+    properties: {minimum_speed: 600}
+  - type: safe
+    x: 320
+    y: 0
+    width: 4544  # Increase by 96 for each new enemy.
+    height: 32
+    properties: {minimum_speed: 600}
+  - type: safe
+    x: 320
+    y: 448
+    width: last_width
+    height: 32
+    properties: {minimum_speed: 600}
+  - type: active
+    x: 320
+    y: 32
+    width: last_width
+    height: 416
+    spawner:
+    - count: 1
+      radius: 12
+      speed: 90
+      x: 384
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - slowing
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - draining
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - gravity
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - repelling
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - freezing
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - slippery
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - disabling
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - enlarging
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - toxic
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - magnetic_reduction
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - magnetic_nullification
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - lava
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - quicksand
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - radar
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - barrier
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - reducing
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - experience_drain
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - blocking
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - void_drain
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      effect_radius: 45
+      types:
+      - withering
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - ice_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - speed_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - regen_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - radiating_bullets
+    - count: 1
+      radius: 12
+      speed: 315
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - tree
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      pattern: spiral
+      projectile_speed: 0
+      projectile_duration: 1000
+      projectile_radius: 12
+      shot_interval: 100
+      types:
+      - frost_giant
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - corrosive_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - poison_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - positive_magnetic_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - negative_magnetic_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - fire_trail
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - flower
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - wind_sniper
+    - count: 1
+      radius: 12
+      speed: 159
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - crumbling
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - prediction_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - lead_sniper
+    - count: 1
+      radius: 12
+      speed: 102
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - stalactite
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - force_sniper_a
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - force_sniper_b
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - confectioner
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - ninja_star_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - grass
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - summoner
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - sparking
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - void_sniper
+    - count: 1
+      radius: 12
+      speed: 90
+      x: last_x + 96
+      y: 240
+      angle: 90
+      types:
+      - void_swarm
+  - type: safe
+    x: last_right
+    y: 0
+    width: 256
+    height: 480
+    properties: {minimum_speed: 600}
+  - type: exit
+    x: last_right
+    y: 0
+    width: 64
+    height: 480
+    translate:
+      x: 160
+      y: 0
+  - height: 32
+    translate: {x: -512, y: -6944}
+    type: teleport
+    width: 32
+    x: 288
+    y: 224
+    properties:
+      background_color: [115, 84, 179, 255]
+    requirements:
+    - mystery_keycard
+  properties:
+    pellet_count: 0
+    all_enemies_immune: True
+- name: ​1st Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    type: safe
+    width: 320
+    x: 0
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 20
+      speed: 168
+      types:
+      - infectious
+    - count: 9
+      radius: 10
+      speed: 142
+      types:
+      - infectious
+    - count: 7
+      radius: 30
+      speed: 194
+      types:
+      - infectious
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​2nd Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 25
+      speed: 231
+      types:
+      - infectious
+    - count: 8
+      radius: 15
+      speed: 258
+      types:
+      - infectious
+    - count: 2
+      radius: 4
+      speed: 188
+      effect_radius: 50
+      types:
+      - slowing
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​3rd Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 10
+      speed: 305
+      types:
+      - infectious
+    - count: 6
+      radius: 10
+      speed: 366
+      types:
+      - infectious
+    - count: 5
+      radius: 35
+      speed: 259
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 206
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 206
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​4th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 20
+      speed: 305
+      types:
+      - infectious
+    - count: 8
+      radius: 30
+      speed: 259
+      types:
+      - infectious
+    - count: 2
+      radius: 4
+      speed: 325
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 201
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 201
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​5th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 12
+      speed: 254
+      types:
+      - infectious
+    - count: 6
+      radius: 18
+      speed: 367
+      types:
+      - infectious
+    - count: 6
+      radius: 24
+      speed: 297
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 192
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 192
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​6th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 17
+      radius: 45
+      speed: 338
+      types:
+      - infectious
+    - count: 3
+      radius: 4
+      speed: 288
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 141
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 141
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​7th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 15
+      speed: 463
+      types:
+      - infectious
+    - count: 8
+      radius: 30
+      speed: 400
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 285
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 285
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​8th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 32
+      speed: 380
+      types:
+      - infectious
+    - count: 6
+      radius: 22
+      speed: 506
+      types:
+      - infectious
+    - count: 5
+      radius: 22
+      speed: 561
+      types:
+      - infectious
+    - count: 3
+      radius: 4
+      speed: 433
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 246
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 246
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​9th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 10
+      speed: 535
+      types:
+      - infectious
+    - count: 9
+      radius: 40
+      speed: 468
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 301
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 301
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​10th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 20
+      radius: 15
+      speed: 572
+      types:
+      - infectious
+    - count: 3
+      radius: 4
+      speed: 520
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 4
+      speed: 520
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 281
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 281
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: True
+- name: ​11th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 17
+      radius: 10
+      speed: 307
+      types:
+      - corrosive
+    - count: 3
+      radius: 15
+      speed: 224
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 224
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​12th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 31
+      radius: 30
+      speed: 221
+      types:
+      - corrosive
+    - count: 4
+      radius: 4
+      speed: 245
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 159
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 159
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​13th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 20
+      speed: 331
+      types:
+      - corrosive
+    - count: 16
+      radius: 20
+      speed: 254
+      types:
+      - corrosive
+    - count: 3
+      radius: 15
+      speed: 224
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 224
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​14th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 31
+      radius: 40
+      speed: 227
+      types:
+      - corrosive
+    - count: 4
+      radius: 4
+      speed: 245
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 184
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 184
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​15th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 22
+      radius: 12
+      speed: 437
+      types:
+      - corrosive
+    - count: 3
+      radius: 15
+      speed: 277
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 277
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​16th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 22
+      radius: 18
+      speed: 367
+      types:
+      - corrosive
+    - count: 5
+      radius: 4
+      speed: 307
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 223
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 223
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​17th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 22
+      radius: 50
+      speed: 340
+      types:
+      - corrosive
+    - count: 3
+      radius: 15
+      speed: 203
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 203
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​18th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 8
+      speed: 489
+      types:
+      - corrosive
+    - count: 12
+      radius: 25
+      speed: 348
+      types:
+      - corrosive
+    - count: 5
+      radius: 4
+      speed: 393
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 276
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 276
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​19th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 23
+      radius: 40
+      speed: 415
+      types:
+      - corrosive
+    - count: 3
+      radius: 15
+      speed: 345
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 345
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​20th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 6
+      speed: 533
+      types:
+      - corrosive
+    - count: 7
+      radius: 4
+      speed: 578
+      types:
+      - corrosive
+    - count: 13
+      radius: 5
+      speed: 375
+      types:
+      - corrosive
+    - count: 5
+      radius: 4
+      speed: 450
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 5
+      radius: 4
+      speed: 450
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 305
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 305
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: True
+- name: ​21st Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 40
+      speed: 237
+      types:
+      - immune
+    - count: 12
+      radius: 20
+      speed: 214
+      types:
+      - immune
+    - count: 8
+      radius: 10
+      speed: 285
+      types:
+      - immune
+    - count: 3
+      radius: 15
+      speed: 214
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 214
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​22nd Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 39
+      radius: 30
+      speed: 223
+      types:
+      - immune
+    - count: 6
+      radius: 4
+      speed: 242
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 211
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 211
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​23rd Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 22
+      speed: 237
+      types:
+      - immune
+    - count: 7
+      radius: 14
+      speed: 331
+      types:
+      - immune
+    - count: 9
+      radius: 30
+      speed: 297
+      types:
+      - immune
+    - count: 3
+      radius: 15
+      speed: 229
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 229
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​24th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 16
+      speed: 397
+      types:
+      - immune
+    - count: 8
+      radius: 46
+      speed: 251
+      types:
+      - immune
+    - count: 12
+      radius: 26
+      speed: 281
+      types:
+      - immune
+    - count: 6
+      radius: 4
+      speed: 322
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 271
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 271
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​25th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 16
+      speed: 346
+      types:
+      - immune
+    - count: 8
+      radius: 35
+      speed: 299
+      types:
+      - immune
+    - count: 7
+      radius: 8
+      speed: 480
+      types:
+      - immune
+    - count: 3
+      radius: 15
+      speed: 316
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 316
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​26th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 15
+      speed: 307
+      types:
+      - immune
+    - count: 12
+      radius: 20
+      speed: 338
+      types:
+      - immune
+    - count: 9
+      radius: 15
+      speed: 406
+      types:
+      - immune
+    - count: 7
+      radius: 4
+      speed: 344
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 281
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 281
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​27th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 12
+      speed: 481
+      types:
+      - immune
+    - count: 8
+      radius: 55
+      speed: 299
+      types:
+      - immune
+    - count: 8
+      radius: 20
+      speed: 449
+      types:
+      - immune
+    - count: 3
+      radius: 15
+      speed: 299
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 299
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​28th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 20
+      speed: 449
+      types:
+      - immune
+    - count: 8
+      radius: 15
+      speed: 480
+      types:
+      - immune
+    - count: 9
+      radius: 25
+      speed: 418
+      types:
+      - immune
+    - count: 7
+      radius: 4
+      speed: 359
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 285
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 285
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​29th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 16
+      radius: 8
+      speed: 377
+      types:
+      - immune
+    - count: 8
+      radius: 35
+      speed: 341
+      types:
+      - immune
+    - count: 9
+      radius: 18
+      speed: 494
+      types:
+      - immune
+    - count: 3
+      radius: 15
+      speed: 335
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 335
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​30th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 40
+      speed: 371
+      types:
+      - immune
+    - count: 11
+      radius: 20
+      speed: 572
+      types:
+      - immune
+    - count: 7
+      radius: 4
+      speed: 455
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 7
+      radius: 4
+      speed: 455
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 351
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 351
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: True
+- name: ​31st Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 14
+      speed: 224
+      types:
+      - corrosive
+    - count: 7
+      radius: 16
+      speed: 205
+      types:
+      - corrosive
+    - count: 4
+      radius: 35
+      speed: 192
+      types:
+      - corrosive
+    - count: 7
+      radius: 14
+      speed: 224
+      types:
+      - infectious
+    - count: 7
+      radius: 16
+      speed: 205
+      types:
+      - infectious
+    - count: 4
+      radius: 35
+      speed: 192
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 219
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 219
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​32nd Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 22
+      speed: 250
+      types:
+      - corrosive
+    - count: 15
+      radius: 22
+      speed: 250
+      types:
+      - infectious
+    - count: 8
+      radius: 4
+      speed: 225
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 211
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 211
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​33rd Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 14
+      radius: 45
+      speed: 225
+      types:
+      - corrosive
+    - count: 13
+      radius: 45
+      speed: 225
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 258
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 258
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​34th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 60
+      speed: 182
+      types:
+      - corrosive
+    - count: 14
+      radius: 60
+      speed: 182
+      types:
+      - immune
+    - count: 8
+      radius: 4
+      speed: 237
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 216
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 216
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​35th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 21
+      radius: 15
+      speed: 305
+      types:
+      - corrosive
+    - count: 20
+      radius: 15
+      speed: 305
+      types:
+      - immune
+    - count: 3
+      radius: 15
+      speed: 297
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 297
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​36th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 34
+      radius: 10
+      speed: 216
+      types:
+      - corrosive
+    - count: 35
+      radius: 10
+      speed: 216
+      types:
+      - immune
+    - count: 9
+      radius: 4
+      speed: 277
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 3
+      radius: 15
+      speed: 247
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 247
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​37th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 19
+      radius: 30
+      speed: 335
+      types:
+      - immune
+    - count: 19
+      radius: 30
+      speed: 335
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 337
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 337
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​38th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 29
+      radius: 20
+      speed: 284
+      types:
+      - immune
+    - count: 29
+      radius: 20
+      speed: 284
+      types:
+      - infectious
+    - count: 9
+      radius: 4
+      speed: 320
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 279
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 279
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​39th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 22
+      radius: 8
+      speed: 227
+      types:
+      - immune
+    - count: 6
+      radius: 70
+      speed: 264
+      types:
+      - immune
+    - count: 23
+      radius: 8
+      speed: 227
+      types:
+      - infectious
+    - count: 6
+      radius: 70
+      speed: 264
+      types:
+      - infectious
+    - count: 3
+      radius: 15
+      speed: 251
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 251
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- name: ​40th Test
+  x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 12
+      speed: 383
+      types:
+      - corrosive
+    - count: 7
+      radius: 18
+      speed: 372
+      types:
+      - corrosive
+    - count: 9
+      radius: 12
+      speed: 383
+      types:
+      - immune
+    - count: 7
+      radius: 18
+      speed: 372
+      types:
+      - immune
+    - count: 9
+      radius: 12
+      speed: 383
+      types:
+      - infectious
+    - count: 7
+      radius: 18
+      speed: 372
+      types:
+      - infectious
+    - count: 9
+      radius: 4
+      speed: 413
+      effect_radius: 50
+      types:
+      - slowing
+    - count: 9
+      radius: 4
+      speed: 413
+      effect_radius: 50
+      types:
+      - draining
+    - count: 3
+      radius: 15
+      speed: 349
+      types:
+      - wall
+    - count: 3
+      radius: 15
+      speed: 349
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: True
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: victory
+    width: 2976
+    x: 64
+    y: 0
+  - height: last_height
+    type: removal
+    width: 160
+    x: 3040
+    y: 0

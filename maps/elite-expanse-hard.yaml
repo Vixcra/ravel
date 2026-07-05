@@ -1,0 +1,4636 @@
+name: Elite Expanse Hard
+properties:
+  background_color:
+  - 55
+  - 75
+  - 115
+  - 100
+  friction: 0.75
+  max_level: 1000
+areas:
+- x: var x
+  y: var y
+  zones:
+  - type: teleport
+    x: 0
+    y: 0
+    width: 32
+    height: 480
+    translate:
+      x: -262208
+      y: 0
+    properties:
+      background_color:
+      - 0
+      - 0
+      - 0
+      - 100
+  - type: safe
+    x: 32
+    y: 0
+    width: 288
+    height: 480
+    properties:
+      minimum_speed: 300
+  - height: 480
+    spawner:
+    - count: 8
+      radius: 20
+      speed: 42.85714285714286
+      types:
+      - star
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 20
+      speed: 42.85714285714286
+      types:
+      - star
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 35
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 18
+      radius: 35
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 12
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 8
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 8
+      radius: 35
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 12
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 12
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 12
+      radius: 35
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 27
+      radius: 35
+      speed: 150
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 45
+      radius: 25
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 2
+      radius: 90
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 180
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 99
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 180
+      types:
+      - gravity
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 180
+      types:
+      - gravity
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 270
+      types:
+      - gravity
+    - count: 6
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 270
+      types:
+      - gravity
+    - count: 9
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 360
+      types:
+      - gravity
+    - count: 4
+      radius: 35
+      speed: 270
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 30
+      speed: 450
+      types:
+      - gravity
+    - count: 5
+      radius: 12
+      speed: 360
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 30
+      speed: 180
+      types:
+      - gravity
+    - count: 5
+      radius: 24
+      speed: 270
+      types:
+      - gravity
+    - count: 5
+      radius: 18
+      speed: 360
+      types:
+      - gravity
+    - count: 10
+      radius: 18
+      speed: 150
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 4
+      radius: 30
+      speed: 270
+      types:
+      - gravity
+    - count: 4
+      radius: 24
+      speed: 360
+      types:
+      - gravity
+    - count: 4
+      radius: 18
+      speed: 450
+      types:
+      - gravity
+    - count: 4
+      radius: 12
+      speed: 270
+      types:
+      - homing
+    - count: 10
+      radius: 18
+      speed: 150
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 22
+      radius: 18
+      speed: 210
+      types:
+      - gravity
+    - count: 10
+      radius: 12
+      speed: 171.4285714285714
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 18
+      speed: 107.1428571428571
+      types:
+      - star
+    - count: 8
+      radius: 18
+      speed: 330
+      types:
+      - gravity
+    - count: 3
+      radius: 70
+      speed: 330
+      types:
+      - gravity
+    - count: 1
+      radius: 140
+      speed: 495
+      types:
+      - gravity_ghost
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 18
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 7
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 5
+      radius: 18
+      speed: 90
+      types:
+      - homing
+    - count: 5
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 180
+      types:
+      - repelling
+    - count: 10
+      radius: 18
+      speed: 180
+      types:
+      - homing
+    - count: 5
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 90
+      types:
+      - repelling
+    - count: 6
+      radius: 30
+      speed: 270
+      types:
+      - homing
+    - count: 10
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 180
+      types:
+      - repelling
+    - count: 20
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 180
+      types:
+      - repelling
+    - count: 6
+      radius: 12
+      speed: 90
+      types:
+      - slowing
+    - count: 25
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 10
+      radius: 12
+      speed: 270
+      types:
+      - slowing
+    - count: 10
+      radius: 12
+      speed: 270
+      types:
+      - draining
+    - count: 9
+      radius: 20
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 360
+      types:
+      - repelling
+    - count: 8
+      radius: 12
+      speed: 360
+      types:
+      - slowing
+    - count: 8
+      radius: 12
+      speed: 360
+      types:
+      - draining
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 18
+      speed: 450
+      types:
+      - repelling
+    - count: 3
+      radius: 70
+      speed: 450
+      types:
+      - repelling
+    - count: 1
+      radius: 140
+      speed: 675
+      types:
+      - repelling_ghost
+    - count: 8
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 12
+      speed: 180
+      types:
+      - gravity
+    - count: 6
+      radius: 12
+      speed: 180
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 12
+      speed: 180
+      types:
+      - gravity
+    - count: 9
+      radius: 12
+      speed: 180
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 18
+      speed: 270
+      types:
+      - gravity
+    - count: 9
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 6
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 14
+      radius: 18
+      speed: 270
+      types:
+      - gravity
+    - count: 14
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 6
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 270
+      types:
+      - gravity
+    - count: 8
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 6
+      radius: 12
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 90
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 18
+      speed: 270
+      types:
+      - gravity
+    - count: 13
+      radius: 18
+      speed: 270
+      types:
+      - repelling
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 6
+      radius: 12
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 150
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 18
+      speed: 360
+      types:
+      - gravity
+    - count: 11
+      radius: 18
+      speed: 360
+      types:
+      - repelling
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 6
+      radius: 12
+      speed: 171.4285714285714
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 270
+      types:
+      - sniper
+    - count: 18
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 18
+      speed: 360
+      types:
+      - gravity
+    - count: 11
+      radius: 18
+      speed: 360
+      types:
+      - repelling
+    - count: 8
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 6
+      radius: 12
+      speed: 360
+      types:
+      - draining
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 18
+      speed: 450
+      types:
+      - gravity
+    - count: 6
+      radius: 18
+      speed: 450
+      types:
+      - repelling
+    - count: 4
+      radius: 12
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 4
+      radius: 18
+      speed: 150
+      types:
+      - star
+    - count: 4
+      radius: 12
+      speed: 450
+      types:
+      - draining
+    - count: 3
+      radius: 12
+      speed: 150
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 60
+      speed: 360
+      types:
+      - gravity
+    - count: 1
+      radius: 120
+      speed: 540
+      types:
+      - gravity_ghost
+    - count: 8
+      radius: 60
+      speed: 360
+      types:
+      - repelling
+    - count: 1
+      radius: 120
+      speed: 540
+      types:
+      - repelling_ghost
+    - count: 20
+      radius: 14
+      speed: 171.4285714285714
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 300
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: victory
+    width: 2976
+    x: 64
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 20
+      speed: 42.85714285714286
+      types:
+      - teleporting
+    - count: 15
+      radius: 20
+      speed: 42.85714285714286
+      types:
+      - star
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 8
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 15
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 35
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 9
+      radius: 35
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 16
+      radius: 35
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 16
+      radius: 35
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 7
+      radius: 12
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 7
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 7
+      radius: 35
+      speed: 42.85714285714286
+      types:
+      - teleporting
+    - count: 7
+      radius: 12
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 7
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 7
+      radius: 35
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 12
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 9
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 9
+      radius: 35
+      speed: 42.85714285714286
+      types:
+      - teleporting
+    - count: 9
+      radius: 12
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 20
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 9
+      radius: 35
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 20
+      radius: 35
+      speed: 150
+      types:
+      - teleporting
+    - count: 20
+      radius: 35
+      speed: 150
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 25
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 1
+      radius: 90
+      speed: 42.85714285714286
+      types:
+      - teleporting
+    - count: 25
+      radius: 25
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 1
+      radius: 90
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 6
+      radius: 12
+      speed: 180
+      types:
+      - slowing
+    - count: 1
+      radius: 12
+      speed: 180
+      effect_radius: 64
+      types:
+      - slowing
+    - count: 1
+      radius: 12
+      speed: 180
+      effect_radius: 288
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 180
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 180
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 270
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 5
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 5
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 270
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 7
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 7
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 360
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 6
+      radius: 35
+      speed: 270
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 30
+      speed: 450
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 7
+      radius: 12
+      speed: 360
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 30
+      speed: 180
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 5
+      radius: 24
+      speed: 270
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 5
+      radius: 18
+      speed: 360
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 7
+      radius: 18
+      speed: 150
+      types:
+      - teleporting
+    - count: 7
+      radius: 18
+      speed: 150
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 4
+      radius: 30
+      speed: 270
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 4
+      radius: 24
+      speed: 360
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 4
+      radius: 18
+      speed: 450
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 6
+      radius: 12
+      speed: 270
+      types:
+      - homing
+    - count: 7
+      radius: 18
+      speed: 150
+      types:
+      - teleporting
+    - count: 7
+      radius: 18
+      speed: 150
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 22
+      radius: 18
+      speed: 210
+      gravity: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 8
+      radius: 12
+      speed: 171.4285714285714
+      types:
+      - teleporting
+    - count: 8
+      radius: 12
+      speed: 171.4285714285714
+      types:
+      - star
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 18
+      speed: 107.1428571428571
+      types:
+      - teleporting
+    - count: 15
+      radius: 18
+      speed: 107.1428571428571
+      types:
+      - star
+    - count: 1
+      radius: 90
+      speed: 107.1428571428571
+      types:
+      - teleporting
+    - count: 1
+      radius: 90
+      speed: 107.1428571428571
+      types:
+      - star
+    - count: 2
+      radius: 40
+      speed: 270
+      types:
+      - homing
+    - count: 13
+      radius: 60
+      speed: 495
+      types:
+      - gravity_ghost
+    - count: 5
+      radius: 90
+      speed: 495
+      types:
+      - gravity_ghost
+    - count: 1
+      radius: 150
+      speed: 495
+      types:
+      - gravity_ghost
+    - count: 6
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 270
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 18
+      radius: 18
+      speed: 270
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 7
+      radius: 18
+      speed: 270
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 8
+      radius: 18
+      speed: 90
+      types:
+      - homing
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 180
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 15
+      radius: 18
+      speed: 180
+      types:
+      - homing
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 4
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 90
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 270
+      types:
+      - homing
+    - count: 8
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 8
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 180
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 15
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 15
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 180
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 6
+      radius: 12
+      speed: 90
+      effect_radius: 192
+      types:
+      - slowing
+    - count: 19
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 19
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 270
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 10
+      radius: 12
+      speed: 270
+      effect_radius: 192
+      types:
+      - slowing
+    - count: 10
+      radius: 12
+      speed: 270
+      effect_radius: 192
+      types:
+      - draining
+    - count: 9
+      radius: 20
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 360
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 8
+      radius: 12
+      speed: 360
+      effect_radius: 192
+      types:
+      - slowing
+    - count: 8
+      radius: 12
+      speed: 360
+      effect_radius: 192
+      types:
+      - draining
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 16
+      radius: 60
+      speed: 675
+      types:
+      - repelling_ghost
+    - count: 6
+      radius: 90
+      speed: 675
+      types:
+      - repelling_ghost
+    - count: 1
+      radius: 150
+      speed: 675
+      types:
+      - repelling_ghost
+    - count: 1
+      radius: 90
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 1
+      radius: 90
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 15
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 15
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 2
+      radius: 40
+      speed: 270
+      types:
+      - homing
+    - count: 9
+      radius: 30
+      speed: 360
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 12
+      speed: 180
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 6
+      radius: 12
+      speed: 180
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 12
+      speed: 180
+      gravity: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 9
+      radius: 12
+      speed: 180
+      repulsion: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 9
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 5
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 5
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 14
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 14
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 5
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 5
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 8
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 3
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 5
+      radius: 12
+      speed: 42.85714285714286
+      types:
+      - teleporting
+    - count: 3
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 42.85714285714286
+      types:
+      - star
+    - count: 6
+      radius: 15
+      speed: 120
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 13
+      radius: 18
+      speed: 270
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 3
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 5
+      radius: 12
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 3
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 6
+      radius: 15
+      speed: 189.9
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 18
+      speed: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 11
+      radius: 18
+      speed: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 3
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 5
+      radius: 12
+      speed: 171.4285714285714
+      types:
+      - teleporting
+    - count: 3
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 5
+      radius: 12
+      speed: 171.4285714285714
+      types:
+      - star
+    - count: 6
+      radius: 15
+      speed: 360
+      types:
+      - sniper
+    - count: 18
+      radius: 30
+      speed: 225
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 18
+      speed: 360
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 11
+      radius: 18
+      speed: 360
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 6
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - teleporting
+    - count: 6
+      radius: 18
+      speed: 128.5714285714286
+      types:
+      - star
+    - count: 6
+      radius: 12
+      speed: 360
+      effect_radius: 192
+      types:
+      - draining
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 18
+      speed: 450
+      effect_radius: 256
+      types:
+      - gravity
+    - count: 6
+      radius: 18
+      speed: 450
+      effect_radius: 256
+      types:
+      - repelling
+    - count: 3
+      radius: 12
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 3
+      radius: 18
+      speed: 150
+      types:
+      - teleporting
+    - count: 3
+      radius: 12
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 3
+      radius: 18
+      speed: 150
+      types:
+      - star
+    - count: 4
+      radius: 12
+      speed: 450
+      effect_radius: 192
+      types:
+      - draining
+    - count: 4
+      radius: 15
+      speed: 189.9
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 675
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 50
+      speed: 765
+      types:
+      - gravity_ghost
+    - count: 4
+      radius: 85
+      speed: 765
+      types:
+      - gravity_ghost
+    - count: 2
+      radius: 120
+      speed: 765
+      types:
+      - gravity_ghost
+    - count: 6
+      radius: 50
+      speed: 765
+      types:
+      - repelling_ghost
+    - count: 4
+      radius: 85
+      speed: 765
+      types:
+      - repelling_ghost
+    - count: 2
+      radius: 120
+      speed: 765
+      types:
+      - repelling_ghost
+    - count: 5
+      radius: 14
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 5
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 5
+      radius: 26
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 1
+      radius: 90
+      speed: 85.71428571428571
+      types:
+      - teleporting
+    - count: 5
+      radius: 14
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 5
+      radius: 18
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 5
+      radius: 26
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 1
+      radius: 90
+      speed: 85.71428571428571
+      types:
+      - star
+    - count: 2
+      radius: 40
+      speed: 270
+      types:
+      - homing
+    - count: 2
+      radius: 40
+      speed: 270
+      types:
+      - sniper
+    - count: 9
+      radius: 30
+      speed: 450
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: victory
+    width: 2976
+    x: 64
+    y: 0
+  - height: last_height
+    type: removal
+    width: 160
+    x: 3040
+    y: 0

@@ -1,0 +1,139 @@
+name: Stellar Square
+warping_disabled: true
+properties:
+  friction: 0.75
+  max_level: 1000
+  death_timer: 1500
+  pellet_count: 50
+  charge_reduced: true
+areas:
+- x: var x
+  y: var y
+  zones:
+  - type: teleport
+    x: 1216
+    y: 0
+    width: 64
+    height: 384
+    translate:
+      x: 832
+      y: 384
+    properties:
+      background_color:
+      - 0
+      - 50
+      - 0
+      - 50
+  - type: teleport
+    x: 1216
+    y: 384
+    width: 64
+    height: 448
+    translate:
+      x: 832
+      y: 0
+    properties:
+      background_color:
+      - 0
+      - 50
+      - 0
+      - 50
+  - type: teleport
+    x: 1216
+    y: 832
+    width: 64
+    height: 384
+    translate:
+      x: 832
+      y: -384
+    properties:
+      background_color:
+      - 0
+      - 50
+      - 0
+      - 50
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 960
+  - type: safe
+    x: 1088
+    y: 128
+    width: 128
+    height: 960
+  - type: safe
+    x: 0
+    y: 0
+    width: 1216
+    height: 128
+  - type: safe
+    x: 0
+    y: 1088
+    width: 1216
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 960
+    height: 960
+    spawner:
+    - count: 3
+      radius: 18
+      speed: 150
+      types:
+      - normal
+    - count: 3
+      radius: 18
+      speed: 150
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - count: 3
+      radius: 18
+      speed: 90
+      types:
+      - sniper
+    - count: 1
+      radius: 0
+      speed: 0
+      x: 128
+      y: 128
+      immune: true
+      effect_radius: 16
+      types:
+      - repelling
+    - count: 1
+      radius: 0
+      speed: 0
+      x: 128
+      y: 1088
+      immune: true
+      effect_radius: 16
+      types:
+      - repelling
+    - count: 1
+      radius: 0
+      speed: 0
+      x: 1088
+      y: 128
+      immune: true
+      effect_radius: 16
+      types:
+      - repelling
+    - count: 1
+      radius: 0
+      speed: 0
+      x: 1088
+      y: 1088
+      immune: true
+      effect_radius: 16
+      types:
+      - repelling
+    - count: 15
+      radius: 18
+      speed: 90
+      types:
+      - wall

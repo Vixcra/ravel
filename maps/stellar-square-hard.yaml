@@ -1,0 +1,1441 @@
+name: Stellar Square Hard
+areas:
+- x: var x
+  y: var y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 960
+  - type: safe
+    x: 1088
+    y: 128
+    width: 128
+    height: 960
+  - type: safe
+    x: 0
+    y: 0
+    width: 1216
+    height: 128
+  - type: safe
+    x: 0
+    y: 1088
+    width: 1216
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 960
+    height: 960
+    spawner:
+    - radius: 18
+      speed: 150
+      count: 3
+      types:
+      - normal
+    - radius: 18
+      speed: 150
+      count: 3
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 18
+      speed: 90
+      count: 3
+      types:
+      - sniper
+    - radius: 18
+      speed: 90
+      count: 10
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 10
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 10
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 32
+      speed: 150
+      count: 3
+      types:
+      - normal
+    - radius: 6
+      speed: 600
+      types:
+      - key
+      count: 1
+  properties:
+    pellet_count: 15
+    minimum_speed: 300
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1024
+  - type: safe
+    x: 1152
+    y: 128
+    width: 128
+    height: 1024
+  - type: safe
+    x: 0
+    y: 0
+    width: 1280
+    height: 128
+  - type: safe
+    x: 0
+    y: 1152
+    width: 1280
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1024
+    height: 1024
+    spawner:
+    - radius: 30
+      speed: 150
+      count: 5
+      types:
+      - normal
+    - radius: 18
+      speed: 150
+      count: 3
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 18
+      speed: 90
+      count: 3
+      types:
+      - sniper
+    - radius: 18
+      speed: 90
+      count: 11
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 11
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 20
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 32
+      speed: 150
+      count: 3
+      types:
+      - normal
+    - radius: 7
+      speed: 615
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 315
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1088
+  - type: safe
+    x: 1216
+    y: 128
+    width: 128
+    height: 1088
+  - type: safe
+    x: 0
+    y: 0
+    width: 1344
+    height: 128
+  - type: safe
+    x: 0
+    y: 1216
+    width: 1344
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1088
+    height: 1088
+    spawner:
+    - radius: 18
+      speed: 150
+      count: 1
+      types:
+      - normal
+    - radius: 18
+      speed: 150
+      count: 20
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 18
+      speed: 90
+      count: 8
+      types:
+      - sniper
+    - radius: 18
+      speed: 90
+      count: 12
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 12
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 1
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 32
+      speed: 150
+      count: 1
+      types:
+      - normal
+    - radius: 8
+      speed: 630
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 330
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1152
+  - type: safe
+    x: 1280
+    y: 128
+    width: 128
+    height: 1152
+  - type: safe
+    x: 0
+    y: 0
+    width: 1408
+    height: 128
+  - type: safe
+    x: 0
+    y: 1280
+    width: 1408
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1152
+    height: 1152
+    spawner:
+    - radius: 18
+      speed: 150
+      count: 3
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 18
+      speed: 120
+      count: 16
+      types:
+      - sniper
+    - radius: 18
+      speed: 90
+      count: 13
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 13
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 10
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 9
+      speed: 645
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 345
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1344
+  - type: safe
+    x: 1472
+    y: 128
+    width: 128
+    height: 1344
+  - type: safe
+    x: 0
+    y: 0
+    width: 1600
+    height: 128
+  - type: safe
+    x: 0
+    y: 1472
+    width: 1600
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1344
+    height: 1344
+    spawner:
+    - radius: 18
+      speed: 250
+      count: 15
+      types:
+      - normal
+    - radius: 80
+      speed: 90
+      count: 3
+      types:
+      - sniper
+    - radius: 18
+      speed: 90
+      count: 14
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 14
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 15
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 32
+      speed: 150
+      count: 5
+      types:
+      - normal
+    - radius: 10
+      speed: 660
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 360
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1408
+  - type: safe
+    x: 1536
+    y: 128
+    width: 128
+    height: 1408
+  - type: safe
+    x: 0
+    y: 0
+    width: 1664
+    height: 128
+  - type: safe
+    x: 0
+    y: 1536
+    width: 1664
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1408
+    height: 1408
+    spawner:
+    - radius: 26
+      speed: 150
+      count: 3
+      types:
+      - snow_liquid
+    - radius: 5
+      speed: 210
+      count: 54
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+    - radius: 12
+      speed: 90
+      count: 15
+      types:
+      - wind_sniper
+    - radius: 18
+      speed: 90
+      count: 15
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 15
+      types:
+      - wall
+    - radius: 11
+      speed: 675
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 375
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1472
+  - type: safe
+    x: 1600
+    y: 128
+    width: 128
+    height: 1472
+  - type: safe
+    x: 0
+    y: 0
+    width: 1728
+    height: 128
+  - type: safe
+    x: 0
+    y: 1600
+    width: 1728
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1472
+    height: 1472
+    spawner:
+    - radius: 18
+      speed: 240
+      count: 30
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+    - radius: 32
+      speed: 150
+      count: 15
+      types:
+      - wind_sniper
+    - radius: 18
+      speed: 90
+      count: 16
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 16
+      types:
+      - wall
+    - radius: 12
+      speed: 690
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 390
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1536
+  - type: safe
+    x: 1664
+    y: 128
+    width: 128
+    height: 1536
+  - type: safe
+    x: 0
+    y: 0
+    width: 1792
+    height: 128
+  - type: safe
+    x: 0
+    y: 1664
+    width: 1792
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1536
+    height: 1536
+    spawner:
+    - radius: 10
+      speed: 360
+      count: 52
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+    - radius: 50
+      speed: 90
+      count: 5
+      types:
+      - wind_sniper
+    - radius: 18
+      speed: 90
+      count: 17
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 17
+      types:
+      - wall
+    - radius: 13
+      speed: 705
+      types:
+      - key
+      count: 1
+    - radius: 22
+      speed: 150
+      count: 5
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 405
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1600
+  - type: safe
+    x: 1728
+    y: 128
+    width: 128
+    height: 1600
+  - type: safe
+    x: 0
+    y: 0
+    width: 1856
+    height: 128
+  - type: safe
+    x: 0
+    y: 1728
+    width: 1856
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1600
+    height: 1600
+    spawner:
+    - radius: 64
+      speed: 180
+      count: 20
+      types:
+      - wind_ghost
+    - radius: 18
+      speed: 450
+      count: 38
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+    - radius: 70
+      speed: 90
+      count: 3
+      types:
+      - wind_sniper
+    - radius: 18
+      speed: 90
+      count: 18
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 18
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 10
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 14
+      speed: 720
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 420
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1792
+  - type: safe
+    x: 1920
+    y: 128
+    width: 128
+    height: 1792
+  - type: safe
+    x: 0
+    y: 0
+    width: 2048
+    height: 128
+  - type: safe
+    x: 0
+    y: 1920
+    width: 2048
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1792
+    height: 1792
+    spawner:
+    - radius: 32
+      speed: 150
+      count: 15
+      types:
+      - snow_liquid
+    - radius: 18
+      speed: 250
+      count: 45
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+    - radius: 110
+      speed: 90
+      count: 6
+      types:
+      - wind_sniper
+    - radius: 18
+      speed: 90
+      count: 19
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 19
+      types:
+      - wall
+    - radius: 15
+      speed: 735
+      types:
+      - key
+      count: 1
+    - radius: 10
+      speed: 400
+      count: 15
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+    - radius: 26
+      speed: 90
+      count: 15
+      types:
+      - wind_ghost
+      - snow_liquid
+      - cactus
+      - mutating
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 435
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1856
+  - type: safe
+    x: 1984
+    y: 128
+    width: 128
+    height: 1856
+  - type: safe
+    x: 0
+    y: 0
+    width: 2112
+    height: 128
+  - type: safe
+    x: 0
+    y: 1984
+    width: 2112
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1856
+    height: 1856
+    spawner:
+    - radius: 18
+      speed: 150
+      count: 3
+      types:
+      - fire_trail
+    - radius: 40
+      speed: 180
+      count: 64
+      types:
+      - glowy
+      - firefly
+      - phantom
+      - mist
+    - radius: 18
+      speed: 240
+      count: 5
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 20
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 20
+      types:
+      - wall
+    - radius: 16
+      speed: 750
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 450
+    lighting: 0.67
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1920
+  - type: safe
+    x: 2048
+    y: 128
+    width: 128
+    height: 1920
+  - type: safe
+    x: 0
+    y: 0
+    width: 2176
+    height: 128
+  - type: safe
+    x: 0
+    y: 2048
+    width: 2176
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1920
+    height: 1920
+    spawner:
+    - radius: 18
+      speed: 300
+      count: 6
+      types:
+      - fire_trail
+    - radius: 40
+      speed: 90
+      count: 60
+      types:
+      - glowy
+      - firefly
+      - phantom
+      - mist
+    - radius: 12
+      speed: 180
+      count: 5
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 21
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 21
+      types:
+      - wall
+    - radius: 10
+      speed: 150
+      count: 10
+      types:
+      - wavy
+      - dasher
+      - spiral
+      - sizing
+    - radius: 17
+      speed: 765
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    lighting: 0.56
+    minimum_speed: 475
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 1984
+  - type: safe
+    x: 2112
+    y: 128
+    width: 128
+    height: 1984
+  - type: safe
+    x: 0
+    y: 0
+    width: 2240
+    height: 128
+  - type: safe
+    x: 0
+    y: 2112
+    width: 2240
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 1984
+    height: 1984
+    spawner:
+    - radius: 32
+      speed: 240
+      count: 5
+      types:
+      - fire_trail
+    - radius: 32
+      speed: 300
+      count: 45
+      types:
+      - glowy
+      - firefly
+      - phantom
+      - mist
+    - radius: 16
+      speed: 300
+      count: 6
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 22
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 22
+      types:
+      - wall
+    - radius: 12
+      speed: 120
+      count: 5
+      types:
+      - fire_trail
+    - radius: 18
+      speed: 780
+      types:
+      - key
+      count: 1
+    - radius: 20
+      speed: 90
+      count: 20
+      types:
+      - glowy
+      - firefly
+      - phantom
+      - mist
+  properties:
+    pellet_count: 15
+    lighting: 0.46
+    minimum_speed: 490
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 2048
+  - type: safe
+    x: 2176
+    y: 128
+    width: 128
+    height: 2048
+  - type: safe
+    x: 0
+    y: 0
+    width: 2304
+    height: 128
+  - type: safe
+    x: 0
+    y: 2176
+    width: 2304
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 2048
+    height: 2048
+    spawner:
+    - radius: 18
+      speed: 150
+      count: 8
+      types:
+      - fire_trail
+    - radius: 40
+      speed: 180
+      count: 50
+      types:
+      - glowy
+      - firefly
+      - phantom
+      - mist
+    - radius: 18
+      speed: 210
+      count: 24
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 23
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 23
+      types:
+      - wall
+    - radius: 19
+      speed: 795
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    lighting: 0.36
+    minimum_speed: 510
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 2240
+  - type: safe
+    x: 2368
+    y: 128
+    width: 128
+    height: 2368
+  - type: safe
+    x: 0
+    y: 0
+    width: 2496
+    height: 128
+  - type: safe
+    x: 0
+    y: 2368
+    width: 2368
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 2240
+    height: 2240
+    spawner:
+    - radius: 18
+      speed: 150
+      count: 3
+      types:
+      - normal
+    - radius: 70
+      speed: 150
+      count: 82
+      types:
+      - glowy
+      - firefly
+      - phantom
+      - mist
+    - radius: 120
+      speed: 240
+      count: 6
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 24
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 24
+      types:
+      - wall
+    - radius: 20
+      speed: 810
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    lighting: 0.06
+    minimum_speed: 525
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 2304
+  - type: safe
+    x: 2432
+    y: 128
+    width: 128
+    height: 2432
+  - type: safe
+    x: 0
+    y: 0
+    width: 2560
+    height: 128
+  - type: safe
+    x: 0
+    y: 2432
+    width: 2432
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 2304
+    height: 2304
+    spawner:
+    - radius: 22
+      speed: 360
+      count: 20
+      types:
+      - snow_liquid
+    - radius: 18
+      speed: 180
+      count: 12
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 660
+      count: 40
+      types:
+      - mutating
+    - radius: 18
+      speed: 90
+      count: 25
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 25
+      types:
+      - wall
+    - radius: 21
+      speed: 825
+      types:
+      - key
+      count: 1
+    - radius: 64
+      speed: 180
+      count: 15
+      types:
+      - snow_liquid
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 540
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 2368
+  - type: safe
+    x: 2496
+    y: 128
+    width: 128
+    height: 2496
+  - type: safe
+    x: 0
+    y: 0
+    width: 2624
+    height: 128
+  - type: safe
+    x: 0
+    y: 2496
+    width: 2496
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 2368
+    height: 2368
+    spawner:
+    - radius: 32
+      speed: 270
+      count: 28
+      types:
+      - snow_liquid
+    - radius: 18
+      speed: 660
+      count: 40
+      types:
+      - mutating
+    - radius: 18
+      speed: 180
+      count: 20
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 26
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 26
+      types:
+      - wall
+    - radius: 22
+      speed: 840
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 555
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 2432
+  - type: safe
+    x: 2560
+    y: 128
+    width: 128
+    height: 2560
+  - type: safe
+    x: 0
+    y: 0
+    width: 2688
+    height: 128
+  - type: safe
+    x: 0
+    y: 2560
+    width: 2560
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 2432
+    height: 2432
+    spawner:
+    - radius: 280
+      speed: 480
+      count: 6
+      types:
+      - wind_ghost
+    - radius: 32
+      speed: 660
+      count: 40
+      types:
+      - mutating
+    - radius: 18
+      speed: 150
+      count: 50
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 28
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 28
+      types:
+      - wall
+    - radius: 23
+      speed: 855
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 570
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 2496
+  - type: safe
+    x: 2624
+    y: 128
+    width: 128
+    height: 2624
+  - type: safe
+    x: 0
+    y: 0
+    width: 2752
+    height: 128
+  - type: safe
+    x: 0
+    y: 2624
+    width: 2624
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 2496
+    height: 2496
+    spawner:
+    - radius: 64
+      speed: 240
+      count: 36
+      types:
+      - wind_sniper
+    - radius: 400
+      speed: 30
+      count: 3
+      types:
+      - mutating
+    - radius: 6
+      speed: 150
+      count: 30
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 29
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 29
+      types:
+      - wall
+    - radius: 32
+      speed: 300
+      count: 33
+      types:
+      - snow_liquid
+    - radius: 25
+      speed: 870
+      types:
+      - key
+      count: 1
+  properties:
+    pellet_count: 15
+    minimum_speed: 600
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: safe
+    x: 0
+    y: 128
+    width: 128
+    height: 3328
+  - type: safe
+    x: 3456
+    y: 0
+    width: 128
+    height: 3584
+  - type: safe
+    x: 0
+    y: 0
+    width: 3456
+    height: 128
+  - type: safe
+    x: 0
+    y: 3456
+    width: 3456
+    height: 128
+  - type: active
+    x: 128
+    y: 128
+    width: 3328
+    height: 3328
+    spawner:
+    - radius: 400
+      speed: 600
+      count: 1
+      types:
+      - wind_ghost
+    - radius: 28
+      speed: 200
+      count: 40
+      types:
+      - snow_liquid
+    - radius: 3
+      speed: 510
+      count: 100
+      types:
+      - mutating
+    - radius: 5
+      speed: 90
+      count: 70
+      types:
+      - snow_sniper
+    - radius: 18
+      speed: 90
+      count: 50
+      types:
+      - wall
+    - radius: 18
+      speed: -90
+      count: 50
+      types:
+      - wall
+    - radius: 300
+      speed: 300
+      count: 3
+      types:
+      - snow_liquid
+    - radius: 50
+      speed: 1000
+      types:
+      - key
+      count: 1
+  
+  properties:
+    pellet_count: 15
+    minimum_speed: 800
+- x: last_right+64
+  y: last_y
+  zones:
+  - type: removal
+    x: 3456
+    y: 0
+    width: 128
+    height: 3584
+  - type: victory
+    x: 0
+    y: 0
+    width: 3456
+    height: 3584
+  properties:
+    pellet_count: 164
+properties:
+  friction: 0.75
+  max_level: 727
+  death_timer: 480000
+  pellet_count: 15
+  warping_disabled: true
+  charge_reduced: true

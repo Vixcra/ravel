@@ -19,6 +19,7 @@
     replay._lastPellets = null;
     replay._pelletsCleared = false;
     replay._heroLoaded = null;
+    replay._warnedRegions = {};
     return replay.ev;
   };
 
@@ -72,12 +73,40 @@
     } catch (e) { console.warn("[replay] ensureAllWorlds:", e); }
   };
 
+  // Charge les 62 YAML officiels (maps/, copies de Jotun/Map_files_config) et crée les
+  // mondes ABSENTS des jeux intégrés de Ravel — une run peut warper n'importe où.
+  replay._loadYamlWorlds = function (game) {
+    if (replay._yamlKicked) return;
+    replay._yamlKicked = true;
+    fetch("maps/index.json").then(function (r) { return r.json(); }).then(function (files) {
+      var added = 0, failed = [];
+      var chain = Promise.resolve();
+      files.forEach(function (f) {
+        chain = chain.then(function () {
+          return fetch("maps/" + f).then(function (r) { return r.text(); }).then(function (txt) {
+            var doc = jsyaml.load(txt);
+            if (!doc || !doc.name) return;
+            for (var i = 0; i < game.worlds.length; i++) {
+              if (String(game.worlds[i].name).toLowerCase() === String(doc.name).toLowerCase()) return; // déjà présent
+            }
+            game.worlds.push(new World(new Vector(0, 0), game.worlds.length, doc));
+            added++;
+          })["catch"](function () { failed.push(f); });
+        });
+      });
+      return chain.then(function () {
+        console.log("[replay] YAML officiels: +" + added + " mondes (total " + game.worlds.length + ")" +
+          (failed.length ? " — échecs: " + failed.join(", ") : ""));
+      });
+    })["catch"](function (e) { console.warn("[replay] maps/index.json introuvable:", e); });
+  };
+
   // Suit les changements d'aire/région de la run : tous les mondes sont chargés,
-  // on bascule player.world/area sur le monde du même nom. Région inconnue -> on reste.
+  // on bascule player.world/area sur le monde du même nom. Région pas encore
+  // chargée (YAML en vol) -> on ré-essaie au frame suivant.
   replay._switchArea = function (game, areaStr) {
     if (!areaStr || areaStr === replay._lastAreaStr) return;
     replay._lastAreaStr = areaStr;
-    replay._ensureAllWorlds(game);
     var ci = areaStr.lastIndexOf(":");
     var region = ci >= 0 ? areaStr.slice(0, ci) : areaStr;
     var areaName = ci >= 0 ? areaStr.slice(ci + 1) : "";
@@ -88,7 +117,12 @@
     }
     if (wi < 0) {
       // "unknown" = ticks pré-partie (écran d'accueil) : normal, on attend la vraie région.
-      if (region !== "unknown") console.warn("[replay] région inconnue de Ravel:", region);
+      replay._warnedRegions = replay._warnedRegions || {};
+      if (region !== "unknown" && !replay._warnedRegions[region]) {
+        replay._warnedRegions[region] = true;
+        console.warn("[replay] région pas (encore) chargée:", region);
+      }
+      replay._lastAreaStr = null; // ré-essaie au prochain frame (YAML peut être en chargement)
       return;
     }
     var world = game.worlds[wi];
@@ -103,9 +137,17 @@
     }
     if (ai < 0) ai = 0;
     if (player.world !== wi || player.area !== ai) {
+      var pw = player.world, pa = player.area;
       player.world = wi;
       player.area = ai;
-      try { world.areas[ai].load(); } catch (e) { console.warn("[replay] area.load:", e); }
+      try { world.areas[ai].load(); }
+      catch (e) {
+        // aire cassée (YAML exotique ?) : on revient en arrière plutôt qu'un canvas noir
+        console.warn("[replay] area.load a échoué pour", region, areaName, "- on reste:", e);
+        player.world = pw; player.area = pa;
+        return;
+      }
+      console.log("[replay] switch →", region + ":" + areaName, "(monde", wi + ", aire", ai + ")");
       replay._pupArea = null;       // marionnettes à reconstruire dans la nouvelle aire
       replay._lastPellets = null;   // area.load a respawné des pellets aléatoires -> re-remplacer
       replay._pelletsCleared = false;
@@ -164,6 +206,10 @@
     var frame = window.replayCore.sampleFrame(replay.ev, replay.tickFloat);
     var player = game.players[0];
     if (!player) return;
+    // DÈS LE DÉBUT : tous les jeux de mondes intégrés + les YAML officiels manquants,
+    // pour qu'un warp vers n'importe quelle région trouve son monde.
+    replay._ensureAllWorlds(game);
+    replay._loadYamlWorlds(game);
     replay._switchArea(game, frame.area);
     var world = game.worlds[player.world];
     if (!world) return;                       // I2: garde une transition d'aire mid-replay

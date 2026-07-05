@@ -1,0 +1,2410 @@
+name: Central Core
+properties:
+  background_color:
+  - 109
+  - 194
+  - 12
+  - 65
+  friction: 0.75
+areas:
+- x: var x
+  y: var y
+  zones:
+  - type: teleport
+    x: 0
+    y: 0
+    width: 320
+    height: 64
+    translate:
+      x: 0
+      y: -1120
+  - type: safe
+    x: 0
+    y: 64
+    width: 320
+    height: 416
+  - height: 480
+    spawner:
+    - count: 5
+      radius: 6
+      speed: 120
+      types:
+      - immune
+      - homing
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 6
+      speed: 150
+      types:
+      - immune
+      - homing
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 9
+      speed: 198
+      types:
+      - immune
+      - homing
+    - count: 2
+      radius: 12
+      speed: 90
+      types:
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 11
+      radius: 12
+      speed: 210
+      types:
+      - immune
+      - homing
+    - count: 3
+      radius: 12
+      speed: 90
+      types:
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 12
+      speed: 225
+      types:
+      - immune
+    - count: 10
+      radius: 12
+      speed: 180
+      types:
+      - homing
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 16
+      radius: 12
+      speed: 210
+      types:
+      - immune
+    - count: 13
+      radius: 16
+      speed: 120
+      types:
+      - immune
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 2
+      radius: 12
+      speed: 90
+      types:
+      - sniper
+    - count: 35
+      radius: 18
+      speed: 210
+      types:
+      - homing
+      - immune
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 42
+      radius: 12
+      speed: 90
+      types:
+      - immune
+    - count: 6
+      radius: 12
+      speed: 210
+      types:
+      - homing
+    - count: 4
+      radius: 12
+      speed: 240
+      types:
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 75
+      radius: 12
+      speed: 120
+      types:
+      - immune
+    - count: 5
+      radius: 12
+      speed: 150
+      types:
+      - homing
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 18
+      speed: 240
+      types:
+      - homing
+      - immune
+    - count: 6
+      radius: 12
+      speed: 180
+      types:
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 9
+      speed: 180
+      types:
+      - draining
+    - count: 10
+      radius: 18
+      speed: 180
+      types:
+      - freezing
+    - count: 2
+      radius: 12
+      speed: 90
+      types:
+      - regen_sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 18
+      speed: 180
+      types:
+      - freezing
+    - count: 5
+      radius: 12
+      speed: 90
+      types:
+      - regen_sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 40
+      radius: 9
+      speed: 270
+      types:
+      - slowing
+      - draining
+      - immune
+    - count: 5
+      radius: 12
+      speed: 180
+      types:
+      - regen_sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 50
+      radius: 12
+      speed: 150
+      types:
+      - slowing
+      - immune
+    - count: 6
+      radius: 12
+      speed: 180
+      types:
+      - regen_sniper
+      - speed_sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 1
+      radius: 12
+      speed: 360
+      types:
+      - sniper
+    - count: 5
+      radius: 12
+      speed: 300
+      types:
+      - speed_sniper
+    - count: 20
+      radius: 18
+      speed: 90
+      types:
+      - slowing
+      - freezing
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 9
+      speed: 330
+      types:
+      - sniper
+    - count: 5
+      radius: 24
+      speed: 300
+      types:
+      - speed_sniper
+    - count: 25
+      radius: 12
+      speed: 90
+      types:
+      - freezing
+      - slowing
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 1
+      radius: 30
+      speed: 420
+      types:
+      - speed_sniper
+    - count: 50
+      radius: 12
+      speed: 210
+      types:
+      - draining
+      - slowing
+      - immune
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 30
+      speed: 180
+      types:
+      - draining
+      - slowing
+    - count: 5
+      radius: 12
+      speed: 300
+      types:
+      - immune
+    - count: 1
+      radius: 12
+      speed: 510
+      types:
+      - speed_sniper
+    - count: 1
+      radius: 12
+      speed: 510
+      types:
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 12
+      speed: 450
+      types:
+      - sniper
+      - slowing
+    - count: 5
+      radius: 9
+      speed: 270
+      types:
+      - speed_sniper
+      - regen_sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 100
+      radius: 3
+      speed: 90
+      types:
+      - immune
+    - count: 20
+      radius: 12
+      speed: 60
+      types:
+      - slowing
+      - draining
+    - count: 13
+      radius: 18
+      speed: 60
+      types:
+      - freezing
+    - count: 2
+      radius: 20
+      speed: 300
+      types:
+      - speed_sniper
+      - regen_sniper
+    - count: 8
+      radius: 30
+      speed: 240
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 50
+      radius: 9
+      speed: 120
+      types:
+      - disabling
+    - count: 10
+      radius: 18
+      speed: 90
+      types:
+      - disabling
+    - count: 20
+      radius: 12
+      speed: 120
+      types:
+      - homing
+    - count: 2
+      radius: 12
+      speed: 90
+      types:
+      - ice_sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 40
+      radius: 9
+      speed: 60
+      types:
+      - disabling
+    - count: 10
+      radius: 18
+      speed: 45
+      types:
+      - disabling
+    - count: 3
+      radius: 18
+      speed: 270
+      types:
+      - ice_sniper
+    - count: 2
+      radius: 12
+      speed: 390
+      types:
+      - homing
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 30
+      radius: 4
+      speed: 180
+      types:
+      - disabling
+    - count: 5
+      radius: 8
+      speed: 150
+      types:
+      - disabling
+    - count: 4
+      radius: 18
+      speed: 300
+      types:
+      - ice_sniper
+    - count: 3
+      radius: 18
+      speed: 30
+      types:
+      - radiating_bullets
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 12
+      speed: 300
+      types:
+      - disabling
+    - count: 5
+      radius: 3
+      speed: 60
+      types:
+      - disabling
+    - count: 10
+      radius: 18
+      speed: 300
+      types:
+      - radiating_bullets
+      - ice_sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 18
+      speed: 30
+      types:
+      - radiating_bullets
+    - count: 2
+      radius: 12
+      speed: 300
+      types:
+      - homing
+    - count: 2
+      radius: 18
+      speed: 150
+      types:
+      - homing
+    - count: 3
+      radius: 24
+      speed: 90
+      types:
+      - homing
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 3
+      speed: 300
+      types:
+      - disabling
+    - count: 10
+      radius: 24
+      speed: 120
+      types:
+      - disabling
+    - count: 1
+      radius: 18
+      speed: 480
+      types:
+      - radiating_bullets
+    - count: 1
+      radius: 12
+      speed: 390
+      types:
+      - ice_sniper
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 18
+      speed: 150
+      types:
+      - homing
+    - count: 5
+      radius: 18
+      speed: 330
+      types:
+      - radiating_bullets
+    - count: 10
+      radius: 9
+      speed: 270
+      types:
+      - disabling
+    - count: 4
+      radius: 24
+      speed: 270
+      types:
+      - disabling
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 20
+      radius: 24
+      speed: 90
+      types:
+      - disabling
+    - count: 10
+      radius: 9
+      speed: 150
+      types:
+      - disabling
+    - count: 7
+      radius: 9
+      speed: 210
+      types:
+      - disabling
+    - count: 5
+      radius: 24
+      speed: 180
+      types:
+      - homing
+    - count: 1
+      radius: 18
+      speed: 270
+      types:
+      - ice_sniper
+    - count: 2
+      radius: 24
+      speed: 300
+      types:
+      - radiating_bullets
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 25
+      radius: 9
+      speed: 270
+      types:
+      - disabling
+    - count: 3
+      radius: 18
+      speed: 390
+      types:
+      - ice_sniper
+    - count: 15
+      radius: 24
+      speed: 180
+      types:
+      - homing
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 80
+      radius: 3
+      speed: 30
+      types:
+      - disabling
+    - count: 5
+      radius: 12
+      speed: 180
+      types:
+      - homing
+    - count: 4
+      radius: 24
+      speed: 150
+      types:
+      - homing
+    - count: 4
+      radius: 36
+      speed: 120
+      types:
+      - homing
+    - count: 4
+      radius: 48
+      speed: 90
+      types:
+      - homing
+    - count: 3
+      radius: 60
+      speed: 60
+      types:
+      - homing
+    - count: 3
+      radius: 75
+      speed: 30
+      types:
+      - homing
+    - count: 1
+      radius: 60
+      speed: 300
+      types:
+      - ice_sniper
+    - count: 1
+      radius: 60
+      speed: 300
+      types:
+      - radiating_bullets
+    - count: 8
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 30
+      speed: 240
+      types:
+      - sniper
+    - count: 10
+      radius: 12
+      speed: 330
+      types:
+      - immune
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 12
+      speed: 270
+      types:
+      - sniper
+    - count: 10
+      radius: 24
+      speed: 90
+      types:
+      - slowing
+      - draining
+    - count: 10
+      radius: 6
+      speed: 300
+      types:
+      - slowing
+      - draining
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 12
+      speed: 90
+      types:
+      - sniper
+    - count: 7
+      radius: 12
+      speed: 390
+      types:
+      - slowing
+      - draining
+    - count: 6
+      radius: 18
+      speed: 300
+      types:
+      - slowing
+      - draining
+    - count: 5
+      radius: 24
+      speed: 210
+      types:
+      - slowing
+      - draining
+    - count: 6
+      radius: 36
+      speed: 180
+      types:
+      - slowing
+      - draining
+    - count: 7
+      radius: 48
+      speed: 120
+      types:
+      - slowing
+      - draining
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 40
+      radius: 18
+      speed: 180
+      types:
+      - immune
+    - count: 10
+      radius: 24
+      speed: 300
+      types:
+      - sniper
+    - count: 15
+      radius: 9
+      speed: 180
+      types:
+      - slowing
+      - draining
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 60
+      radius: 12
+      speed: 150
+      types:
+      - immune
+    - count: 60
+      radius: 9
+      speed: 60
+      types:
+      - slowing
+      - draining
+    - count: 2
+      radius: 60
+      speed: 300
+      types:
+      - sniper
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 12
+      speed: 240
+      types:
+      - freezing
+      - draining
+    - count: 6
+      radius: 24
+      speed: 180
+      types:
+      - freezing
+    - count: 4
+      radius: 48
+      speed: 150
+      types:
+      - freezing
+    - count: 1
+      radius: 100
+      speed: 450
+      types:
+      - regen_sniper
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 20
+      radius: 12
+      speed: 270
+      types:
+      - slowing
+      - draining
+      - immune
+    - count: 15
+      radius: 24
+      speed: 225
+      types:
+      - slowing
+      - draining
+      - immune
+    - count: 10
+      radius: 36
+      speed: 150
+      types:
+      - slowing
+      - draining
+      - immune
+    - count: 7
+      radius: 48
+      speed: 105
+      types:
+      - slowing
+      - draining
+      - immune
+    - count: 5
+      radius: 60
+      speed: 30
+      types:
+      - slowing
+      - draining
+      - immune
+    - count: 1
+      radius: 100
+      speed: 300
+      types:
+      - speed_sniper
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 12
+      speed: 30
+      types:
+      - ice_sniper
+    - count: 30
+      radius: 3
+      speed: 300
+      types:
+      - disabling
+    - count: 1
+      radius: 100
+      speed: 150
+      types:
+      - ice_sniper
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 2
+      radius: 80
+      speed: 330
+      types:
+      - radiating_bullets
+    - count: 10
+      radius: 12
+      speed: 300
+      types:
+      - radiating_bullets
+    - count: 15
+      radius: 3
+      speed: 120
+      types:
+      - homing
+    - count: 8
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 1
+      radius: 120
+      speed: 180
+      types:
+      - radiating_bullets
+    - count: 1
+      radius: 120
+      speed: 180
+      types:
+      - speed_sniper
+    - count: 1
+      radius: 120
+      speed: 180
+      types:
+      - regen_sniper
+    - count: 1
+      radius: 120
+      speed: 180
+      types:
+      - ice_sniper
+    - count: 1
+      radius: 120
+      speed: 180
+      types:
+      - sniper
+    - count: 8
+      radius: 9
+      speed: 210
+      types:
+      - disabling
+      - slowing
+      - draining
+      - freezing
+      - homing
+    - count: 8
+      radius: 12
+      speed: 210
+      types:
+      - disabling
+      - slowing
+      - draining
+      - freezing
+      - homing
+    - count: 6
+      radius: 24
+      speed: 150
+      types:
+      - disabling
+      - slowing
+      - draining
+      - freezing
+      - homing
+    - count: 5
+      radius: 48
+      speed: 120
+      types:
+      - disabling
+      - slowing
+      - draining
+      - immune
+      - homing
+    - count: 5
+      radius: 60
+      speed: 120
+      types:
+      - disabling
+      - slowing
+      - draining
+      - immune
+      - homing
+    - count: 3
+      radius: 9
+      speed: 90
+      types:
+      - disabling
+    - count: 2
+      radius: 9
+      speed: 120
+      types:
+      - slowing
+    - count: 2
+      radius: 12
+      speed: 120
+      types:
+      - draining
+    - count: 2
+      radius: 18
+      speed: 180
+      types:
+      - freezing
+    - count: 2
+      radius: 24
+      speed: 180
+      types:
+      - homing
+    - count: 1
+      radius: 48
+      speed: 210
+      types:
+      - immune
+    - count: 2
+      radius: 12
+      speed: 195
+      types:
+      - speed_sniper
+    - count: 2
+      radius: 12
+      speed: 195
+      types:
+      - regen_sniper
+    - count: 2
+      radius: 12
+      speed: 180
+      types:
+      - ice_sniper
+    - count: 4
+      radius: 12
+      speed: 210
+      types:
+      - sniper
+    - count: 2
+      radius: 12
+      speed: 210
+      types:
+      - radiating_bullets
+    - count: 16
+      radius: 30
+      speed: 330
+      types:
+      - wall
+    type: active
+    width: 5120
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  boss: true
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: victory
+    width: 2976
+    x: 64
+    y: 0
+  - height: last_height
+    type: removal
+    width: 160
+    x: 3040
+    y: 0

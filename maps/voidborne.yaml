@@ -1,0 +1,1229 @@
+name: Voidborne
+warping_disabled: true
+properties:
+  friction: 0.75
+  disable_interactions: true
+  pellet_count: 0
+  background_color:
+    - 190
+    - 90
+    - 190
+    - 150
+areas:
+  # 1
+  - x: var x
+    y: var y
+    zones:
+      - type: safe
+        x: 0
+        y: 0
+        width: 160
+        height: 480
+      - type: safe
+        x: last_right
+        y: 0
+        width: 160
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 960
+        height: 480
+        spawner:
+          - count: 15
+            radius: 18
+            speed: 180
+            types:
+              - normal
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 2
+  - x: last_right
+    y: last_y
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 17
+            radius: 18
+            speed: 240
+            types:
+              - normal
+          - count: 6
+            radius: 30
+            speed: 210
+            types:
+              - wall
+        type: active
+        width: 960
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 3
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 171
+        - 81
+        - 171
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 25
+            radius: 12
+            speed: 270
+            types:
+              - normal
+          - count: 6
+            radius: 30
+            speed: 210
+            types:
+              - wall
+        type: active
+        width: 1280
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 4
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 171
+        - 81
+        - 171
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 30
+            radius: 12
+            speed: 270
+            types:
+              - normal
+          - count: 10
+            radius: 12
+            speed: 270
+            types:
+              - withering
+          - count: 6
+            radius: 30
+            speed: 210
+            types:
+              - wall
+        type: active
+        width: 1280
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 5
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 171
+        - 81
+        - 171
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 20
+            radius: 24
+            speed: 300
+            types:
+              - normal
+          - count: 10
+            radius: 24
+            speed: 300
+            types:
+              - withering
+          - count: 6
+            radius: 30
+            speed: 210
+            types:
+              - wall
+        type: active
+        width: 1280
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 6
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 152
+        - 72
+        - 150
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 27
+            radius: 18
+            speed: 300
+            types:
+              - normal
+          - count: 14
+            radius: 12
+            speed: 300
+            effect_radius: 75
+            types:
+              - withering
+          - count: 6
+            radius: 30
+            speed: 360
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 360
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 1600
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 7
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 152
+        - 72
+        - 150
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 38
+            radius: 8
+            speed: 240
+            effect_radius: 50
+            types:
+              - withering
+          - count: 17
+            radius: 32
+            speed: 180
+            types:
+              - normal
+          - count: 6
+            radius: 30
+            speed: 360
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 360
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 1600
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 8
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 152
+        - 72
+        - 150
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 3
+            radius: 12
+            speed: 300
+            types:
+              - withering
+          - count: 20
+            radius: 18
+            speed: 300
+            types:
+              - normal
+          - count: 20
+            radius: 18
+            speed: 300
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 360
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 360
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 1600
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 9
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 152
+        - 72
+        - 150
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 10
+            radius: 12
+            speed: 240
+            types:
+              - withering
+          - count: 28
+            radius: 18
+            speed: 240
+            types:
+              - normal
+          - count: 28
+            radius: 18
+            speed: 240
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 360
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 360
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 1600
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 10
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 133
+        - 63
+        - 133
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 10
+            radius: 12
+            speed: 240
+            types:
+              - withering
+          - count: 3
+            radius: 60
+            speed: 240
+            types:
+              - normal
+          - count: 3
+            radius: 60
+            speed: 240
+            types:
+              - immune
+          - count: 22
+            radius: 18
+            speed: 240
+            types:
+              - normal
+          - count: 22
+            radius: 18
+            speed: 240
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 360
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 360
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 1600
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+    boss: true
+  # 11
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 133
+        - 63
+        - 133
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 10
+            radius: 6
+            speed: 240
+            types:
+              - withering
+          - count: 33
+            radius: 12
+            speed: 300
+            types:
+              - normal
+          - count: 33
+            radius: 12
+            speed: 300
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 480
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 480
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2048
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 12
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 133
+        - 63
+        - 133
+        - 150
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 7
+            radius: 24
+            speed: 240
+            types:
+              - withering
+          - count: 28
+            radius: 12
+            speed: 360
+            types:
+              - normal
+          - count: 28
+            radius: 12
+            speed: 360
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 480
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 480
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2048
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 13
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 114
+        - 54
+        - 114
+        - 160
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 7
+            radius: 24
+            speed: 240
+            types:
+              - withering
+          - count: 28
+            radius: 12
+            speed: 360
+            types:
+              - immune
+          - count: 28
+            radius: 18
+            speed: 360
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 660
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 660
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2048
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 14
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 114
+        - 54
+        - 114
+        - 160
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 7
+            radius: 6
+            speed: 240
+            types:
+              - withering
+          - count: 23
+            radius: 12
+            speed: 360
+            types:
+              - immune
+          - count: 23
+            radius: 18
+            speed: 360
+            types:
+              - immune
+          - count: 12
+            radius: 24
+            speed: 360
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 660
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 660
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2048
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 15
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 114
+        - 54
+        - 114
+        - 160
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 7
+            radius: 6
+            speed: 240
+            types:
+              - withering
+          - count: 22
+            radius: 12
+            speed: 420
+            types:
+              - immune
+          - count: 20
+            radius: 18
+            speed: 360
+            types:
+              - immune
+          - count: 15
+            radius: 24
+            speed: 240
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 660
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 660
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2048
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 16
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 95
+        - 45
+        - 95
+        - 170
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 10
+            radius: 6
+            speed: 240
+            types:
+              - withering
+          - count: 30
+            radius: 12
+            speed: 420
+            types:
+              - immune
+          - count: 25
+            radius: 18
+            speed: 360
+            types:
+              - immune
+          - count: 15
+            radius: 24
+            speed: 240
+            types:
+              - immune
+          - count: 10
+            radius: 40
+            speed: 120
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 660
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 660
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2560
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 17
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 95
+        - 45
+        - 95
+        - 170
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 75
+            radius: 12
+            speed: 420
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 660
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 660
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2560
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 18
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 95
+        - 45
+        - 95
+        - 170
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 63
+            radius: 12
+            speed: 480
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 660
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 660
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2560
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 19
+  - x: last_right
+    y: last_y
+    properties:
+      background_color:
+        - 57
+        - 13
+        - 57
+        - 180
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 50
+            radius: 12
+            speed: 480
+            types:
+              - immune
+          - count: 10
+            radius: 12
+            speed: 360
+            types:
+              - withering
+          - count: 10
+            radius: 18
+            speed: 300
+            types:
+              - immune
+          - count: 10
+            radius: 24
+            speed: 120
+            types:
+              - immune
+          - count: 6
+            radius: 30
+            speed: 900
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 900
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2560
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: 160
+          y: 0
+        type: exit
+        width: 64
+        x: last_right
+        y: 0
+  # 20
+  - x: last_right
+    y: last_y
+    boss: true
+    properties:
+      background_color:
+        - 57
+        - 13
+        - 57
+        - 180
+    zones:
+      - height: 480
+        type: safe
+        width: 160
+        x: 0
+        y: 0
+      - height: 480
+        type: safe
+        width: 160
+        x: last_right
+        y: 0
+      - height: last_height
+        spawner:
+          - count: 75
+            radius: 18
+            speed: 480
+            types:
+              - immune
+          - count: 7
+            radius: 12
+            speed: 60
+            types:
+              - withering
+          - count: 6
+            radius: 30
+            speed: 900
+            types:
+              - wall
+          - count: 6
+            radius: 30
+            speed: 900
+            move_clockwise: false
+            types:
+              - wall
+        type: active
+        width: 2560
+        x: last_right
+        y: 0
+      - height: last_height
+        type: safe
+        width: 256
+        x: last_right
+        y: 0
+      - height: last_height
+        translate:
+          x: -49440
+          y: -182352
+        type: exit
+        width: 64
+        x: last_right
+        y: 0

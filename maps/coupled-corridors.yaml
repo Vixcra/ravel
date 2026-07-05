@@ -1,0 +1,3502 @@
+name: Coupled Corridors
+warping_disabled: true
+properties:
+  background_color:
+    - 187
+    - 170
+    - 85
+    - 80
+  death_timer: 60000
+  friction: 0.75
+areas:
+  # Northern Corridor
+  - name: '1 North' # Northern 1
+    x: var x
+    y: var y
+    zones:
+      - type: teleport
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        requirements:
+          - exact_index:Mysterious Mansion:61
+        translate:
+          x: -22720
+          y: 0
+      - type: teleport
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -28000
+          y: -1600
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 75
+          radius: 18
+          count: 10
+          types:
+          - charging
+        - speed: 180
+          radius: 12
+          count: 2
+          types:
+          - reducing
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: last_y
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '2 North' # Northern 2
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 75
+          radius: 24
+          count: 10
+          types:
+          - charging
+        - speed: 180
+          radius: 12
+          count: 6
+          types:
+          - reducing
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '3 North' # Northern 3
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 120
+          radius: 36
+          count: 8
+          types:
+          - charging
+        - speed: 240
+          radius: 12
+          count: 12
+          types:
+          - reducing
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '4 North' # Northern 4
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 75
+          radius: 48
+          count: 6
+          types:
+          - charging
+        - speed: 60
+          radius: 18
+          count: 12
+          types:
+          - charging
+        - speed: 180
+          radius: 12
+          count: 10
+          types:
+          - reducing
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '5 North' # Northern 5
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 75
+          radius: 75
+          count: 2
+          types:
+          - charging
+        - speed: 90
+          radius: 75
+          count: 2
+          types:
+          - reducing
+        - speed: 90
+          radius: 18
+          count: 15
+          types:
+          - charging
+        - speed: 180
+          radius: 18
+          count: 5
+          types:
+          - reducing
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '6 North' # Northern 6
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 105
+          radius: 15
+          count: 12
+          types:
+          - charging
+        - speed: 120
+          radius: 30
+          count: 7
+          types:
+          - reducing
+        - speed: 180
+          radius: 18
+          count: 8
+          types:
+          - switch
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '7 North' # Northern 7
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 120
+          radius: 15
+          count: 13
+          types:
+          - charging
+        - speed: 120
+          radius: 60
+          count: 7
+          types:
+          - reducing
+        - speed: 300
+          radius: 24
+          count: 10
+          types:
+          - switch
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '8 North' # Northern 8
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 135
+          radius: 24
+          count: 6
+          types:
+          - charging
+        - speed: 360
+          radius: 24
+          count: 6
+          types:
+          - reducing
+        - speed: 360
+          radius: 24
+          count: 12
+          types:
+          - switch
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '9 North' # Northern 9
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 45
+          radius: 28
+          count: 15
+          types:
+          - charging
+        - speed: 45
+          radius: 24
+          count: 3
+          types:
+          - reducing
+        - speed: 60
+          radius: 14
+          count: 30
+          types:
+          - switch
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '10 North' # Northern 10
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 90
+          radius: 14
+          count: 15
+          types:
+          - charging
+        - speed: 105
+          radius: 75
+          count: 2
+          types:
+          - charging
+        - speed: 180
+          radius: 16
+          count: 10
+          types:
+          - reducing
+        - speed: 210
+          radius: 75
+          count: 2
+          types:
+          - reducing
+        - speed: 180
+          radius: 16
+          count: 26
+          types:
+          - switch
+        - speed: 210
+          radius: 75
+          count: 5
+          types:
+          - switch
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '11 North' # Northern 11
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 120
+          radius: 20
+          count: 10
+          types:
+          - charging
+        - speed: 180
+          radius: 20
+          count: 5
+          types:
+          - reducing
+        - speed: 180
+          radius: 18
+          count: 6
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '12 North' # Northern 12
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 135
+          radius: 30
+          count: 12
+          types:
+          - charging
+        - speed: 180
+          radius: 30
+          count: 6
+          types:
+          - reducing
+        - speed: 180
+          radius: 18
+          count: 7
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '13 North' # Northern 13
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 165
+          radius: 10
+          count: 6
+          types:
+          - charging
+        - speed: 240
+          radius: 10
+          count: 6
+          types:
+          - reducing
+        - speed: 120
+          radius: 30
+          count: 6
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '14 North' # Northern 14
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 30
+          radius: 18
+          count: 30
+          types:
+          - charging
+        - speed: 30
+          radius: 18
+          count: 10
+          types:
+          - reducing
+        - speed: 30
+          radius: 18
+          count: 5
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '15 North' # Northern 15
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 105
+          radius: 18
+          count: 20
+          types:
+          - charging
+        - speed: 150
+          radius: 75
+          count: 2
+          types:
+          - charging
+        - speed: 150
+          radius: 18
+          count: 10
+          types:
+          - reducing
+        - speed: 180
+          radius: 75
+          count: 2
+          types:
+          - reducing
+        - speed: 150
+          radius: 18
+          count: 5
+          types:
+          - lead_sniper
+        - speed: 90
+          radius: 75
+          count: 2
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '16 North' # Northern 16
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 150
+          radius: 18
+          count: 8
+          types:
+          - charging
+        - speed: 210
+          radius: 18
+          count: 3
+          types:
+          - reducing
+        - speed: 210
+          radius: 18
+          count: 10
+          types:
+          - switch
+        - speed: 210
+          radius: 18
+          count: 2
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '17 North' # Northern 17
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 165
+          radius: 36
+          count: 9
+          types:
+          - charging
+        - speed: 210
+          radius: 36
+          count: 4
+          types:
+          - reducing
+        - speed: 210
+          radius: 36
+          count: 12
+          types:
+          - switch
+        - speed: 210
+          radius: 36
+          count: 3
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '18 North' # Northern 18
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 210
+          radius: 24
+          count: 5
+          types:
+          - charging
+        - speed: 330
+          radius: 24
+          count: 5
+          types:
+          - reducing
+        - speed: 330
+          radius: 24
+          count: 10
+          types:
+          - switch
+        - speed: 330
+          radius: 24
+          count: 5
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '19 North' # Northern 19
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 105
+          radius: 12
+          count: 11
+          types:
+          - charging
+        - speed: 150
+          radius: 12
+          count: 11
+          types:
+          - reducing
+        - speed: 150
+          radius: 12
+          count: 22
+          types:
+          - switch
+        - speed: 120
+          radius: 12
+          count: 7
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '20 North' # Northern 20
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - speed: 120
+          radius: 75
+          count: 2
+          types:
+          - charging
+        - speed: 150
+          radius: 75
+          count: 2
+          types:
+          - reducing
+        - speed: 150
+          radius: 75
+          count: 4
+          types:
+          - switch
+        - speed: 120
+          radius: 75
+          count: 2
+          types:
+          - lead_sniper
+        - speed: 105
+          radius: 18
+          count: 7
+          types:
+          - charging
+        - speed: 150
+          radius: 18
+          count: 6
+          types:
+          - reducing
+        - speed: 150
+          radius: 18
+          count: 15
+          types:
+          - switch
+        - speed: 90
+          radius: 18
+          count: 4
+          types:
+          - lead_sniper
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - x: last_right # Northern Victory
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: victory
+        x: 64
+        y: 0
+        width: 416
+        height: 480
+      - type: victory
+        x: 0
+        y: 480
+        width: 480
+        height: 1696
+      - type: exit
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 64
+        translate:
+          x: 0
+          y: 160
+  # Southern Corridor
+  - name: '1 South' # Southern 1
+    x: var x
+    y: var y + 10848
+    zones:
+      - type: teleport
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        requirements:
+          - exact_index:Mysterious Mansion:60
+        translate:
+          x: -11392
+          y: 0
+      - type: teleport
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -28000
+          y: -12448
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 60
+          radius: 20
+          count: 6
+        - types:
+          - enlarging
+          speed: 90
+          radius: 18
+          count: 6
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '2 South' # Southern 2
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 75
+          radius: 22
+          count: 7
+        - types:
+          - enlarging
+          speed: 150
+          radius: 18
+          count: 5
+        - types:
+          - enlarging
+          speed: 120
+          radius: 34
+          count: 3
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '3 South' # Southern 3
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 180
+          radius: 22
+          count: 5
+        - types:
+          - zigzag
+          speed: 120
+          radius: 30
+          count: 6
+        - types:
+          - enlarging
+          speed: 150
+          radius: 15
+          count: 5
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '4 South' # Southern 4
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: last_y
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 75
+          radius: 30
+          count: 16
+        - types:
+          - enlarging
+          speed: 60
+          radius: 28
+          count: 6
+        - types:
+          - enlarging
+          speed: 120
+          radius: 16
+          count: 12
+      - type: safe
+        x: last_right
+        y: last_y
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '5 South' # Southern 5
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 135
+          radius: 65
+          count: 3
+        - types:
+          - zigzag
+          speed: 105
+          radius: 18
+          count: 12
+        - types:
+          - enlarging
+          speed: 90
+          radius: 11
+          count: 20
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '6 South' # Southern 6
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 105
+          radius: 30
+          count: 10
+        - types:
+          - enlarging
+          speed: 60
+          radius: 14
+          count: 6
+        - types:
+          - mist
+          speed: 210
+          radius: 18
+          count: 8
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '7 South' # Southern 7
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 105
+          radius: 30
+          count: 7
+        - types:
+          - zigzag
+          speed: 150
+          radius: 24
+          count: 5
+        - types:
+          - enlarging
+          speed: 60
+          radius: 18
+          count: 5
+        - types:
+          - mist
+          speed: 225
+          radius: 22
+          count: 11
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '8 South' # Southern 8
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 225
+          radius: 35
+          count: 4
+        - types:
+          - enlarging
+          speed: 300
+          radius: 18
+          count: 4
+        - types:
+          - mist
+          speed: 180
+          radius: 24
+          count: 8
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '9 South' # Southern 9
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 120
+          radius: 35
+          count: 15
+        - types:
+          - enlarging
+          speed: 75
+          radius: 22
+          count: 10
+        - types:
+          - mist
+          speed: 150
+          radius: 28
+          count: 15
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '10 South' # Southern 10
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          - mist
+          speed: 165
+          radius: 55
+          count: 5
+        - types:
+          - enlarging
+          speed: 90
+          radius: 18
+          count: 12
+        - types:
+          - mist
+          speed: 120
+          radius: 20
+          count: 18
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '11 South' # Southern 11
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 75
+          radius: 18
+          count: 8
+        - types:
+          - enlarging
+          speed: 90
+          radius: 16
+          count: 11
+        - types:
+          - poison_sniper
+          speed: 150
+          radius: 18
+          count: 4
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '12 South' # Southern 12
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 90
+          radius: 19
+          count: 4
+        - types:
+          - enlarging
+          speed: 105
+          radius: 22
+          count: 13
+        - types:
+          - poison_sniper
+          speed: 150
+          radius: 20
+          count: 6
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '13 South' # Southern 13
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 150
+          radius: 20
+          count: 7
+        - types:
+          - enlarging
+          speed: 210
+          radius: 17
+          count: 9
+        - types:
+          - poison_sniper
+          speed: 240
+          radius: 15
+          count: 5
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '14 South' # Southern 14
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 105
+          radius: 22
+          count: 15
+        - types:
+          - enlarging
+          speed: 60
+          radius: 15
+          count: 12
+        - types:
+          - poison_sniper
+          speed: 90
+          radius: 18
+          count: 12
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '15 South' # Southern 15
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          - enlarging
+          speed: 90
+          radius: 19
+          count: 22
+        - types:
+          - zigzag
+          speed: 120
+          radius: 45
+          count: 1
+        - types:
+          - enlarging
+          speed: 150
+          radius: 45
+          count: 1
+        - types:
+          - poison_sniper
+          speed: 90
+          radius: 18
+          count: 8
+        - types:
+          - poison_sniper
+          speed: 135
+          radius: 55
+          count: 2
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '16 South' # Southern 16
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          - enlarging
+          speed: 90
+          radius: 20
+          count: 9
+        - types:
+          - mist
+          speed: 240
+          radius: 22
+          count: 4
+        - types:
+          - poison_sniper
+          speed: 120
+          radius: 20
+          count: 5
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '17 South' # Southern 17
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          - enlarging
+          speed: 90
+          radius: 23
+          count: 12
+        - types:
+          - zigzag
+          speed: 180
+          radius: 28
+          count: 2
+        - types:
+          - mist
+          speed: 255
+          radius: 22
+          count: 6
+        - types:
+          - poison_sniper
+          speed: 210
+          radius: 25
+          count: 6
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '18 South' # Southern 18
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - enlarging
+          speed: 45
+          radius: 15
+          count: 20
+        - types:
+          - mist
+          speed: 120
+          radius: 22
+          count: 12
+        - types:
+          - poison_sniper
+          speed: 60
+          radius: 22
+          count: 12
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '19 South' # Southern 19
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          speed: 90
+          radius: 25
+          count: 18
+        - types:
+          - mist
+          speed: 135
+          radius: 20
+          count: 12
+        - types:
+          - poison_sniper
+          speed: 75
+          radius: 20
+          count: 12
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '20 South' # Southern 20
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - types:
+          - zigzag
+          - enlarging
+          speed: 75
+          radius: 25
+          count: 16
+        - types:
+          - mist
+          - poison_sniper
+          speed: 90
+          radius: 25
+          count: 12
+        - types:
+          - zigzag
+          speed: 120
+          radius: 32
+          count: 1
+        - types:
+          - enlarging
+          speed: 90
+          radius: 48
+          count: 1
+        - types:
+          - mist
+          speed: 165
+          radius: 60
+          count: 1
+        - types:
+          - poison_sniper
+          speed: 135
+          radius: 60
+          count: 1
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: last_height
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - x: last_right # Southern Victory
+    y: last_y - 1760
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 480
+        height: 64
+        translate:
+          x: 0
+          y: -160
+      - type: victory
+        x: 0
+        y: 64
+        width: 480
+        height: 1696
+      - type: victory
+        x: 64
+        y: last_bottom
+        width: 416
+        height: 480
+      - type: exit
+        x: 0
+        y: last_y
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+  - name: '21 North' # Northern connecting corridor
+    x: last_x
+    y: var y + 2240
+    zones:
+      - type: safe
+        x: 0
+        y: 0
+        width: 480
+        height: 320
+      - type: active
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 2560
+        spawner:
+        - count: 10
+          radius: 14
+          speed: 150
+          types:
+          - charging
+          - reducing
+        - count: 10
+          radius: 16
+          speed: 90
+          types:
+          - switch
+          - lead_sniper
+      - type: safe
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 256
+      - type: exit
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 64
+        translate:
+          x: 0
+          y: 160
+  - name: '21 South' # Southern connecting corridor
+    x: last_x
+    y: last_bottom + 480
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 480
+        height: 64
+        translate:
+          x: 0
+          y: -160
+      - type: safe
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 256
+      - type: active
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 2560
+        spawner:
+        - count: 10
+          radius: 14
+          speed: 150
+          types:
+          - zigzag
+          - enlarging
+        - count: 10
+          radius: 16
+          speed: 90
+          types:
+          - mist
+          - poison_sniper
+      - type: safe
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 320
+  - name: '21' # Third corridor begins
+    x: last_x
+    y: last_y - 480
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 480
+        height: 64
+        translate:
+          x: 0
+          y: -160
+      - type: safe
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 352
+      - type: exit
+        x: 0
+        y: last_bottom
+        width: 480
+        height: 64
+        translate:
+          x: 0
+          y: 160
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 7
+          radius: 25
+          speed: 75
+          types:
+          - lead_sniper
+        - count: 13
+          radius: 28
+          speed: 90
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '22'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 7
+          radius: 28
+          speed: 75
+          types:
+          - poison_sniper
+        - count: 5
+          radius: 22
+          speed: 135
+          types:
+          - charging
+          - zigzag
+        - count: 8
+          radius: 24
+          speed: 90
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '23'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 6
+          radius: 22
+          speed: 180
+          types:
+          - lead_sniper
+        - count: 9
+          radius: 24
+          speed: 210
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '24'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 3
+          radius: 20
+          speed: 90
+          types:
+          - lead_sniper
+          - poison_sniper
+        - count: 19
+          radius: 24
+          speed: 45
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '25'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 3
+          radius: 20
+          speed: 90
+          types:
+          - lead_sniper
+          - poison_sniper
+        - count: 20
+          radius: 24
+          speed: 60
+          types:
+          - charging
+          - zigzag
+        - count: 1
+          radius: 70
+          speed: 180
+          types:
+          - charging
+        - count: 1
+          radius: 70
+          speed: 180
+          types:
+          - zigzag
+        - count: 3
+          radius: 65
+          speed: 120
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '26'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 6
+          radius: 20
+          speed: 90
+          types:
+          - reducing
+        - count: 8
+          radius: 25
+          speed: 60
+          types:
+          - switch
+        - count: 8
+          radius: 30
+          speed: 120
+          types:
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '27'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - reducing
+        - count: 10
+          radius: 25
+          speed: 90
+          types:
+          - switch
+        - count: 10
+          radius: 32
+          speed: 135
+          types:
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '28'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 3
+          radius: 22
+          speed: 270
+          types:
+          - reducing
+        - count: 10
+          radius: 28
+          speed: 330
+          types:
+          - switch
+        - count: 8
+          radius: 28
+          speed: 210
+          types:
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '29'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 9
+          radius: 24
+          speed: 45
+          types:
+          - reducing
+        - count: 26
+          radius: 26
+          speed: 60
+          types:
+          - switch
+        - count: 12
+          radius: 32
+          speed: 90
+          types:
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '30'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 3
+          radius: 24
+          speed: 45
+          types:
+          - reducing
+        - count: 28
+          radius: 25
+          speed: 60
+          types:
+          - switch
+        - count: 14
+          radius: 30
+          speed: 90
+          types:
+          - zigzag
+        - count: 6
+          radius: 75
+          speed: 150
+          types:
+          - zigzag
+          - switch
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '31'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 6
+          radius: 22
+          speed: 150
+          types:
+          - enlarging
+        - count: 5
+          radius: 25
+          speed: 90
+          types:
+          - mist
+        - count: 10
+          radius: 25
+          speed: 120
+          types:
+          - charging
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '32'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 7
+          radius: 22
+          speed: 150
+          types:
+          - enlarging
+        - count: 8
+          radius: 26
+          speed: 120
+          types:
+          - mist
+        - count: 8
+          radius: 28
+          speed: 180
+          types:
+          - charging
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '33'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 5
+          radius: 22
+          speed: 240
+          types:
+          - enlarging
+        - count: 6
+          radius: 26
+          speed: 360
+          types:
+          - mist
+        - count: 6
+          radius: 28
+          speed: 165
+          types:
+          - charging
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '34'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 6
+          radius: 28
+          speed: 45
+          types:
+          - enlarging
+        - count: 12
+          radius: 22
+          speed: 75
+          types:
+          - mist
+        - count: 20
+          radius: 22
+          speed: 90
+          types:
+          - charging
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '35'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 5
+          radius: 28
+          speed: 60
+          types:
+          - enlarging
+        - count: 12
+          radius: 22
+          speed: 90
+          types:
+          - mist
+        - count: 18
+          radius: 22
+          speed: 120
+          types:
+          - charging
+        - count: 2
+          radius: 78
+          speed: 180
+          types:
+          - mist
+        - count: 2
+          radius: 74
+          speed: 150
+          types:
+          - charging
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '36'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 10
+          radius: 22
+          speed: 120
+          types:
+          - mist
+          - switch
+        - count: 5
+          radius: 24
+          speed: 60
+          types:
+          - lead_sniper
+        - count: 5
+          radius: 22
+          speed: 60
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '37'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 10
+          radius: 20
+          speed: 150
+          types:
+          - mist
+          - switch
+        - count: 5
+          radius: 24
+          speed: 120
+          types:
+          - poison_sniper
+        - count: 11
+          radius: 20
+          speed: 135
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '38'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 7
+          radius: 20
+          speed: 240
+          types:
+          - mist
+          - switch
+        - count: 2
+          radius: 29
+          speed: 240
+          types:
+          - lead_sniper
+        - count: 7
+          radius: 20
+          speed: 165
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '39'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 17
+          radius: 18
+          speed: 30
+          types:
+          - mist
+          - switch
+        - count: 3
+          radius: 30
+          speed: 15
+          types:
+          - poison_sniper
+        - count: 17
+          radius: 20
+          speed: 60
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - name: '40'
+    x: last_right
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: active
+        x: last_right
+        y: 0
+        width: 2560
+        height: 480
+        spawner:
+        - count: 8
+          radius: 25
+          speed: 150
+          types:
+          - wall
+        - count: 14
+          radius: 19
+          speed: 45
+          types:
+          - mist
+          - switch
+        - count: 1
+          radius: 30
+          speed: 45
+          types:
+          - poison_sniper
+        - count: 1
+          radius: 30
+          speed: 45
+          types:
+          - lead_sniper
+        - count: 22
+          radius: 24
+          speed: 60
+          types:
+          - charging
+          - zigzag
+        - count: 2
+          radius: 85
+          speed: 90
+          types:
+          - switch
+        - count: 4
+          radius: 80
+          speed: 120
+          types:
+          - charging
+          - zigzag
+      - type: safe
+        x: last_right
+        y: 0
+        width: 256
+        height: 480
+      - type: exit
+        x: last_right
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: 160
+          y: 0
+  - x: last_right # Victory
+    y: last_y
+    zones:
+      - type: exit
+        x: 0
+        y: 0
+        width: 64
+        height: 480
+        translate:
+          x: -160
+          y: 0
+      - type: victory
+        x: last_right
+        y: 0
+        width: 2976
+        height: 480
+      - type: removal
+        x: last_right
+        y: 0
+        width: 160
+        height: 480

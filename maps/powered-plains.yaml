@@ -1,0 +1,4937 @@
+name: Powered Plains
+properties:
+  background_color:
+  - 170
+  - 250
+  - 0
+  - 40
+  friction: 0.75
+areas:
+# Area 1
+- x: var x
+  y: var y
+  zones:
+  # To Terrifying Temple
+  - type: teleport
+    x: 0
+    y: 0
+    width: 320
+    height: 64
+    translate:
+      x: 0
+      y: -1120
+  # To Ancient Abyss
+  - type: teleport
+    x: 0
+    y: 416
+    width: 320
+    height: 64
+    translate:
+      x: 0
+      y: 1120
+  - type: safe
+    x: 0
+    y: 64
+    width: 320
+    height: 352
+    properties:
+      minimum_speed: 300
+  - type: active
+    x: last_right
+    y: 0
+    width: 2560
+    height: 480
+    spawner:
+    - count: 5
+      radius: 18
+      speed: 90
+      types:
+      - sparking
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 2
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 20
+      speed: 120
+      types:
+      - sparking
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 3
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 6
+      radius: 18
+      speed: 180
+      types:
+      - normal
+    - count: 4
+      radius: 18
+      speed: 150
+      types:
+      - sparking
+    - count: 6
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 4
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 180
+      types:
+      - normal
+    - count: 5
+      radius: 12
+      speed: 150
+      types:
+      - sparking
+    - count: 6
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 5
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 13
+      radius: 18
+      speed: 150
+      types:
+      - normal
+    - count: 2
+      radius: 54
+      speed: 60
+      types:
+      - normal
+    - count: 5
+      radius: 18
+      speed: 150
+      types:
+      - sparking
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 6
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 18
+      speed: 120
+      types:
+      - sparking
+    - count: 8
+      radius: 42
+      speed: 105
+      effect_radius: 260
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 7
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 18
+      speed: 150
+      types:
+      - sparking
+    - count: 2
+      radius: 27
+      speed: 105
+      types:
+      - sparking
+    - count: 12
+      radius: 16
+      speed: 75
+      types:
+      - normal
+    - count: 7
+      radius: 26
+      speed: 135
+      effect_radius: 260
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 8
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 43
+      speed: 90
+      types:
+      - sparking
+    - count: 17
+      radius: 19
+      speed: 45
+      types:
+      - normal
+    - count: 4
+      radius: 36
+      speed: 180
+      effect_radius: 220
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 9
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 18
+      speed: 150
+      types:
+      - sparking
+    - count: 1
+      radius: 40
+      speed: 150
+      types:
+      - sparking
+    - count: 2
+      radius: 125
+      speed: 60
+      types:
+      - normal
+    - count: 14
+      radius: 14
+      speed: 135
+      effect_radius: 120
+      types:
+      - slowing
+    - count: 14
+      radius: 14
+      speed: 135
+      types:
+      - normal
+    - count: 6
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 10
+- x: last_right
+  y: last_y
+  boss: true
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - type: powered_switch
+    id: 1
+    x: 800
+    y: 192
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 2368
+    y: 192
+    width: 96
+    height: 96
+  - height: 480
+    spawner:
+    - count: 20
+      radius: 42
+      speed: 150
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 8
+      radius: 30
+      speed: 120
+      types:
+      - wall
+    - count: 8
+      radius: 30
+      speed: 120
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2624
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  # Powered switches visual region
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 800
+    y: 192
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 808
+    y: 200
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 2368
+    y: 192
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 2376
+    y: 200
+    width: 80
+    height: 80
+# Area 11
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 3
+      radius: 140
+      speed: 150
+      types:
+      - thunderbolt
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 12
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 3
+      radius: 120
+      speed: 150
+      types:
+      - thunderbolt
+    - count: 5
+      radius: 20
+      speed: 180
+      types:
+      - normal
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 13
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 24
+      speed: 240
+      types:
+      - thunderbolt
+    - count: 8
+      radius: 18
+      speed: 240
+      types:
+      - normal
+    - count: 4
+      radius: 22
+      speed: 210
+      types:
+      - homing
+    - count: 1
+      radius: 20
+      speed: 295
+      effect_radius: 190
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 14
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 5
+      radius: 80
+      speed: 240
+      types:
+      - thunderbolt
+    - count: 14
+      radius: 18
+      speed: 120
+      types:
+      - sizing
+    - count: 18
+      radius: 24
+      speed: 120
+      types:
+      - normal
+    - count: 2
+      radius: 20
+      speed: 255
+      effect_radius: 190
+      types:
+      - slowing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 15
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 20
+      radius: 54
+      speed: 420
+      types:
+      - thunderbolt
+    - count: 1
+      radius: 15
+      speed: 420
+      effect_radius: 260
+      types:
+      - slowing
+    - count: 5
+      radius: 18
+      speed: 180
+      types:
+      - sizing
+    - count: 5
+      radius: 18
+      speed: 360
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 16
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 3
+      radius: 18
+      speed: 210
+      types:
+      - sparking
+    - count: 12
+      radius: 54
+      speed: 330
+      types:
+      - thunderbolt
+    - count: 3
+      radius: 7
+      speed: 450
+      effect_radius: 100
+      types:
+      - slowing
+    - count: 4
+      radius: 18
+      speed: 180
+      types:
+      - sizing
+    - count: 6
+      radius: 18
+      speed: 240
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 17
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 8
+      radius: 18
+      speed: 210
+      types:
+      - normal
+    - count: 2
+      radius: 18
+      speed: 210
+      types:
+      - sparking
+    - count: 13
+      radius: 18
+      speed: 210
+      types:
+      - thunderbolt
+    - count: 13
+      radius: 5
+      speed: 150
+      effect_radius: 100
+      types:
+      - slowing
+    - count: 7
+      radius: 26
+      speed: 150
+      types:
+      - sizing
+    - count: 4
+      radius: 10
+      speed: 300
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 18
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 14
+      radius: 12
+      speed: 150
+      types:
+      - normal
+    - count: 4
+      radius: 24
+      speed: 150
+      types:
+      - sparking
+    - count: 6
+      radius: 35
+      speed: 120
+      effect_radius: 160
+      types:
+      - slowing
+    - count: 8
+      radius: 12
+      speed: 150
+      types:
+      - thunderbolt
+    - count: 11
+      radius: 24
+      speed: 180
+      types:
+      - thunderbolt
+    - count: 14
+      radius: 8
+      speed: 210
+      types:
+      - homing
+      - sizing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 19
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 18
+      speed: 180
+      types:
+      - normal
+    - count: 2
+      radius: 18
+      speed: 150
+      types:
+      - sparking
+    - count: 10
+      radius: 30
+      speed: 90
+      types:
+      - slowing
+    - count: 6
+      radius: 90
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 2
+      radius: 42
+      speed: 90
+      types:
+      - sizing
+    - count: 3
+      radius: 82
+      speed: 180
+      types:
+      - homing
+    - count: 6
+      radius: 30
+      speed: 150
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 20
+- x: last_right
+  y: last_y
+  boss: true
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - type: powered_switch
+    id: 1
+    x: 800
+    y: 192
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 2368
+    y: 192
+    width: 96
+    height: 96
+  - height: 480
+    spawner:
+    - count: 32
+      radius: 25
+      speed: 150
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 4
+      radius: 70
+      speed: 90
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 4
+      radius: 10
+      speed: 210
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 3
+      radius: 30
+      speed: 90
+      effect_radius: 190
+      types:
+      - slowing
+    - count: 2
+      radius: 60
+      speed: 75
+      types:
+      - normal
+    - count: 2
+      radius: 60
+      speed: 75
+      types:
+      - sizing
+    - count: 2
+      radius: 60
+      speed: 75
+      types:
+      - homing
+    - count: 8
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    - count: 8
+      radius: 30
+      speed: 180
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2624
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  # Powered switches visual region
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 800
+    y: 192
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 808
+    y: 200
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 2368
+    y: 192
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 2376
+    y: 200
+    width: 80
+    height: 80
+# Area 21
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 24
+      speed: 240
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 22
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 20
+      radius: 24
+      speed: 240
+      types:
+      - normal
+    - count: 10
+      radius: 24
+      speed: 240
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 23
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 10
+      radius: 12
+      speed: 180
+      types:
+      - normal
+    - count: 8
+      radius: 24
+      speed: 180
+      types:
+      - normal
+    - count: 6
+      radius: 36
+      speed: 180
+      types:
+      - normal
+    - count: 4
+      radius: 12
+      speed: 180
+      types:
+      - sizing
+    - count: 2
+      radius: 24
+      speed: 180
+      types:
+      - sizing
+    - count: 2
+      radius: 36
+      speed: 180
+      types:
+      - sizing
+    - count: 8
+      radius: 24
+      speed: 210
+      types:
+      - static
+    - count: 3
+      radius: 72
+      speed: 270
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 24
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 18
+      radius: 24
+      speed: 150
+      types:
+      - sizing
+    - count: 10
+      radius: 18
+      speed: 180
+      types:
+      - sparking
+    - count: 6
+      radius: 72
+      speed: 240
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 25
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 50
+      radius: 24
+      speed: 90
+      types:
+      - static
+    - count: 3
+      radius: 60
+      speed: 450
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 210
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 26
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 4
+      radius: 24
+      speed: 120
+      types:
+      - sparking
+    - count: 12
+      radius: 24
+      speed: 240
+      types:
+      - thunderbolt
+    - count: 25
+      radius: 24
+      speed: 90
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 27
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 16
+      radius: 24
+      speed: 150
+      types:
+      - normal
+    - count: 16
+      radius: 12
+      speed: 150
+      types:
+      - thunderbolt
+    - count: 4
+      radius: 24
+      speed: 150
+      types:
+      - homing
+    - count: 5
+      radius: 24
+      speed: 120
+      types:
+      - sparking
+    - count: 25
+      radius: 24
+      speed: 90
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 28
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 18
+      radius: 24
+      speed: 150
+      types:
+      - normal
+    - count: 5
+      radius: 36
+      speed: 180
+      types:
+      - sizing
+    - count: 5
+      radius: 48
+      speed: 180
+      types:
+      - thunderbolt
+    - count: 28
+      radius: 36
+      speed: 90
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 29
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 24
+      speed: 210
+      types:
+      - normal
+    - count: 6
+      radius: 24
+      speed: 150
+      types:
+      - homing
+    - count: 9
+      radius: 24
+      speed: 180
+      types:
+      - sizing
+    - count: 8
+      radius: 18
+      speed: 90
+      types:
+      - thunderbolt
+    - count: 6
+      radius: 24
+      speed: 150
+      types:
+      - sparking
+    - count: 25
+      radius: 24
+      speed: 90
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    type: active
+    width: 2560
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 30
+- x: last_right
+  y: last_y
+  boss: true
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - type: powered_switch
+    id: 1
+    x: 800
+    y: 192
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 2368
+    y: 192
+    width: 96
+    height: 96
+  - height: 480
+    spawner:
+    - count: 4
+      radius: 60
+      speed: 150
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 10
+      radius: 30
+      speed: 180
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 20
+      radius: 15
+      speed: 240
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 10
+      radius: 18
+      speed: 90
+      types:
+      - normal
+    - count: 6
+      radius: 18
+      speed: 90
+      types:
+      - thunderbolt
+    - count: 10
+      radius: 48
+      speed: 300
+      types:
+      - static
+    - count: 8
+      radius: 30
+      speed: 180
+      types:
+      - wall
+    - count: 8
+      radius: 30
+      speed: 180
+      move_clockwise: False
+      types:
+      - wall
+    type: active
+    width: 2624
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  # Powered switches visual region
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 800
+    y: 192
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 808
+    y: 200
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 2368
+    y: 192
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 2376
+    y: 200
+    width: 80
+    height: 80
+# Area 31
+- x: last_right
+  y: last_y
+  zones:
+  - height: 160
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 1
+      radius: 16
+      speed: 300
+      angle: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 2]
+      projectile_speed: 600
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1056
+      y: 80
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 2]
+      spawn_projectile: False
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1056
+      y: 80
+      electrical_id: 4
+      projectile_path: [3, all_the_way_to, 4]
+      spawn_projectile: False
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 300
+      angle: 0
+      x: 336
+      y: 144
+      electrical_id: 3
+      projectile_path: [3, all_the_way_to, 4]
+      projectile_speed: 600
+      types:
+      - electrical
+    type: active
+    width: 1472
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 32
+- x: last_right
+  y: last_y
+  zones:
+  - height: 224
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 1
+      radius: 16
+      speed: 300
+      angle: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 2]
+      projectile_speed: 600
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 210
+      angle: 0
+      x: 656
+      y: 208
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 2]
+      spawn_projectile: False
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 300
+      angle: 180
+      x: 1776
+      y: 16
+      electrical_id: 3
+      projectile_path: [3, all_the_way_to, 4]
+      projectile_speed: 600
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 210
+      angle: 180
+      x: 1456
+      y: 208
+      electrical_id: 4
+      projectile_path: [3, all_the_way_to, 4]
+      spawn_projectile: False
+      types:
+      - electrical
+    type: active
+    width: 1472
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 33
+- x: last_right
+  y: last_y
+  zones:
+  - height: 288
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 9
+      radius: 24
+      speed: 90
+      types:
+      - static
+    - count: 3
+      radius: 18
+      speed: 90
+      types:
+      - sizing
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 528
+      y: 144
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 720
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 912
+      y: 144
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1104
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 144
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1488
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1680
+      y: 144
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 272
+      electrical_id: 11
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 528
+      y: 144
+      electrical_id: 12
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 720
+      y: 272
+      electrical_id: 13
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 912
+      y: 144
+      electrical_id: 14
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1104
+      y: 272
+      electrical_id: 15
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 144
+      electrical_id: 16
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1488
+      y: 272
+      electrical_id: 17
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1680
+      y: 144
+      electrical_id: 18
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 272
+      electrical_id: 19
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 1568
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 34
+- x: last_right
+  y: last_y
+  zones:
+  - height: 288
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 12
+      radius: 30
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 528
+      y: 144
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 720
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 912
+      y: 144
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1104
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 144
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1488
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1680
+      y: 144
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 9]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 272
+      electrical_id: 11
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 528
+      y: 144
+      electrical_id: 12
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 720
+      y: 272
+      electrical_id: 13
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 912
+      y: 144
+      electrical_id: 14
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1104
+      y: 272
+      electrical_id: 15
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 144
+      electrical_id: 16
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1488
+      y: 272
+      electrical_id: 17
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1680
+      y: 144
+      electrical_id: 18
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 272
+      electrical_id: 19
+      projectile_path: [11, all_the_way_to, 19]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 1568
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 35
+- x: last_right
+  y: last_y
+  zones:
+  - height: 352
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 15
+      radius: 24
+      speed: 90
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 496
+      y: 176
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 656
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 816
+      y: 176
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 976
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1136
+      y: 176
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1456
+      y: 176
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1616
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1776
+      y: 176
+      electrical_id: 10
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1936
+      y: 16
+      electrical_id: 11
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 176
+      electrical_id: 12
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2256
+      y: 16
+      electrical_id: 13
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 336
+      electrical_id: 21
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 496
+      y: 176
+      electrical_id: 22
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 656
+      y: 336
+      electrical_id: 23
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 816
+      y: 176
+      electrical_id: 24
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 976
+      y: 336
+      electrical_id: 25
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1136
+      y: 176
+      electrical_id: 26
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 336
+      electrical_id: 27
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1456
+      y: 176
+      electrical_id: 28
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1616
+      y: 336
+      electrical_id: 29
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1776
+      y: 176
+      electrical_id: 30
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1936
+      y: 336
+      electrical_id: 31
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 176
+      electrical_id: 32
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2256
+      y: 336
+      electrical_id: 33
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 1952
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 36
+- x: last_right
+  y: last_y
+  zones:
+  - height: 352
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    spawner:
+    - count: 2
+      radius: 12
+      speed: 120
+      types:
+      - sparking
+    - count: 14
+      radius: 14
+      speed: 120
+      types:
+      - sizing
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 496
+      y: 176
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 656
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 816
+      y: 176
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 976
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1136
+      y: 176
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1456
+      y: 176
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1616
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1776
+      y: 176
+      electrical_id: 10
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1936
+      y: 16
+      electrical_id: 11
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 176
+      electrical_id: 12
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2256
+      y: 16
+      electrical_id: 13
+      projectile_path: [1, all_the_way_to, 13]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 336
+      electrical_id: 21
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 496
+      y: 176
+      electrical_id: 22
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 656
+      y: 336
+      electrical_id: 23
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 816
+      y: 176
+      electrical_id: 24
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 976
+      y: 336
+      electrical_id: 25
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1136
+      y: 176
+      electrical_id: 26
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1296
+      y: 336
+      electrical_id: 27
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1456
+      y: 176
+      electrical_id: 28
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1616
+      y: 336
+      electrical_id: 29
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1776
+      y: 176
+      electrical_id: 30
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1936
+      y: 336
+      electrical_id: 31
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 176
+      electrical_id: 32
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2256
+      y: 336
+      electrical_id: 33
+      projectile_path: [21, all_the_way_to, 33]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 1952
+    x: last_right
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+# Area 37
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - type: powered_switch
+    id: 1
+    x: 1824
+    y: 64
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 1824
+    y: 320
+    width: 96
+    height: 96
+  - height: 480
+    spawner:
+    - count: 3
+      radius: 12
+      speed: 120
+      types:
+      - sparking
+    - count: 12
+      radius: 24
+      speed: 120
+      types:
+      - static
+    - count: 5
+      radius: 30
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 20
+      radius: 16
+      speed: 240
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 560
+      y: 240
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 784
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1008
+      y: 240
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1232
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1424
+      y: 240
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1648
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 240
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2288
+      y: 240
+      electrical_id: 10
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2512
+      y: 16
+      electrical_id: 11
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2736
+      y: 240
+      electrical_id: 12
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2928
+      y: 16
+      electrical_id: 13
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3152
+      y: 240
+      electrical_id: 14
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3376
+      y: 16
+      electrical_id: 15
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 464
+      electrical_id: 21
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 560
+      y: 240
+      electrical_id: 22
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 784
+      y: 464
+      electrical_id: 23
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1008
+      y: 240
+      electrical_id: 24
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1232
+      y: 464
+      electrical_id: 25
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1424
+      y: 240
+      electrical_id: 26
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1648
+      y: 464
+      electrical_id: 27
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 240
+      electrical_id: 28
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 464
+      electrical_id: 29
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2288
+      y: 240
+      electrical_id: 30
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2512
+      y: 464
+      electrical_id: 31
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2736
+      y: 240
+      electrical_id: 32
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2928
+      y: 464
+      electrical_id: 33
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3152
+      y: 240
+      electrical_id: 34
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3376
+      y: 464
+      electrical_id: 35
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 3072
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  - type: dummy
+    properties:
+      background_color:
+        - 125
+        - 125
+        - 125
+        - 255
+    x: 1824
+    y: 64
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color:
+        - 150
+        - 150
+        - 150
+        - 255
+    x: 1832
+    y: 72
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color:
+        - 125
+        - 125
+        - 125
+        - 255
+    x: 1824
+    y: 320
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color:
+        - 150
+        - 150
+        - 150
+        - 255
+    x: 1832
+    y: 328
+    width: 80
+    height: 80
+# Area 38
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - type: powered_switch
+    id: 1
+    x: 1824
+    y: 64
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 1824
+    y: 320
+    width: 96
+    height: 96
+  - height: 480
+    spawner:
+    - count: 13
+      radius: 24
+      speed: 120
+      types:
+      - static
+    - count: 4
+      radius: 30
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 9
+      radius: 18
+      speed: 180
+      types:
+      - sizing
+    - count: 30
+      radius: 16
+      speed: 240
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 560
+      y: 240
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 784
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1008
+      y: 240
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1232
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1424
+      y: 240
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1648
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 240
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2288
+      y: 240
+      electrical_id: 10
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2512
+      y: 16
+      electrical_id: 11
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2736
+      y: 240
+      electrical_id: 12
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2928
+      y: 16
+      electrical_id: 13
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3152
+      y: 240
+      electrical_id: 14
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3376
+      y: 16
+      electrical_id: 15
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 464
+      electrical_id: 21
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 560
+      y: 240
+      electrical_id: 22
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 784
+      y: 464
+      electrical_id: 23
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1008
+      y: 240
+      electrical_id: 24
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1232
+      y: 464
+      electrical_id: 25
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1424
+      y: 240
+      electrical_id: 26
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1648
+      y: 464
+      electrical_id: 27
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 240
+      electrical_id: 28
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 464
+      electrical_id: 29
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2288
+      y: 240
+      electrical_id: 30
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2512
+      y: 464
+      electrical_id: 31
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2736
+      y: 240
+      electrical_id: 32
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2928
+      y: 464
+      electrical_id: 33
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3152
+      y: 240
+      electrical_id: 34
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3376
+      y: 464
+      electrical_id: 35
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 3072
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  - type: dummy
+    properties:
+      background_color:
+        - 125
+        - 125
+        - 125
+        - 255
+    x: 1824
+    y: 64
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color:
+        - 150
+        - 150
+        - 150
+        - 255
+    x: 1832
+    y: 72
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color:
+        - 125
+        - 125
+        - 125
+        - 255
+    x: 1824
+    y: 320
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color:
+        - 150
+        - 150
+        - 150
+        - 255
+    x: 1832
+    y: 328
+    width: 80
+    height: 80
+# Area 39
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - type: powered_switch
+    id: 1
+    x: 1824
+    y: 64
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 1824
+    y: 320
+    width: 96
+    height: 96
+  - height: 480
+    spawner:
+    - count: 2
+      radius: 12
+      speed: 120
+      types:
+      - sparking
+    - count: 10
+      radius: 24
+      speed: 150
+      types:
+      - static
+    - count: 4
+      radius: 40
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 6
+      radius: 18
+      speed: 180
+      types:
+      - sizing
+    - count: 20
+      radius: 16
+      speed: 300
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 16
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 560
+      y: 240
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 784
+      y: 16
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1008
+      y: 240
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1232
+      y: 16
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1424
+      y: 240
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1648
+      y: 16
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 240
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 16
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2288
+      y: 240
+      electrical_id: 10
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2512
+      y: 16
+      electrical_id: 11
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2736
+      y: 240
+      electrical_id: 12
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2928
+      y: 16
+      electrical_id: 13
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3152
+      y: 240
+      electrical_id: 14
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3376
+      y: 16
+      electrical_id: 15
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 336
+      y: 464
+      electrical_id: 21
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 560
+      y: 240
+      electrical_id: 22
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 784
+      y: 464
+      electrical_id: 23
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1008
+      y: 240
+      electrical_id: 24
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1232
+      y: 464
+      electrical_id: 25
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1424
+      y: 240
+      electrical_id: 26
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1648
+      y: 464
+      electrical_id: 27
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 1872
+      y: 240
+      electrical_id: 28
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2096
+      y: 464
+      electrical_id: 29
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2288
+      y: 240
+      electrical_id: 30
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2512
+      y: 464
+      electrical_id: 31
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2736
+      y: 240
+      electrical_id: 32
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 2928
+      y: 464
+      electrical_id: 33
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3152
+      y: 240
+      electrical_id: 34
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 16
+      speed: 0
+      x: 3376
+      y: 464
+      electrical_id: 35
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 3072
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  - type: dummy
+    properties:
+      background_color:
+        - 125
+        - 125
+        - 125
+        - 255
+    x: 1824
+    y: 64
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color:
+        - 150
+        - 150
+        - 150
+        - 255
+    x: 1832
+    y: 72
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color:
+        - 125
+        - 125
+        - 125
+        - 255
+    x: 1824
+    y: 320
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color:
+        - 150
+        - 150
+        - 150
+        - 255
+    x: 1832
+    y: 328
+    width: 80
+    height: 80
+# Area 40
+- x: last_right
+  y: last_y
+  zones:
+  - height: 512
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  # Start switch
+  - type: powered_switch
+    id: 1
+    x: 1024
+    y: 192
+    width: 128
+    height: 128
+  # Middle switches
+  - type: powered_switch
+    id: 1
+    x: 3552
+    y: 64
+    width: 96
+    height: 96
+  - type: powered_switch
+    id: 1
+    x: 3552
+    y: 352
+    width: 96
+    height: 96
+  # End switch
+  - type: powered_switch
+    id: 1
+    x: 6048
+    y: 192
+    width: 128
+    height: 128
+  - height: 512
+    spawner:
+    - count: 5
+      radius: 12
+      speed: 120
+      types:
+      - sparking
+    - count: 16
+      radius: 32
+      speed: 120
+      types:
+      - static
+    - count: 6
+      radius: 30
+      speed: 450
+      types:
+      - thunderbolt
+    - count: 16
+      radius: 30
+      speed: 60
+      types:
+      - sizing
+    - count: 72
+      radius: 16
+      speed: 120
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 18
+      radius: 32
+      speed: 150
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 6
+      radius: 48
+      speed: 180
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 3
+      radius: 64
+      speed: 180
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 1
+      radius: 6
+      speed: 480
+      switch_id: 1
+      powered_time_interval: 1000
+      types:
+      - powered
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 352
+      y: 32
+      electrical_id: 1
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 816
+      y: 256
+      electrical_id: 2
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 1280
+      y: 32
+      electrical_id: 3
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 1744
+      y: 256
+      electrical_id: 4
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 2208
+      y: 32
+      electrical_id: 5
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 2672
+      y: 256
+      electrical_id: 6
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 3136
+      y: 32
+      electrical_id: 7
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 3600
+      y: 256
+      electrical_id: 8
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 4064
+      y: 32
+      electrical_id: 9
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 4528
+      y: 256
+      electrical_id: 10
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 4992
+      y: 32
+      electrical_id: 11
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 5456
+      y: 256
+      electrical_id: 12
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 5920
+      y: 32
+      electrical_id: 13
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 6384
+      y: 256
+      electrical_id: 14
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 270
+      x: 6848
+      y: 32
+      electrical_id: 15
+      projectile_path: [1, all_the_way_to, 15]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 352
+      y: 480
+      electrical_id: 21
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 816
+      y: 256
+      electrical_id: 22
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 1280
+      y: 480
+      electrical_id: 23
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 1744
+      y: 256
+      electrical_id: 24
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 2208
+      y: 480
+      electrical_id: 25
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 2672
+      y: 256
+      electrical_id: 26
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 3136
+      y: 480
+      electrical_id: 27
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 3600
+      y: 256
+      electrical_id: 28
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 4064
+      y: 480
+      electrical_id: 29
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 4528
+      y: 256
+      electrical_id: 30
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 4992
+      y: 480
+      electrical_id: 31
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 5456
+      y: 256
+      electrical_id: 32
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 5920
+      y: 480
+      electrical_id: 33
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 0
+      x: 6384
+      y: 256
+      electrical_id: 34
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    - count: 1
+      radius: 32
+      speed: 30
+      angle: 90
+      x: 6848
+      y: 480
+      electrical_id: 35
+      projectile_path: [21, all_the_way_to, 35]
+      projectile_teleports_at_end_of_path: true
+      types:
+      - electrical
+    type: active
+    width: 6560
+    x: 320
+    y: 0
+  - height: last_height
+    type: safe
+    width: 256
+    x: last_right
+    y: 0
+  - height: last_height
+    translate:
+      x: 160
+      y: 0
+    type: exit
+    width: 64
+    x: last_right
+    y: 0
+  # Powered switch visual region
+  # Start switch
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 1024
+    y: 192
+    width: 128
+    height: 128
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 1032
+    y: 200
+    width: 112
+    height: 112
+  # Middle switches
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 3552
+    y: 64
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 3560
+    y: 72
+    width: 80
+    height: 80
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 3552
+    y: 352
+    width: 96
+    height: 96
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 3560
+    y: 360
+    width: 80
+    height: 80
+  # End switch
+  - type: dummy
+    properties:
+      background_color: [125, 125, 125, 255]
+    x: 6048
+    y: 192
+    width: 128
+    height: 128
+  - type: dummy
+    properties:
+      background_color: [150, 150, 150, 255]
+    x: 6056
+    y: 200
+    width: 112
+    height: 112
+  boss: true
+# Area 41 (victory)
+- x: last_right
+  y: last_y
+  zones:
+  - height: 480
+    translate:
+      x: -160
+      y: 0
+    type: exit
+    width: 64
+    x: 0
+    y: 0
+  - height: last_height
+    type: victory
+    width: 2976
+    x: 64
+    y: 0
+  - height: last_height
+    type: removal
+    width: 160
+    x: 3040
+    y: 0
