@@ -265,14 +265,22 @@
       if (L.cursor && f.player.mouse && (f.player.mouse[0] || f.player.mouse[1])) {
         var cu = plPt(f.player.x + f.player.mouse[0] / 32, f.player.y + f.player.mouse[1] / 32);
         ctx.save();
-        ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 2;
+        // halo gradient rouge -> orange
+        var cg = ctx.createRadialGradient(cu.x, cu.y, 0, cu.x, cu.y, 18);
+        cg.addColorStop(0, "rgba(255,30,0,0.85)");
+        cg.addColorStop(0.6, "rgba(255,140,0,0.45)");
+        cg.addColorStop(1, "rgba(255,140,0,0)");
+        ctx.fillStyle = cg;
+        ctx.beginPath(); ctx.arc(cu.x, cu.y, 18, 0, 2 * Math.PI); ctx.fill();
+        // croix
+        ctx.strokeStyle = "#ff3c00"; ctx.lineWidth = 3; ctx.lineCap = "round";
         ctx.beginPath();
-        ctx.moveTo(cu.x - 7, cu.y); ctx.lineTo(cu.x + 7, cu.y);
-        ctx.moveTo(cu.x, cu.y - 7); ctx.lineTo(cu.x, cu.y + 7);
+        ctx.moveTo(cu.x - 12, cu.y); ctx.lineTo(cu.x + 12, cu.y);
+        ctx.moveTo(cu.x, cu.y - 12); ctx.lineTo(cu.x, cu.y + 12);
         ctx.stroke();
-        ctx.beginPath();
-        ctx.strokeStyle = "#000000"; ctx.lineWidth = 1;
-        ctx.arc(cu.x, cu.y, 4, 0, 2 * Math.PI); ctx.stroke();
+        // anneau orange
+        ctx.strokeStyle = "#ff9500"; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(cu.x, cu.y, 7, 0, 2 * Math.PI); ctx.stroke();
         ctx.restore();
       }
 
