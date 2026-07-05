@@ -12,10 +12,10 @@
     replay.active = true;
     replay.tickFloat = 0;
     replay.playing = false;
-    replay._metaApplied = false;
     replay._pupArea = null;
     replay._puppets = [];
     replay._origin = [0, 0];
+    replay._lastAreaStr = null;
     return replay.ev;
   };
 
@@ -30,16 +30,49 @@
     "Leono":"#820b0d","Veydris":"#752656"
   };
 
-  // Applique meta (héros/nom/couleur) au joueur Ravel — une fois par fichier chargé.
+  // Applique meta (héros/nom/couleur) au joueur Ravel — CHAQUE frame : le démarrage
+  // menu (#connect) recrée le joueur après coup et écraserait une application unique.
   replay._applyMeta = function (game) {
     var m = replay.ev && replay.ev.meta;
     var p = game.players[0];
-    if (!m || !p || replay._metaApplied) return;
+    if (!m || !p) return;
     if (m.player) p.name = m.player;
     if (m.hero) p.className = m.hero;
     var c = m.hero && HERO_COLORS[m.hero];
     if (c) { p.color = c; p.tempColor = c; }
-    replay._metaApplied = true;
+  };
+
+  // Suit les changements d'aire/région de la run : loadMain() charge TOUS les mondes,
+  // on bascule player.world/area sur le monde du même nom. Région inconnue -> on reste.
+  replay._switchArea = function (game, areaStr) {
+    if (!areaStr || areaStr === replay._lastAreaStr) return;
+    replay._lastAreaStr = areaStr;
+    var ci = areaStr.lastIndexOf(":");
+    var region = ci >= 0 ? areaStr.slice(0, ci) : areaStr;
+    var areaName = ci >= 0 ? areaStr.slice(ci + 1) : "";
+    var player = game.players[0];
+    var wi = -1;
+    for (var i = 0; i < game.worlds.length; i++) {
+      if (game.worlds[i] && String(game.worlds[i].name).toLowerCase() === region.toLowerCase()) { wi = i; break; }
+    }
+    if (wi < 0) { console.warn("[replay] région inconnue de Ravel:", region); return; }
+    var world = game.worlds[wi];
+    var ai = -1;
+    for (var a = 0; a < world.areas.length; a++) {
+      var nm = String(world.areas[a].name);
+      if (nm === areaName || nm.toLowerCase() === areaName.toLowerCase()) { ai = a; break; }
+    }
+    if (ai < 0) { // nom numérique ("3") ou suffixe ("Area 3")
+      var num = parseInt(String(areaName).replace(/[^0-9]/g, ""), 10);
+      if (!isNaN(num) && num >= 1 && num <= world.areas.length) ai = num - 1;
+    }
+    if (ai < 0) ai = 0;
+    if (player.world !== wi || player.area !== ai) {
+      player.world = wi;
+      player.area = ai;
+      try { world.areas[ai].load(); } catch (e) { console.warn("[replay] area.load:", e); }
+      replay._pupArea = null; // marionnettes à reconstruire dans la nouvelle aire
+    }
   };
 
   // Marionnette = vraie entité Ravel (couleur/texture de classe via area.createEnemy),
@@ -69,8 +102,15 @@
   // area.pos), player.pos = MONDE (area.pos + local).
   replay.applyFrame = function (game) {
     if (!replay.active || !replay.ev) return;
+    try { replay._applyFrameInner(game); }
+    catch (e) { console.warn("[replay] applyFrame:", e); } // ne JAMAIS tuer la frame de rendu
+  };
+
+  replay._applyFrameInner = function (game) {
     var frame = window.replayCore.sampleFrame(replay.ev, replay.tickFloat);
     var player = game.players[0];
+    if (!player) return;
+    replay._switchArea(game, frame.area);
     var world = game.worlds[player.world];
     if (!world) return;                       // I2: garde une transition d'aire mid-replay
     var area = world.areas[player.area];
