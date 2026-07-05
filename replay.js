@@ -85,11 +85,27 @@
     }
   };
 
+  // Items/projectiles texturés que renderTexturedEntity sait dessiner, par enum Evades.
+  var RAW_TEXTURES = {
+    SWEET_TOOTH_ITEM: "sweet_tooth_item", SOUR_CANDY_ITEM: "sour_candy_item",
+    CANDY_ITEM: "sweet_tooth_item",
+    VENGEANCE_PROJECTILE: "vengeance_projectile",
+    NINJA_STAR_SNIPER_PROJECTILE: "ninja_star_sniper_projectile"
+  };
+
   // Marionnette = vraie entité Ravel (couleur/texture de classe via area.createEnemy),
   // pilotée en position par le fichier. La sim est coupée : freeze permanent par sécurité.
   replay._makePuppet = function (area, fe) {
     var pup = null;
-    if (fe.r == null && (fe.w != null || fe.h != null)) {
+    var isItem = fe.rawN && fe.rawN.indexOf("ITEM") >= 0;
+    var tex = fe.rawN && RAW_TEXTURES[fe.rawN];
+    if (tex || isItem) {
+      // item/projectile : PAS le chemin rect noir. Texturé si connu, sinon cercle rose.
+      pup = new Entity(new Vector(0, 0), fe.r || 0.4, "#ff80bd");
+      if (tex) pup.texture = tex;
+      pup.isEnemy = false;
+      pup.outline = false;
+    } else if (fe.n === "wall" && fe.r == null && (fe.w != null || fe.h != null)) {
       // rectangle (mur de map) : rendu via le chemin isShield (rect plein)
       pup = new Entity(new Vector(0, 0), 0.5, "#222222");
       pup.isShield = true; pup.rot = 0;
@@ -102,6 +118,7 @@
       }
     }
     pup._n = fe.n;
+    pup._raw = fe.rawN;
     pup.freeze = 1e15;
     return pup;
   };
@@ -147,6 +164,10 @@
         if (st.nextXp != null) player.nextLevelExperience = st.nextXp;
         else if (st.xp != null) player.nextLevelExperience = st.xp + 1; // vieux fichiers: clamp
         if (st.points != null) player.points = st.points;
+        // Niveaux d'abilities (cavités 1..5 de la herocard) — fournis par le recorder
+        // dès que la structure heroInfoCard.buttons est confirmée (buttonsSample).
+        if (st.ab1 != null) { player.ab1L = st.ab1; player.hasAB = true; }
+        if (st.ab2 != null) { player.ab2L = st.ab2; player.hasAB = true; }
       }
     }
 
@@ -160,7 +181,7 @@
     for (var i = 0; i < frame.entities.length; i++) {
       var fe = frame.entities[i];
       var pup = puppets[i];
-      if (!pup || pup._n !== fe.n) { pup = replay._makePuppet(area, fe); puppets[i] = pup; }
+      if (!pup || pup._n !== fe.n || pup._raw !== fe.rawN) { pup = replay._makePuppet(area, fe); puppets[i] = pup; }
       pup.pos.x = fe.x - o[0];
       pup.pos.y = fe.y - o[1];
       if (fe.r != null) pup.radius = fe.r;
@@ -203,7 +224,7 @@
     replay._frame = fLocal;
   };
 
-  replay.layers = { heroCircle: true, aimCone: true, playerVector: true, enemyPaths: true, hud: true };
+  replay.layers = { heroCircle: true, aimCone: true, playerVector: true, enemyPaths: true, hud: true, cursor: true };
   replay.pathAhead = 30;
 
   // view = { fov, W, H, focusX, focusY, areaX, areaY } fourni par main.js. On reproduit EXACTEMENT
@@ -236,6 +257,22 @@
         ctx.moveTo(ps.x, ps.y);
         ctx.arc(ps.x, ps.y, len, ang - half, ang + half);
         ctx.closePath(); ctx.fill();
+        ctx.restore();
+      }
+
+      // Curseur du joueur : le vecteur mouse est un offset px depuis le joueur (échelle
+      // à valider sur données réelles — seul point de réglage : le /32).
+      if (L.cursor && f.player.mouse && (f.player.mouse[0] || f.player.mouse[1])) {
+        var cu = plPt(f.player.x + f.player.mouse[0] / 32, f.player.y + f.player.mouse[1] / 32);
+        ctx.save();
+        ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(cu.x - 7, cu.y); ctx.lineTo(cu.x + 7, cu.y);
+        ctx.moveTo(cu.x, cu.y - 7); ctx.lineTo(cu.x, cu.y + 7);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.strokeStyle = "#000000"; ctx.lineWidth = 1;
+        ctx.arc(cu.x, cu.y, 4, 0, 2 * Math.PI); ctx.stroke();
         ctx.restore();
       }
 

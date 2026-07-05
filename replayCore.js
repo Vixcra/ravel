@@ -40,7 +40,7 @@
       var ea = A.entities[k];
       var eb = (B.entities[k] && B.entities[k].n === ea.n) ? B.entities[k] : ea;
       var rec = {
-        n: ea.n,
+        n: ea.n, rawN: ea.rawN,
         x: _lerp(ea.x, eb.x, f),
         y: _lerp(ea.y, eb.y, f),
         r: ea.r, vx: ea.vx, vy: ea.vy
