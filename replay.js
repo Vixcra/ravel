@@ -26,17 +26,41 @@
     if (m && (!m.hero || m.hero === "unknown") && m.heroType != null && HERO_BY_TYPE[m.heroType]) {
       m.hero = HERO_BY_TYPE[m.heroType];
     }
+    // Détections de scripts embarquées par HS-mod (evrec 1.5) : résumé par type pour
+    // le HUD + détail complet en console.
+    replay._detections = replay.ev.detections || null;
+    replay._detSummary = null;
+    if (replay._detections && replay._detections.length) {
+      var byKind = {};
+      for (var di = 0; di < replay._detections.length; di++) {
+        var d = replay._detections[di];
+        byKind[d.kind] = (byKind[d.kind] || 0) + 1;
+      }
+      var parts = [];
+      for (var bk in byKind) { if (byKind.hasOwnProperty(bk)) parts.push(bk + " ×" + byKind[bk]); }
+      replay._detSummary = parts.join(", ");
+      console.warn("[replay] ⚠ DÉTECTIONS SCRIPT dans ce fichier (" + replay._detections.length + "):");
+      for (var dj = 0; dj < replay._detections.length; dj++) {
+        var dd = replay._detections[dj];
+        console.warn("  [" + dd.kind + "] tick " + dd.tick + " — " + dd.detail);
+      }
+    }
     replay.active = true;
     replay.tickFloat = 0;
     replay.playing = false;
     replay._pupArea = null;
-    replay._puppets = [];
+    replay._puppets = {};
     replay._origin = [0, 0];
     replay._lastAreaStr = null;
     replay._lastPellets = null;
     replay._pelletsCleared = false;
     replay._heroLoaded = null;
     replay._warnedRegions = {};
+    // Jauges d'abilities pilotées par le REPLAY (pas par le joueur sandbox, dont les
+    // défauts — max_abilities — poussaient ab1L à 5 dès le boot)
+    replay._ab1Max = 0;
+    replay._ab2Max = 0;
+    replay._lastLevel = null;
     return replay.ev;
   };
 
@@ -53,18 +77,23 @@
 
   // Applique meta (héros/nom/couleur) au joueur Ravel — CHAQUE frame : le démarrage
   // menu (#connect) recrée le joueur après coup et écraserait une application unique.
-  replay._applyMeta = function (game) {
+  // Le héros vient du TICK courant (frame.hero, "/reset <hero>" mid-run) sinon de la meta.
+  replay._applyMeta = function (game, frame) {
     var m = replay.ev && replay.ev.meta;
     var p = game.players[0];
     if (!m || !p) return;
     if (m.player) p.name = m.player;
-    if (m.hero) p.className = m.hero;
-    var c = m.hero && HERO_COLORS[m.hero];
+    var hero = (frame && frame.hero) || m.hero;
+    if (hero) p.className = hero;
+    var c = hero && HERO_COLORS[hero];
     if (c) { p.color = c; p.tempColor = c; }
     // Icônes d'abilités du héros (loadImages change les src globaux ; une fois par héros)
-    if (m.hero && replay._heroLoaded !== m.hero && typeof loadImages === "function") {
-      replay._heroLoaded = m.hero;
-      try { loadImages(m.hero); } catch (e) {}
+    if (hero && replay._heroLoaded !== hero && typeof loadImages === "function") {
+      var wasLoaded = replay._heroLoaded;
+      replay._heroLoaded = hero;
+      try { loadImages(hero); } catch (e) {}
+      // "/reset" = nouveau héros -> les niveaux d'abilities repartent de zéro
+      if (wasLoaded != null) { replay._ab1Max = 0; replay._ab2Max = 0; replay._lastLevel = null; }
     }
   };
 
@@ -200,6 +229,18 @@
     71:"rgba(38, 18, 53, 0.15)",72:"rgba(255, 128, 0, 0.15)",73:"rgba(0, 255, 0, 0.6)"
   };
   var AURA_FALLBACK = "rgba(150, 100, 255, 0.15)";
+
+  // mm:ss.mmm (h:mm:ss.mmm au-delà d'une heure)
+  function _fmtClock(ms) {
+    if (!(ms >= 0)) ms = 0;
+    var t = Math.floor(ms);
+    var mil = t % 1000;
+    var s = Math.floor(t / 1000) % 60;
+    var m = Math.floor(t / 60000) % 60;
+    var h = Math.floor(t / 3600000);
+    var out = (m < 10 && h > 0 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + "." + String(mil).padStart(3, "0");
+    return h > 0 ? h + ":" + out : out;
+  }
   function auraColorFor(effectType) {
     return (effectType != null && AURA_COLORS[effectType]) || AURA_FALLBACK;
   }
@@ -269,7 +310,7 @@
     var area = world.areas[player.area];
     if (!area || !area.entities) return;
 
-    replay._applyMeta(game);
+    replay._applyMeta(game, frame);
 
     var o = frame.o || [0, 0];
     replay._origin = o;
@@ -287,7 +328,14 @@
       }
       var st = frame.player.stats;
       if (st) {
-        if (st.level != null) player.level = st.level;
+        if (st.level != null) {
+          // Chute du niveau d'xp = "/reset" (même héros) : les abilities repartent à zéro
+          if (replay._lastLevel != null && st.level < replay._lastLevel) {
+            replay._ab1Max = 0; replay._ab2Max = 0;
+          }
+          replay._lastLevel = st.level;
+          player.level = st.level;
+        }
         if (st.energy != null) player.energy = st.energy;
         if (st.maxEnergy != null) player.maxEnergy = st.maxEnergy;
         if (st.regen != null) player.regen = st.regen;
@@ -300,23 +348,39 @@
         if (st.points != null) player.points = st.points;
         // Niveaux d'abilities (cavités 1..5 de la herocard). Le jeu MASQUE .level
         // pendant l'usage d'une ability (indistinguable d'un niveau 0 dans le fichier) ;
-        // les niveaux ne baissent jamais en cours de run -> on affiche le max vu.
-        if (st.ab1 != null) { player.ab1L = Math.max(player.ab1L || 0, st.ab1); player.hasAB = true; }
-        if (st.ab2 != null) { player.ab2L = Math.max(player.ab2L || 0, st.ab2); player.hasAB = true; }
+        // max vu porté par le REPLAY (_ab1Max, reset au load/"/reset") — jamais par le
+        // joueur sandbox : ses défauts (max_abilities) démarraient les jauges à 5.
+        if (st.ab1 != null) { replay._ab1Max = Math.max(replay._ab1Max, st.ab1); player.ab1L = replay._ab1Max; player.hasAB = true; }
+        if (st.ab2 != null) { replay._ab2Max = Math.max(replay._ab2Max, st.ab2); player.ab2L = replay._ab2Max; player.hasAB = true; }
+        // Cooldowns (evrec 1.3) : la herocard Ravel n'utilise que le RATIO cd/total —
+        // valeurs serveur brutes ; total garanti non nul (division du drawer).
+        if (st.ab1cd != null) {
+          player.firstAbilityCooldown = st.ab1cd;
+          player.firstTotalCooldown = st.ab1tcd || st.ab1cd || 1;
+        }
+        if (st.ab2cd != null) {
+          player.secondAbilityCooldown = st.ab2cd;
+          player.secondTotalCooldown = st.ab2tcd || st.ab2cd || 1;
+        }
       }
     }
 
     // Marionnettes : remplace entièrement les entités simulées de l'aire.
+    // Clé = id serveur (evrec 1.3) quand présent — l'index seul recycle une marionnette
+    // pour un AUTRE ennemi dès que l'AOI réordonne le tableau ; fallback index (vieux fichiers).
     if (replay._pupArea !== area) {
       replay._pupArea = area;
-      replay._puppets = [];
+      replay._puppets = {};
     }
     var puppets = replay._puppets;
+    var nextPuppets = {};
     var buckets = {};
     for (var i = 0; i < frame.entities.length; i++) {
       var fe = frame.entities[i];
-      var pup = puppets[i];
-      if (!pup || pup._n !== fe.n || pup._raw !== fe.rawN) { pup = replay._makePuppet(area, fe); puppets[i] = pup; }
+      var pkey = fe.i != null ? "id:" + fe.i : "ix:" + i;
+      var pup = puppets[pkey];
+      if (!pup || pup._n !== fe.n || pup._raw !== fe.rawN) { pup = replay._makePuppet(area, fe); }
+      nextPuppets[pkey] = pup;
       pup.pos.x = fe.x - o[0];
       pup.pos.y = fe.y - o[1];
       if (fe.r != null) pup.radius = fe.r;
@@ -330,7 +394,7 @@
       if (!buckets[fe.n]) buckets[fe.n] = [];
       buckets[fe.n].push(pup);
     }
-    puppets.length = frame.entities.length;
+    replay._puppets = nextPuppets; // les ids sortis de l'AOI sont oubliés
     area.entities = buckets;
 
     // Aura de pouvoir du héros : pseudo-entité isEffect dans area.effects — la passe
@@ -364,24 +428,44 @@
       replay._pelletsCleared = true;
     }
 
+    // Horloge INTERNE du jeu = ticks / tps (l'horloge serveur, désynchronisée du temps
+    // réel). Elle pilote le timer d'en-tête Ravel ; les ms sont affichées dans le HUD.
+    var tps = (replay.ev.meta && replay.ev.meta.tps) || 60;
+    replay._gameTimeMs = replay.tickFloat * (1000 / tps);
+    replay._wallMs = frame.wall != null ? frame.wall : null;
+    player.timer = replay._gameTimeMs;
+
     // Overlays : joueur en coords MONDE (plPt), entités en coords LOCALES (entPt ajoute area.pos).
     var fLocal = { player: null, entities: [] };
     if (frame.player) {
       fLocal.player = {
         x: player.pos.x, y: player.pos.y,
-        vx: frame.player.vx, vy: frame.player.vy, mouse: frame.player.mouse
+        vx: frame.player.vx, vy: frame.player.vy, mouse: frame.player.mouse,
+        dt: frame.player.dt, dtt: frame.player.dtt
       };
     }
     for (var q = 0; q < frame.entities.length; q++) {
       var fq = frame.entities[q];
-      fLocal.entities.push({ n: fq.n, x: fq.x - o[0], y: fq.y - o[1], r: fq.r });
+      fLocal.entities.push({ n: fq.n, x: fq.x - o[0], y: fq.y - o[1], r: fq.r,
+                             i: fq.i, s: fq.s, sl: fq.sl, st: fq.st });
     }
     replay._frame = fLocal;
   };
 
   // enemyPaths/playerVector (lignes de prédiction) coupés par défaut — code conservé,
   // réactivables à la console via replay.layers.
-  replay.layers = { heroCircle: true, aimCone: true, playerVector: false, enemyPaths: false, hud: true, cursor: true };
+  replay.layers = { heroCircle: true, aimCone: true, playerVector: false, enemyPaths: false, hud: true, cursor: true, statusTimers: true, deathTimer: true };
+
+  // Anneau + décompte des statuts chronométrés (ids et styles Goatunn STATUS_STYLES) :
+  // 1=harmless 2=gelé/pétrifié 3=stun(éclair/boule de neige) 4=sugar rush 5=stomp 6=spark.
+  var STATUS_STYLES = {
+    1: { ring: "rgba(170,170,170,0.6)", txt: "#cccccc" },
+    2: { ring: "rgba(0,229,255,0.6)",   txt: "#00e5ff" },
+    3: { ring: "rgba(255,221,0,0.6)",   txt: "#ffdd00" },
+    4: { ring: "rgba(255,128,189,0.6)", txt: "#ff80bd" },
+    5: { ring: "rgba(153,62,6,0.6)",    txt: "#c86a28" },
+    6: { ring: "rgba(255,221,0,0.6)",   txt: "#ffdd00" }
+  };
   replay.pathAhead = 30;
 
   // view = { fov, W, H, focusX, focusY, areaX, areaY } fourni par main.js. On reproduit EXACTEMENT
@@ -441,6 +525,48 @@
         ctx.restore();
       }
 
+      // Down/death timer façon Goatunn : voile fade, anneau rouge, arc blanc de
+      // progression, décompte, croix sur le héros + bannière DOWNED.
+      if (L.deathTimer && f.player.dt != null) {
+        var pr = 24; // même rayon que heroCircle (héros Ravel = 15px * ratio d'échelle)
+        var dtRatio = f.player.dtt > 0 ? Math.max(0, Math.min(1, f.player.dt / f.player.dtt)) : 0;
+        ctx.save();
+        // voile : plus le timer descend, plus le héros s'éteint (dtAlpha Goatunn inversé en voile)
+        ctx.fillStyle = "rgba(0,0,0," + (0.5 * (1 - Math.max(0.15, dtRatio))).toFixed(3) + ")";
+        ctx.beginPath(); ctx.arc(ps.x, ps.y, pr, 0, 2 * Math.PI); ctx.fill();
+        // anneau rouge
+        ctx.strokeStyle = "#ff3333"; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.arc(ps.x, ps.y, pr + 4, 0, 2 * Math.PI); ctx.stroke();
+        // arc blanc de temps restant + décompte
+        if (dtRatio > 0) {
+          ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 2.5;
+          ctx.beginPath();
+          ctx.arc(ps.x, ps.y, pr + 8, -Math.PI / 2, -Math.PI / 2 + dtRatio * 2 * Math.PI);
+          ctx.stroke();
+          ctx.fillStyle = "#ff6666";
+          ctx.font = "bold 12px 'Segoe UI',Arial,sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText((f.player.dt / 1000).toFixed(1) + "s", ps.x, ps.y - pr - 12);
+        }
+        // croix
+        var xsz = pr * 0.7;
+        ctx.strokeStyle = "rgba(255,50,50,0.8)"; ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(ps.x - xsz, ps.y - xsz); ctx.lineTo(ps.x + xsz, ps.y + xsz);
+        ctx.moveTo(ps.x + xsz, ps.y - xsz); ctx.lineTo(ps.x - xsz, ps.y + xsz);
+        ctx.stroke();
+        // bannière DOWNED en haut
+        var downLabel = "DOWNED" + (dtRatio > 0 ? " " + (f.player.dt / 1000).toFixed(1) + "s" : "");
+        ctx.font = "bold 18px 'Segoe UI',Arial,sans-serif";
+        ctx.textAlign = "center";
+        var tw = ctx.measureText(downLabel).width;
+        ctx.fillStyle = "rgba(0,0,0,0.6)";
+        ctx.fillRect(W / 2 - tw / 2 - 12, 6, tw + 24, 30);
+        ctx.fillStyle = "#ff3333";
+        ctx.fillText(downLabel, W / 2, 28);
+        ctx.restore();
+      }
+
       if (L.playerVector && (f.player.vx || f.player.vy)) {
         var pe = plPt(f.player.x + f.player.vx * 3, f.player.y + f.player.vy * 3);
         ctx.save();
@@ -450,12 +576,43 @@
       }
     }
 
+    // Statuts chronométrés façon Goatunn : contour + anneau de progression + décompte.
+    if (L.statusTimers) {
+      for (var si = 0; si < f.entities.length; si++) {
+        var se = f.entities[si];
+        if (!se.s) continue;
+        var style = STATUS_STYLES[se.s];
+        if (!style) continue;
+        var sp = entPt(se.x, se.y);
+        var srPx = (se.r || 0.5) * fov;
+        ctx.save();
+        // contour de l'ennemi
+        ctx.strokeStyle = style.ring; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.arc(sp.x, sp.y, srPx + 1.5, 0, 2 * Math.PI); ctx.stroke();
+        // anneau de progression + texte (seulement si on connaît le temps)
+        if (se.sl > 0 && se.st > 0) {
+          var ratio = Math.max(0, Math.min(1, se.sl / se.st));
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(sp.x, sp.y, srPx + 5, -Math.PI / 2, -Math.PI / 2 + ratio * 2 * Math.PI);
+          ctx.stroke();
+          ctx.fillStyle = style.txt;
+          ctx.font = "11px sans-serif";
+          ctx.textAlign = "center";
+          // Heuristique Goatunn : champs serveur tantôt en ms, tantôt en s
+          var disp = se.sl > 100 ? se.sl / 1000 : se.sl;
+          ctx.fillText(disp.toFixed(1) + "s", sp.x, sp.y - srPx - 7);
+        }
+        ctx.restore();
+      }
+    }
+
     if (L.enemyPaths) {
       var baseTick = Math.floor(replay.tickFloat);
       for (var i = 0; i < f.entities.length; i++) {
         var ent = f.entities[i];
         if (ent.n === "wall") continue; // statiques : pas de trajectoire
-        var pts = window.replayCore.readAhead(replay.ev, i, baseTick, replay.pathAhead);
+        var pts = window.replayCore.readAhead(replay.ev, i, baseTick, replay.pathAhead, ent.i != null ? ent.i : null);
         if (pts.length < 2) continue;
         var o = replay._origin || [0, 0]; // readAhead rend des coords fichier -> re-base local
         ctx.save();
@@ -471,8 +628,28 @@
     if (L.hud) {
       ctx.save();
       ctx.fillStyle = "#fff"; ctx.font = "14px monospace";
+      ctx.textAlign = "left";
       ctx.fillText("tick " + Math.floor(replay.tickFloat) + " / " + (replay.ev.ticks.length - 1) +
         "  x" + replay.speed.toFixed(2) + (replay.playing ? "  ▶" : "  ⏸"), 12, 20);
+      // Horloge interne du jeu (ticks/tps) en mm:ss.mmm + désync vs temps réel de la
+      // capture quand le fichier porte l'heure murale (evrec 1.4+, tick.w).
+      var gt = replay._gameTimeMs || 0;
+      var line = "⏱ " + _fmtClock(gt);
+      if (replay._wallMs != null) {
+        var drift = replay._wallMs - gt; // >0 : le vrai temps a pris de l'avance sur les ticks
+        line += "  (réel " + _fmtClock(replay._wallMs) + ", désync " +
+                (drift >= 0 ? "+" : "−") + (Math.abs(drift) / 1000).toFixed(3) + "s)";
+      }
+      ctx.fillStyle = "#9fe8ff";
+      ctx.fillText(line, 12, 40);
+      // Verdict d'intégrité de la capture (détections HS-mod embarquées dans le fichier)
+      if (replay._detSummary) {
+        ctx.fillStyle = "#ff4d4d";
+        ctx.fillText("⚠ SCRIPTS DÉTECTÉS PENDANT LA CAPTURE: " + replay._detSummary + " (détail en console)", 12, 60);
+      } else if (replay._detections) {
+        ctx.fillStyle = "#7dff9a";
+        ctx.fillText("✔ capture propre (0 détection)", 12, 60);
+      } // fichiers pré-1.5 : pas d'info d'intégrité, on n'affiche rien
       ctx.restore();
     }
   };

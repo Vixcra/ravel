@@ -132,6 +132,131 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   console.log("replayCore: auras OK");
 })();
 
+// evrec 1.3 : appariement par id serveur — le churn AOI réordonne le tableau entre
+// ticks ; l'index seul lerperait deux ennemis différents
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60 },
+    ticks: [
+      { t: 0, area: "a:0", player: null, entities: [
+        { n: "normal", rawN: "NORMAL_ENEMY", x: 0,   y: 0, r: 0.5, i: "7" },
+        { n: "normal", rawN: "NORMAL_ENEMY", x: 100, y: 0, r: 0.5, i: "9" } ] },
+      { t: 1, area: "a:0", player: null, entities: [
+        { n: "normal", rawN: "NORMAL_ENEMY", x: 102, y: 0, r: 0.5, i: "9" },  // réordonné !
+        { n: "normal", rawN: "NORMAL_ENEMY", x: 2,   y: 0, r: 0.5, i: "7" } ] }
+    ]
+  }));
+  var f = RC.sampleFrame(ev, 0.5);
+  assert.strictEqual(f.entities[0].x, 1);    // id 7 : 0->2, PAS 0->102
+  assert.strictEqual(f.entities[1].x, 101);  // id 9 : 100->102
+  assert.strictEqual(f.entities[0].i, "7");
+  // readAhead par id : suit id 7 malgré le réordonnancement
+  assert.deepStrictEqual(RC.readAhead(ev, 0, 0, 2, "7"), [ { x: 2, y: 0 } ]);
+  // vieux format sans id : comportement index inchangé
+  var old = RC.parseEvrec(text);
+  assert.deepStrictEqual(RC.readAhead(old, 1, 0, 2), [ { x: 210, y: 200 }, { x: 220, y: 200 } ]);
+  console.log("replayCore: id matching + readAhead OK");
+})();
+
+// statut chronométré : s/st propagés, sl lerpé si même statut, cooldowns dans stats
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60 },
+    ticks: [
+      { t: 0, area: "a:0",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true,
+                  stats: { level: 1, energy: 10, ab1cd: 500, ab1tcd: 3000 } },
+        entities: [ { n: "normal", rawN: "NORMAL_ENEMY", x: 0, y: 0, r: 0.5, i: "1", s: 2, sl: 1000, st: 4000 } ] },
+      { t: 1, area: "a:0",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true,
+                  stats: { level: 1, energy: 10, ab1cd: 480, ab1tcd: 3000 } },
+        entities: [ { n: "normal", rawN: "NORMAL_ENEMY", x: 0, y: 0, r: 0.5, i: "1", s: 2, sl: 900, st: 4000 } ] }
+    ]
+  }));
+  var f = RC.sampleFrame(ev, 0.5);
+  assert.strictEqual(f.entities[0].s, 2);
+  assert.strictEqual(f.entities[0].sl, 950);   // lerp 1000->900
+  assert.strictEqual(f.entities[0].st, 4000);
+  assert.strictEqual(f.player.stats.ab1cd, 500); // stats passthrough (tick A)
+  console.log("replayCore: statuts + cooldowns OK");
+})();
+
+// evrec 1.4 : héros par tick ("/reset <hero>") reporté comme les pellets + death timer lerpé
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60, hero: "Brute" },
+    ticks: [
+      { t: 0, area: "a:0", hero: "Brute",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true }, entities: [] },
+      { t: 1, area: "a:0",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true, dt: 3000, dtt: 4000 }, entities: [] },
+      { t: 2, area: "a:0", hero: "Candy",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true, dt: 2000, dtt: 4000 }, entities: [] },
+      { t: 3, area: "a:0",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true }, entities: [] }
+    ]
+  }));
+  assert.strictEqual(RC.sampleFrame(ev, 0).hero, "Brute");
+  assert.strictEqual(RC.sampleFrame(ev, 1.5).hero, "Brute");  // report du tick 0
+  assert.strictEqual(RC.sampleFrame(ev, 2).hero, "Candy");    // "/reset candy"
+  assert.strictEqual(RC.sampleFrame(ev, 3).hero, "Candy");    // report
+  assert.strictEqual(RC.sampleFrame(ev, 1.5).player.dt, 2500); // lerp 3000->2000
+  assert.strictEqual(RC.sampleFrame(ev, 1.5).player.dtt, 4000);
+  assert.strictEqual(RC.sampleFrame(ev, 3).player.dt, undefined); // relevé -> plus de timer
+  // vieux fichier sans tick.hero : frame.hero null (le viewer retombe sur meta)
+  assert.strictEqual(RC.sampleFrame(RC.parseEvrec(text), 0).hero, null);
+  console.log("replayCore: héros par tick + death timer OK");
+})();
+
+// evrec 1.4 : heure murale par tick (tick.w) lerpée -> frame.wall (désync horloge interne)
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60 },
+    ticks: [
+      { t: 0, area: "a:0", w: 0,   player: null, entities: [] },
+      { t: 1, area: "a:0", w: 18,  player: null, entities: [] } // paquet en retard (16.7ms attendu)
+    ]
+  }));
+  assert.strictEqual(RC.sampleFrame(ev, 0).wall, 0);
+  assert.strictEqual(RC.sampleFrame(ev, 0.5).wall, 9);
+  assert.strictEqual(RC.sampleFrame(ev, 1).wall, 18);
+  assert.strictEqual(RC.sampleFrame(RC.parseEvrec(text), 0).wall, undefined); // vieux fichiers
+  console.log("replayCore: heure murale OK");
+})();
+
+// recorderCore : readPlayer dt/dtt (deathTimer -1 = vivant) + buildTick passthrough
+(function () {
+  var REC = require("../../recorder/recorderCore.js");
+  var ctx = { xk: "x", yk: "y", rk: "radius", deadk: "isDead", typek: "entityType", pelletType: 113, selfId: null };
+  assert.strictEqual(REC.readPlayer({ x: 1, y: 2, deathTimer: -1 }, null, ctx).dt, undefined);
+  var down = REC.readPlayer({ x: 1, y: 2, deathTimer: 2500, deathTimerTotal: 4000 }, null, ctx);
+  assert.strictEqual(down.dt, 2500);
+  assert.strictEqual(down.dtt, 4000);
+  var tick = REC.buildTick(0, "a:0", { x: 0, y: 0, dt: 2500, dtt: 4000 }, [], {}, null);
+  assert.strictEqual(tick.player.dt, 2500);  // temps bruts, PAS de /32
+  assert.strictEqual(tick.player.dtt, 4000);
+  console.log("recorderCore: death timer OK");
+})();
+
+// recorderCore.readStatus : chaîne de priorité Goatunn + arrondi
+(function () {
+  var REC = require("../../recorder/recorderCore.js");
+  assert.deepStrictEqual(REC.readStatus({ frozenTimeLeft: 1234.567, frozenTime: 4000 }), { s: 2, sl: 1234.57, st: 4000 });
+  assert.deepStrictEqual(REC.readStatus({ sugarRushTimeLeft: 2, sugarRushTime: 5, frozenTimeLeft: 1 }).s, 4); // sugar prime
+  assert.deepStrictEqual(REC.readStatus({ petrified: true }), { s: 2, sl: 0, st: 0 });
+  assert.strictEqual(REC.readStatus({}), null);
+  // buildTick : i + statut passthrough + cooldowns dans stats (non convertis)
+  var tick = REC.buildTick(0, "a:0",
+    { x: 0, y: 0, stats: { ab1cd: 500, ab1tcd: 3000 } },
+    [ { id: "42", type: 1, x: 32, y: 0, r: 16, s: 2, sl: 1000, st: 4000 } ],
+    { 1: "NORMAL_ENEMY" }, null);
+  assert.strictEqual(tick.entities[0].i, "42");
+  assert.strictEqual(tick.entities[0].s, 2);
+  assert.strictEqual(tick.entities[0].sl, 1000);
+  assert.strictEqual(tick.player.stats.ab1cd, 500);
+  console.log("recorderCore: readStatus + buildTick i/statut OK");
+})();
+
 // recorderCore.readAura : plus grand rayon retenu, formats radius/currentRadius/range,
 // effets sans rayon ignorés ; buildTick convertit en tuiles (÷32)
 (function () {

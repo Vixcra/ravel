@@ -885,10 +885,9 @@ function renderUI(area, players, focus) {
         context.fillText(text, x, y + 17 / 2 * uiScale + 44 * uiScale - 17 * uiScale + UI_CONSTANTS.ABILITY_SIZE / 2 + 17 * uiScale);
       }
 
-      // Draw cooldown overlay
-      if (index < 2) {
-        const cooldownTime = player[cooldown] / player[totalCooldown];
-        context.fillStyle = !player[`${key}L`] || cooldownTime === 1 ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0.2)";
+      // Draw cooldown overlay (voile fixe seulement pour une ability niveau 0)
+      if (index < 2 && !player[`${key}L`]) {
+        context.fillStyle = "rgba(0, 0, 0, 0.6)";
         context.fillRect(x - UI_CONSTANTS.ABILITY_SIZE / 2, y - 3 * uiScale + 17 * uiScale + 44 * uiScale - 17 * uiScale - UI_CONSTANTS.ABILITY_SIZE / 2, UI_CONSTANTS.ABILITY_SIZE, UI_CONSTANTS.ABILITY_SIZE);
       }
 
@@ -915,12 +914,21 @@ function renderUI(area, players, focus) {
         context.stroke();
       }
 
-      // Draw cooldown arc for first two abilities only
-      if (index < 2) {
-        context.fillStyle = "rgba(0, 0, 0, 0.6)";
-        const abilityX = x - UI_CONSTANTS.ABILITY_SIZE / 2;
-        const abilityY = y - 3 * uiScale + 17 * uiScale + 44 * uiScale - 17 * uiScale - UI_CONSTANTS.ABILITY_SIZE / 2;
-        sectorInRect(context, abilityX, abilityY, UI_CONSTANTS.ABILITY_SIZE, UI_CONSTANTS.ABILITY_SIZE, 360 * (1 - player[cooldown] / player[totalCooldown]) - 90);
+      // Cooldown = fondu gradient : voile sombre descendant du haut, hauteur = temps
+      // restant, bord adouci — l'icône se "révèle" de bas en haut en récupérant.
+      if (index < 2 && player[`${key}L`]) {
+        const cdRatio = Math.max(0, Math.min(1, (player[cooldown] || 0) / (player[totalCooldown] || 1)));
+        if (cdRatio > 0) {
+          const abilityX = x - UI_CONSTANTS.ABILITY_SIZE / 2;
+          const abilityY = y - 3 * uiScale + 17 * uiScale + 44 * uiScale - 17 * uiScale - UI_CONSTANTS.ABILITY_SIZE / 2;
+          const veilH = UI_CONSTANTS.ABILITY_SIZE * cdRatio;
+          const grad = context.createLinearGradient(0, abilityY, 0, abilityY + veilH);
+          grad.addColorStop(0, "rgba(0, 0, 0, 0.75)");
+          grad.addColorStop(Math.max(0, 1 - (6 * uiScale) / veilH), "rgba(0, 0, 0, 0.6)");
+          grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+          context.fillStyle = grad;
+          context.fillRect(abilityX, abilityY, UI_CONSTANTS.ABILITY_SIZE, veilH);
+        }
       }
     });
   }
