@@ -172,6 +172,12 @@ window.onload = () => {
 }
 function keydownKeys(e) {
   const player = game.players[0];
+  // Mode replay : raccourcis sandbox coupés (cheats/reset désynchroniseraient le
+  // playback) ; le clavier est délégué aux contrôles de lecture.
+  if (window.replay && window.replay.active) {
+    window.replay.handleKey(e, player);
+    return;
+  }
   if(e.code == 'KeyD' && settings.dev){
     ping.activationTime = new Date().getTime();
   }

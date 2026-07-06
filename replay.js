@@ -7,8 +7,25 @@
     playing: false
   };
 
+  // Ids de héros serveur = rang alphabétique (table HS-mod _HERO_NAMES) : rattrape les
+  // fichiers dont meta.hero est resté "unknown" (F9 avant d'entrer en partie) mais qui
+  // ont un heroType.
+  var HERO_BY_TYPE = {
+    0: "Aurora", 1: "Boldrock", 2: "Brute", 3: "Candy", 4: "Cent",
+    5: "Chrono", 6: "Cybot", 7: "Demona", 8: "Echelon", 9: "Euclid",
+    10: "Factorb", 11: "Ghoul", 12: "Glob", 13: "Ignis", 14: "Jolt",
+    15: "Jötunn", 16: "Leono", 17: "Magmax", 18: "Magno", 19: "Mirage",
+    20: "Morfe", 21: "Mortuus", 22: "Necro", 23: "Nexus", 24: "Rameses",
+    25: "Reaper", 26: "Rime", 27: "Shade", 28: "Stella", 29: "Stheno",
+    30: "Veydris", 31: "Viola"
+  };
+
   replay.load = function (text) {
     replay.ev = window.replayCore.parseEvrec(text);
+    var m = replay.ev.meta;
+    if (m && (!m.hero || m.hero === "unknown") && m.heroType != null && HERO_BY_TYPE[m.heroType]) {
+      m.hero = HERO_BY_TYPE[m.heroType];
+    }
     replay.active = true;
     replay.tickFloat = 0;
     replay.playing = false;
@@ -155,6 +172,38 @@
     }
   };
 
+  // Couleurs d'aura par effectType serveur (table rus.js, vérifiée sur le bundle live).
+  // Sert quand la classe Ravel du puppet n'a pas d'auraColor (type "unknown").
+  var AURA_COLORS = {
+    0:"rgba(255, 80, 10, 0.15)",1:"rgba(200, 70, 0, 0.15)",2:"rgba(77, 233, 242, 0.2)",
+    3:"rgba(255, 0, 0, 0.2)",4:"rgba(255, 255, 0, 0.2)",5:"rgba(153, 62, 6, 0.2)",
+    6:"rgba(76, 240, 161, 0.25)",7:"rgba(142, 129, 38, 0.15)",8:"rgba(174, 137, 185, 0.25)",
+    9:"rgba(225, 225, 0, 0.1)",10:"rgba(0, 0, 0, 0.2)",13:"rgba(255, 128, 189, 0.25)",
+    14:"rgba(161, 132, 70, 0.2)",16:"rgba(109, 109, 255, 0.2)",18:"rgba(255, 250, 134, 0.15)",
+    19:"rgba(146, 107, 227, 0.15)",20:"rgba(97, 97, 97, 0.2)",21:"rgba(228, 0, 0, 0.15)",
+    22:"rgba(254, 0, 0, 0.15)",23:"rgba(0, 200, 255, 0.15)",24:"rgba(60, 0, 114, 0.15)",
+    25:"rgba(210, 228, 238, 0.2)",26:"rgba(58, 116, 112, 0.3)",27:"rgba(33, 161, 164, 0.3)",
+    28:"rgba(254, 191, 206, 0.5)",29:"rgba(77, 1, 98, 0.3)",30:"rgba(0, 198, 0, 0.2)",
+    31:"rgba(189, 103, 209, 0.25)",32:"rgba(100, 35, 115, 0.3)",33:"rgba(246, 131, 6, 0.3)",
+    34:"rgba(107, 84, 30, 0.3)",35:"rgba(152, 153, 153, 0.2)",36:"rgba(41, 254, 198, 0.3)",
+    37:"rgba(45, 50, 54, 0.15)",38:"rgba(59, 0, 0, 0.2)",39:"rgba(190, 82, 19, 0.3)",
+    41:"rgba(38, 18, 53, 0.15)",42:"rgba(117, 38, 86, 0.15)",43:"rgba(60, 189, 152, 0.2)",
+    44:"rgba(207, 166, 236, 0.25)",45:"rgba(99, 93, 110, 0.35)",46:"rgba(110, 57, 30, 0.15)",
+    47:"rgba(0, 225, 225, 0.1)",48:"rgba(255, 0, 0, 0.15)",49:"rgba(0, 0, 255, 0.15)",
+    50:"rgba(60, 0, 115, 0.15)",51:"rgba(210, 228, 239, 0.2)",52:"rgba(58, 117, 112, 0.3)",
+    53:"rgba(33, 161, 165, 0.3)",54:"rgba(255, 191, 206, 0.5)",55:"rgba(60, 0, 0, 0.2)",
+    56:"rgba(77, 1, 99, 0.3)",57:"rgba(0, 199, 0, 0.2)",58:"rgba(189, 103, 210, 0.25)",
+    59:"rgba(100, 35, 116, 0.3)",60:"rgba(247, 131, 6, 0.3)",61:"rgba(146, 107, 227, 0.3)",
+    62:"rgba(214, 0, 57, 0.3)",63:"rgba(108, 84, 30, 0.3)",64:"rgba(153, 153, 153, 0.2)",
+    65:"rgba(41, 255, 198, 0.3)",66:"rgba(45, 50, 55, 0.15)",67:"rgba(191, 82, 19, 0.3)",
+    68:"rgba(170, 47, 47, 0.48)",69:"rgba(70, 65, 66, 0.17)",70:"rgba(117, 38, 86, 0.15)",
+    71:"rgba(38, 18, 53, 0.15)",72:"rgba(255, 128, 0, 0.15)",73:"rgba(0, 255, 0, 0.6)"
+  };
+  var AURA_FALLBACK = "rgba(150, 100, 255, 0.15)";
+  function auraColorFor(effectType) {
+    return (effectType != null && AURA_COLORS[effectType]) || AURA_FALLBACK;
+  }
+
   // Items/projectiles texturés que renderTexturedEntity sait dessiner, par enum Evades.
   var RAW_TEXTURES = {
     SWEET_TOOTH_ITEM: "sweet_tooth_item", SOUR_CANDY_ITEM: "sour_candy_item",
@@ -181,7 +230,10 @@
       pup.isShield = true; pup.rot = 0;
       pup.size = new Vector((fe.w || 1) / 2, (fe.h || 1) / 2);
     } else {
-      try { pup = area.createEnemy(fe.n, 0, 0, (fe.r || 0.5) * 32, 0, 0, {}, 0, 0, 1); } catch (e) {}
+      // auraRadius : rayon enregistré (px) si le fichier en a un, sinon undefined ->
+      // défaut de la classe Ravel (150 etc.) pour les vieux fichiers sans auras.
+      var auraPx = fe.a != null ? fe.a * 32 : undefined;
+      try { pup = area.createEnemy(fe.n, 0, 0, (fe.r || 0.5) * 32, 0, 0, {}, auraPx, 0, 1); } catch (e) {}
       if (!pup) {
         var ti = entityTypes.indexOf(fe.n);
         pup = new Enemy(new Vector(0, 0), ti > 0 ? ti : 0, fe.r || 0.5, 0, 0, "#7a4bd6");
@@ -268,11 +320,31 @@
       pup.pos.x = fe.x - o[0];
       pup.pos.y = fe.y - o[1];
       if (fe.r != null) pup.radius = fe.r;
+      // Aura enregistrée : rayon par frame (les sizing la font varier) ; couleur de la
+      // classe Ravel si elle en a une, sinon table effectType.
+      if (fe.a != null) {
+        pup.aura = true;
+        pup.auraSize = fe.a;
+        if (!pup.auraColor) pup.auraColor = auraColorFor(fe.at);
+      }
       if (!buckets[fe.n]) buckets[fe.n] = [];
       buckets[fe.n].push(pup);
     }
     puppets.length = frame.entities.length;
     area.entities = buckets;
+
+    // Aura de pouvoir du héros : pseudo-entité isEffect dans area.effects — la passe
+    // effets du drawer la rend SOUS les entités (un overlay la peindrait par-dessus).
+    if (frame.player && frame.player.aura && area.effects) {
+      area.effects["replay_hero_aura"] = [{
+        isEffect: true,
+        color: auraColorFor(frame.player.aura.t),
+        radius: frame.player.aura.r,
+        pos: { x: frame.player.x - o[0], y: frame.player.y - o[1] }
+      }];
+    } else if (area.effects && area.effects["replay_hero_aura"]) {
+      delete area.effects["replay_hero_aura"];
+    }
 
     // Pellets réels : remplace ceux que Ravel a spawné au hasard (area.load).
     // frame.pellets = référence stable entre changements -> rebuild seulement au changement.
@@ -307,7 +379,9 @@
     replay._frame = fLocal;
   };
 
-  replay.layers = { heroCircle: true, aimCone: true, playerVector: true, enemyPaths: true, hud: true, cursor: true };
+  // enemyPaths/playerVector (lignes de prédiction) coupés par défaut — code conservé,
+  // réactivables à la console via replay.layers.
+  replay.layers = { heroCircle: true, aimCone: true, playerVector: false, enemyPaths: false, hud: true, cursor: true };
   replay.pathAhead = 30;
 
   // view = { fov, W, H, focusX, focusY, areaX, areaY } fourni par main.js. On reproduit EXACTEMENT
@@ -400,6 +474,34 @@
       ctx.fillText("tick " + Math.floor(replay.tickFloat) + " / " + (replay.ev.ticks.length - 1) +
         "  x" + replay.speed.toFixed(2) + (replay.playing ? "  ▶" : "  ⏸"), 12, 20);
       ctx.restore();
+    }
+  };
+
+  // Clavier en mode replay : listeners.js nous délègue TOUT keydown (les raccourcis
+  // sandbox — cheats T/R/E/V/N..., reset End — casseraient l'état piloté par le fichier).
+  // Espace = play/pause, flèches = frame ±1 (±10 avec Shift), H/M = herocard/minimap.
+  replay.handleKey = function (e, player) {
+    switch (e.code) {
+      case "Space":
+        e.preventDefault();
+        // Un bouton de la replay-bar resté focus serait AUSSI activé par Espace (keyup)
+        if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+        replay.playing ? replay.pause() : replay.play();
+        break;
+      case "ArrowRight":
+        e.preventDefault();
+        replay.step(e.shiftKey ? 10 : 1);
+        break;
+      case "ArrowLeft":
+        e.preventDefault();
+        replay.step(e.shiftKey ? -10 : -1);
+        break;
+      case "KeyH":
+        if (player) player.herocard = !player.herocard;
+        break;
+      case "KeyM":
+        if (player) player.minimap = !player.minimap;
+        break;
     }
   };
 

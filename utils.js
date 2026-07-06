@@ -614,6 +614,8 @@ function parseRange(value) {
 function loadImages(character) {
   images.tiles.src = localStorage.tiles === "true" ? "texture/tiles.jpg" : "texture/tiles2.jpg";
 
+  // Paires [slot1, slot2] alignées sur le Codex officiel (Codex/heroes.json, extrait du
+  // bundle). Icônes = copies de Evades.io/assets/abilities (import officiel).
   const abilityMap = {
     "Magmax": ["flow", "harden"],
     "Basic": ["flow", "harden"],
@@ -628,9 +630,27 @@ function loadImages(character) {
     "Jötunn": ["decay", "shatter"],
     "Shade": ["night", "vengeance"],
     "Cent": ["fusion", "mortar"],
-    "Rameses": ["bandages", "latch"],
+    "Rameses": ["latch", "bandages"],
     "Reaper": ["atonement", "depart"],
-    "Mirage": ["shift", "obscure"]
+    "Mirage": ["shift", "obscure"],
+    "Nexus": ["barrier", "stream"],
+    "Euclid": ["black_hole", "orbit"],
+    "Jolt": ["spark", "charge"],
+    "Ghoul": ["shriek", "shadow"],
+    "Boldrock": ["crumble", "earthquake"],
+    "Glob": ["radioactive_gloop", "sticky_coat"],
+    "Magno": ["attract", "repel"],
+    "Ignis": ["wildfire", "ember"],
+    "Stella": ["wormhole", "supernova"],
+    "Viola": ["bloom", "pollinate"],
+    "Mortuus": ["undead_infection", "gravekeeper"],
+    "Cybot": ["network_control", "robo_scanner"],
+    "Echelon": ["echo", "reduce"],
+    "Demona": ["dash", "incinerate"],
+    "Stheno": ["petrify", "ictos"],
+    "Factorb": ["mutatiorb", "explodiorb"],
+    "Leono": ["parry", "slash"],
+    "Veydris": ["voidborne", "umbrel"]
   };
 
   if (character in abilityMap) {

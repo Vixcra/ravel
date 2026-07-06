@@ -107,3 +107,49 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   assert.strictEqual(RC.sampleFrame(ev, 0).entities[0].rawN, "SWEET_TOOTH_ITEM");
   console.log("replayCore: rawN passthrough OK");
 })();
+
+// auras (evrec 1.2) : rayon d'aura ennemi lerpé, type propagé, aura joueur passthrough
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: { tps: 60 },
+    ticks: [
+      { t: 0, area: "a:0",
+        player: { x: 0, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true, aura: { t: 13, r: 5 } },
+        entities: [ { n: "slowing", rawN: "SLOWING_ENEMY", x: 1, y: 1, r: 0.5, a: 4, at: 48 } ] },
+      { t: 1, area: "a:0",
+        player: { x: 2, y: 0, vx: 0, vy: 0, mouse: [0, 0], alive: true, aura: { t: 13, r: 5 } },
+        entities: [ { n: "slowing", rawN: "SLOWING_ENEMY", x: 2, y: 1, r: 0.5, a: 6, at: 48 } ] }
+    ]
+  }));
+  var f = RC.sampleFrame(ev, 0.5);
+  assert.strictEqual(f.entities[0].a, 5);      // (4+6)/2
+  assert.strictEqual(f.entities[0].at, 48);
+  assert.deepStrictEqual(f.player.aura, { t: 13, r: 5 });
+  // ancien format sans auras : rien ne fuit
+  var old = RC.sampleFrame(RC.parseEvrec(text), 0);
+  assert.strictEqual(old.entities[0].a, undefined);
+  assert.strictEqual(old.player.aura, undefined);
+  console.log("replayCore: auras OK");
+})();
+
+// recorderCore.readAura : plus grand rayon retenu, formats radius/currentRadius/range,
+// effets sans rayon ignorés ; buildTick convertit en tuiles (÷32)
+(function () {
+  var REC = require("../../recorder/recorderCore.js");
+  var e = { effects: { effects: {
+    a: { effectType: 48, radius: 160 },
+    b: { type: 21, currentRadius: 96 },
+    c: { effectType: 7 },            // sans rayon -> ignoré
+    d: null
+  } } };
+  assert.deepStrictEqual(REC.readAura(e), { t: 48, r: 160 });
+  assert.strictEqual(REC.readAura({}), null);
+  var tick = REC.buildTick(0, "a:0",
+    { x: 0, y: 0, aura: { t: 13, r: 64 } },
+    [ { type: 1, x: 32, y: 32, r: 16, ar: 160, at: 48 } ],
+    { 1: "NORMAL_ENEMY" }, null);
+  assert.strictEqual(tick.entities[0].a, 5);   // 160/32
+  assert.strictEqual(tick.entities[0].at, 48);
+  assert.deepStrictEqual(tick.player.aura, { t: 13, r: 2 }); // 64/32
+  console.log("recorderCore: readAura + buildTick auras OK");
+})();

@@ -34,6 +34,7 @@
         mouse: A.player.mouse, alive: A.player.alive
       };
       if (A.player.stats) player.stats = A.player.stats;
+      if (A.player.aura) player.aura = A.player.aura; // {t, r} — aura de pouvoir du héros
     }
     var entities = [];
     for (var k = 0; k < A.entities.length; k++) {
@@ -47,6 +48,8 @@
       };
       if (ea.w != null) rec.w = ea.w;
       if (ea.h != null) rec.h = ea.h;
+      // Aura enregistrée (rayon lerpé : les sizing font varier le rayon d'aura)
+      if (ea.a != null) { rec.a = eb.a != null ? _lerp(ea.a, eb.a, f) : ea.a; rec.at = ea.at; }
       entities.push(rec);
     }
     var frame = { player: player, entities: entities, area: A.area };
