@@ -660,6 +660,23 @@ function renderPlayers(area, players, focus) {
       context.strokeStyle = !settings.cooldown ? "rgb(211, 211, 0)" : player.sweetToothEffect ? "rgb(212, 0, 100)" : player.sourCandyEffect ? "rgb(110, 0, 212)" : "rgb(68, 118, 255)";
       context.lineWidth = 1 / (32 / fov);
       context.strokeRect(playerX - energyBarWidth / 2, energyBarY, energyBarWidth, energyBarHeight);
+
+      // Icônes d'états joueur (evrec 1.6, player.st) — map identique à
+      // Sandbox/JuliaTraining/gui.js (décision spec : dupliquée, pas de module partagé).
+      if (player.evrecStates) {
+        const STATE_ICONS = [["inv", "🛡️"], ["frz", "🧊"], ["slp", "💧"], ["sil", "🚫"], ["stk", "🕸️"], ["shf", "🐌"], ["dyi", "💀"]];
+        const iconSize = ENERGY_BAR_HEIGHT * 2 / 32 * fov;
+        let iconX = playerX + energyBarWidth / 2 + 3 / 32 * fov;
+        context.font = `${iconSize}px sans-serif`;
+        context.textAlign = "left";
+        context.textBaseline = "middle";
+        for (const [key, icon] of STATE_ICONS) {
+          if (!player.evrecStates[key]) continue;
+          context.fillText(icon, iconX, energyBarY + energyBarHeight / 2);
+          iconX += iconSize * 1.15;
+        }
+        context.textBaseline = "alphabetic"; // restaure le défaut (le reste du drawer y compte)
+      }
     }
 
     // Render player name

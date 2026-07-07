@@ -41,6 +41,7 @@
         mouse: A.player.mouse, alive: A.player.alive
       };
       if (A.player.stats) player.stats = A.player.stats;
+      if (A.player.st) player.st = A.player.st; // états joueur (evrec 1.6 ; absent = aucun actif)
       if (A.player.aura) player.aura = A.player.aura; // {t, r} — aura de pouvoir du héros
       // Down/death timer (ms) : décompte lerpé si présent aux deux ticks
       if (A.player.dt != null) {

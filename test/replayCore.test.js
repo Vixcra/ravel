@@ -278,3 +278,17 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   assert.deepStrictEqual(tick.player.aura, { t: 13, r: 2 }); // 64/32
   console.log("recorderCore: readAura + buildTick auras OK");
 })();
+
+// sampleFrame: passthrough des états joueur (st, evrec 1.6)
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: {},
+    ticks: [
+      { t: 0, area: "0", player: { x: 0, y: 0, mouse: [0, 0], alive: true, st: { inv: 1, frz: 1 } }, entities: [] },
+      { t: 1, area: "0", player: { x: 10, y: 0, mouse: [0, 0], alive: true }, entities: [] }
+    ]
+  }));
+  assert.deepStrictEqual(RC.sampleFrame(ev, 0).player.st, { inv: 1, frz: 1 });
+  assert.strictEqual(RC.sampleFrame(ev, 1).player.st, undefined); // tick sans st = aucun état
+  console.log("replayCore: sampleFrame st passthrough OK");
+})();

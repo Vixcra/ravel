@@ -326,6 +326,8 @@
         console.log("[replay] pos: local=(" + (frame.player.x - o[0]).toFixed(1) + "," + (frame.player.y - o[1]).toFixed(1) +
           ") monde Ravel=(" + world.pos.x + "," + world.pos.y + ") aire=(" + area.pos.x + "," + area.pos.y + ")");
       }
+      // États joueur enregistrés (evrec 1.6) -> icônes emoji du drawer ; null = rien à afficher.
+      player.evrecStates = frame.player.st || null;
       var st = frame.player.stats;
       if (st) {
         if (st.level != null) {
