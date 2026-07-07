@@ -664,7 +664,7 @@ function renderPlayers(area, players, focus) {
       // Icônes d'états joueur (evrec 1.6, player.st) — map identique à
       // Sandbox/JuliaTraining/gui.js (décision spec : dupliquée, pas de module partagé).
       if (player.evrecStates) {
-        const STATE_ICONS = [["inv", "🛡️"], ["frz", "🧊"], ["slp", "💧"], ["sil", "🚫"], ["stk", "🕸️"], ["shf", "🐌"], ["dyi", "💀"]];
+        const STATE_ICONS = [["inv", "🛡️"], ["frz", "🧊"], ["slp", "💧"], ["sil", "🚫"], ["stk", "🕸️"], ["shf", "🐌"], ["dyi", "💀"], ["dot", "🔥"]];
         const iconSize = ENERGY_BAR_HEIGHT * 2 / 32 * fov;
         let iconX = playerX + energyBarWidth / 2 + 3 / 32 * fov;
         context.font = `${iconSize}px sans-serif`;
