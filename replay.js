@@ -258,7 +258,7 @@
   // Types absents de la table du recorder au moment de la capture (n="unknown") :
   // re-mappés ici par rawN pour que les VIEUX fichiers retrouvent une texture.
   var RAW_FALLBACK = {
-    ENLARGING_ENEMY: "expander", BLOCKING_ENEMY: "blocking",
+    ENLARGING_ENEMY: "enlarging", BLOCKING_ENEMY: "blocking",
     FORCE_SNIPER_A_ENEMY: "sniper", FORCE_SNIPER_B_ENEMY: "sniper",
     FORCE_SNIPER_A_PROJECTILE: "normal", FORCE_SNIPER_B_PROJECTILE: "normal"
   };
@@ -283,8 +283,17 @@
       // auraRadius : rayon enregistré (px) si le fichier en a un, sinon undefined ->
       // défaut de la classe Ravel (150 etc.) pour les vieux fichiers sans auras.
       var auraPx = fe.a != null ? fe.a * 32 : undefined;
-      try { pup = area.createEnemy(fe.n, 0, 0, (fe.r || 0.5) * 32, 0, 0, {}, auraPx, 0, 1); } catch (e) {}
+      var mkErr = null;
+      try { pup = area.createEnemy(fe.n, 0, 0, (fe.r || 0.5) * 32, 0, 0, {}, auraPx, 0, 1); } catch (e) { mkErr = e; }
       if (!pup) {
+        // Fallback violet générique : signalé UNE fois par type pour ne plus jamais
+        // masquer un échec de création (cause des "textures violettes").
+        replay._pupWarned = replay._pupWarned || {};
+        if (!replay._pupWarned[fe.n]) {
+          replay._pupWarned[fe.n] = true;
+          console.warn("[replay] createEnemy a échoué pour \"" + fe.n + "\" (rawN=" + fe.rawN + ")" +
+            (mkErr ? " : " + mkErr.message : " (retour null)") + " -> fallback violet");
+        }
         var ti = entityTypes.indexOf(fe.n);
         pup = new Enemy(new Vector(0, 0), ti > 0 ? ti : 0, fe.r || 0.5, 0, 0, "#7a4bd6");
       }
