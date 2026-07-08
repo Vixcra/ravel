@@ -292,3 +292,17 @@ const text = fs.readFileSync(path.join(__dirname, "fixture.evrec.json"), "utf8")
   assert.strictEqual(RC.sampleFrame(ev, 1).player.st, undefined); // tick sans st = aucun état
   console.log("replayCore: sampleFrame st passthrough OK");
 })();
+
+// sampleFrame: radius joueur lerpé (evrec 1.6.3)
+(function () {
+  var ev = RC.parseEvrec(JSON.stringify({
+    format: "evrec/1", meta: {},
+    ticks: [
+      { t: 0, area: "0", player: { x: 0, y: 0, mouse: [0, 0], alive: true, r: 0.5 }, entities: [] },
+      { t: 1, area: "0", player: { x: 10, y: 0, mouse: [0, 0], alive: true, r: 1.0 }, entities: [] }
+    ]
+  }));
+  assert.strictEqual(RC.sampleFrame(ev, 0.5).player.r, 0.75);
+  assert.strictEqual(RC.sampleFrame(ev, 1).player.r, 1.0);
+  console.log("replayCore: sampleFrame radius joueur lerp OK");
+})();

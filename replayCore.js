@@ -42,6 +42,10 @@
       };
       if (A.player.stats) player.stats = A.player.stats;
       if (A.player.st) player.st = A.player.st; // états joueur (evrec 1.6 ; absent = aucun actif)
+      // Radius joueur (evrec 1.6.3, tuiles) : lerpé — Enlarging aura, Brute Vigor...
+      if (A.player.r != null) {
+        player.r = (B.player && B.player.r != null) ? _lerp(A.player.r, B.player.r, f) : A.player.r;
+      }
       if (A.player.aura) player.aura = A.player.aura; // {t, r} — aura de pouvoir du héros
       // Down/death timer (ms) : décompte lerpé si présent aux deux ticks
       if (A.player.dt != null) {

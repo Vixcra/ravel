@@ -255,8 +255,17 @@
 
   // Marionnette = vraie entité Ravel (couleur/texture de classe via area.createEnemy),
   // pilotée en position par le fichier. La sim est coupée : freeze permanent par sécurité.
+  // Types absents de la table du recorder au moment de la capture (n="unknown") :
+  // re-mappés ici par rawN pour que les VIEUX fichiers retrouvent une texture.
+  var RAW_FALLBACK = {
+    ENLARGING_ENEMY: "expander", BLOCKING_ENEMY: "blocking",
+    FORCE_SNIPER_A_ENEMY: "sniper", FORCE_SNIPER_B_ENEMY: "sniper",
+    FORCE_SNIPER_A_PROJECTILE: "normal", FORCE_SNIPER_B_PROJECTILE: "normal"
+  };
   replay._makePuppet = function (area, fe) {
     var pup = null;
+    var origN = fe.n; // identité du cache puppets (la boucle compare pup._n à fe.n du fichier)
+    if (fe.n === "unknown" && fe.rawN && RAW_FALLBACK[fe.rawN]) fe = Object.assign({}, fe, { n: RAW_FALLBACK[fe.rawN] });
     var isItem = fe.rawN && fe.rawN.indexOf("ITEM") >= 0;
     var tex = fe.rawN && RAW_TEXTURES[fe.rawN];
     if (tex || isItem) {
@@ -280,7 +289,7 @@
         pup = new Enemy(new Vector(0, 0), ti > 0 ? ti : 0, fe.r || 0.5, 0, 0, "#7a4bd6");
       }
     }
-    pup._n = fe.n;
+    pup._n = origN;
     pup._raw = fe.rawN;
     pup.freeze = 1e15;
     return pup;
@@ -328,6 +337,8 @@
       }
       // États joueur enregistrés (evrec 1.6) -> icônes emoji du drawer ; null = rien à afficher.
       player.evrecStates = frame.player.st || null;
+      // Radius joueur enregistré (evrec 1.6.3) ; vieux fichiers sans r -> radius par défaut.
+      if (frame.player.r != null) player.radius = frame.player.r;
       var st = frame.player.stats;
       if (st) {
         if (st.level != null) {
